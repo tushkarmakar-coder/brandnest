@@ -18,10 +18,10 @@ export default function Home() {
     '@graph': [
       {
         '@type': 'LocalBusiness',
-        '@id': 'https://brandnest.in/#business',
+        '@id': 'https://brandnestagency.vercel.app/#business',
         name: 'BrandNest',
         description: 'AI-powered digital agency — website development, video production, commercial ads and AI integration. India.',
-        url: 'https://brandnest.in',
+        url: 'https://brandnestagency.vercel.app',
         telephone: '+91-7894935653',
         email: 'brandnest.team@gmail.com',
         address: { 

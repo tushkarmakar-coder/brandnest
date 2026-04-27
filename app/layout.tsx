@@ -17,7 +17,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://brandnest.in'),
+  metadataBase: new URL('https://brandnestagency.vercel.app'),
   title: {
     default: 'BrandNest | AI-Powered Digital Agency — Websites, Video & Ads India',
     template: '%s | BrandNest'
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'BrandNest | AI-Powered Digital Agency — India',
     description: 'Premium digital agency — full-stack websites, AI video production, commercial ads & AI tools.',
-    url: 'https://brandnest.in',
+    url: 'https://brandnestagency.vercel.app',
     siteName: 'BrandNest',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'BrandNest Digital Agency India' }],
     locale: 'en_IN',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     icon: '/logo.png',
     apple: '/logo.png',
   },
-  alternates: { canonical: 'https://brandnest.in' },
+  alternates: { canonical: 'https://brandnestagency.vercel.app' },
   verification: { google: 'YOUR_GOOGLE_SEARCH_CONSOLE_CODE' },
 }
 

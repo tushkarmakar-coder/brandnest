@@ -7,7 +7,7 @@ Disallow: /api/
 Disallow: /.next/
 
 # Sitemap location
-Sitemap: https://brandnest.in/sitemap.xml
+Sitemap: https://brandnestagency.vercel.app/sitemap.xml
 
 # Crawl delay (optional - allows 2 seconds between requests)
 Crawl-delay: 1
