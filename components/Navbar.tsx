@@ -1,0 +1,50 @@
+'use client'
+import { useState } from 'react'
+import Link from 'next/link'
+import { Menu, X } from 'lucide-react'
+import Logo from './Logo'
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(17,17,17,0.95)] border-b border-[rgba(255,92,0,0.08)] backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Logo size="md" />
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="#services" className="text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Services</Link>
+          <Link href="#work" className="text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
+          <Link href="#why" className="text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
+          <Link href="#contact" className="text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Contact</Link>
+          <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}`} target="_blank" rel="noopener noreferrer"
+            className="bg-[#FF5C00] text-[#111] px-6 py-2 text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors">
+            WhatsApp
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button className="md:hidden text-[#FF5C00]" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden border-t border-[rgba(255,92,0,0.08)] bg-[rgba(17,17,17,0.98)]">
+          <div className="px-6 py-4 space-y-4">
+            <Link href="#services" className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Services</Link>
+            <Link href="#work" className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
+            <Link href="#why" className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
+            <Link href="#contact" className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Contact</Link>
+            <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}`} target="_blank" rel="noopener noreferrer"
+              className="block bg-[#FF5C00] text-[#111] px-6 py-2 text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors text-center">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      )}
+    </nav>
+  )
+}

@@ -1,0 +1,313 @@
+'use client'
+import { useEffect, useRef, useState } from 'react'
+import * as THREE from 'three'
+import { motion } from 'framer-motion'
+import LeadForm from './LeadForm'
+
+export default function HeroThree() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  // Typewriter effect state
+  const [typedWord, setTypedWord] = useState('Scale')
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [wordIndex, setWordIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(5)
+
+  const typeWords = ['Scale', 'Convert', 'Dominate', 'Grow', 'Perform']
+
+  useEffect(() => {
+    if (!canvasRef.current || !containerRef.current) return
+    const container = containerRef.current
+    const W = container.clientWidth
+    const H = container.clientHeight
+
+    // RENDERER
+    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, antialias: true, alpha: true })
+    renderer.setSize(W, H)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setClearColor(0x111111, 1)
+
+    // SCENE + CAMERA
+    const scene = new THREE.Scene()
+    scene.fog = new THREE.FogExp2(0x111111, 0.07)
+    const camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 1000)
+    camera.position.set(0, 0, 5)
+
+    // === GOLD PARTICLE FIELD (1800 particles) ===
+    const particleCount = 1800
+    const positions = new Float32Array(particleCount * 3)
+    for (let i = 0; i < particleCount; i++) {
+      positions[i * 3]     = (Math.random() - 0.5) * 28
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 16
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 12
+    }
+    const pgeo = new THREE.BufferGeometry()
+    pgeo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+    const pmat = new THREE.PointsMaterial({
+      color: 0xFF5C00, size: 0.04, transparent: true, opacity: 0.55,
+      sizeAttenuation: true, blending: THREE.AdditiveBlending, depthWrite: false
+    })
+    const particles = new THREE.Points(pgeo, pmat)
+    scene.add(particles)
+
+    // === SILVER/WHITE MICRO PARTICLES (900) ===
+    const scount = 900
+    const spos = new Float32Array(scount * 3)
+    for (let i = 0; i < scount; i++) {
+      spos[i * 3] = (Math.random() - 0.5) * 32
+      spos[i * 3 + 1] = (Math.random() - 0.5) * 18
+      spos[i * 3 + 2] = (Math.random() - 0.5) * 14
+    }
+    const sgeo = new THREE.BufferGeometry()
+    sgeo.setAttribute('position', new THREE.BufferAttribute(spos, 3))
+    const smat = new THREE.PointsMaterial({
+      color: 0xF5F5F5, size: 0.018, transparent: true, opacity: 0.18,
+      sizeAttenuation: true, blending: THREE.AdditiveBlending, depthWrite: false
+    })
+    const sparticles = new THREE.Points(sgeo, smat)
+    scene.add(sparticles)
+
+    // === WIREFRAME SHAPES ===
+    const wireMat = (opacity = 0.08) => new THREE.MeshBasicMaterial({
+      color: 0xFF5C00, wireframe: true, transparent: true, opacity
+    })
+
+    // Icosahedron (right floating)
+    const ico = new THREE.Mesh(new THREE.IcosahedronGeometry(1.8, 1), wireMat(0.08))
+    ico.position.set(4.2, 0.4, -1)
+    scene.add(ico)
+
+    // Octahedron (left floating)
+    const oct = new THREE.Mesh(new THREE.OctahedronGeometry(1.1), wireMat(0.07))
+    oct.position.set(-5, -0.5, -2)
+    scene.add(oct)
+
+    // Large torus ring (back center)
+    const tor = new THREE.Mesh(
+      new THREE.TorusGeometry(2.4, 0.012, 6, 90),
+      new THREE.MeshBasicMaterial({ color: 0xFF5C00, transparent: true, opacity: 0.07 })
+    )
+    tor.rotation.x = Math.PI / 3
+    tor.position.set(1, 0, -3)
+    scene.add(tor)
+
+    // Small torus (foreground left)
+    const tor2 = new THREE.Mesh(
+      new THREE.TorusGeometry(1.0, 0.008, 6, 60),
+      new THREE.MeshBasicMaterial({ color: 0xFF7A2E, transparent: true, opacity: 0.15 })
+    )
+    tor2.rotation.x = Math.PI / 4
+    tor2.rotation.y = Math.PI / 6
+    tor2.position.set(-2.5, 1, 0.5)
+    scene.add(tor2)
+
+    // === PULSING ORANGE SPHERE ===
+    const sphere = new THREE.Mesh(
+      new THREE.SphereGeometry(0.28, 32, 32),
+      new THREE.MeshBasicMaterial({ color: 0xFF5C00, transparent: true, opacity: 0.6 })
+    )
+    sphere.position.set(3.5, -0.5, 1)
+    scene.add(sphere)
+
+    // === NETWORK CONNECTING LINES ===
+    const lineCount = 40
+    const lpos = new Float32Array(lineCount * 6)
+    for (let i = 0; i < lineCount; i++) {
+      lpos[i * 6]     = (Math.random() - 0.5) * 24
+      lpos[i * 6 + 1] = (Math.random() - 0.5) * 12
+      lpos[i * 6 + 2] = (Math.random() - 0.5) * 8
+      lpos[i * 6 + 3] = lpos[i * 6]     + (Math.random() - 0.5) * 4
+      lpos[i * 6 + 4] = lpos[i * 6 + 1] + (Math.random() - 0.5) * 3
+      lpos[i * 6 + 5] = lpos[i * 6 + 2] + (Math.random() - 0.5) * 2
+    }
+    const lgeo = new THREE.BufferGeometry()
+    lgeo.setAttribute('position', new THREE.BufferAttribute(lpos, 3))
+    const linesMesh = new THREE.LineSegments(lgeo, new THREE.LineBasicMaterial({
+      color: 0xFF5C00, transparent: true, opacity: 0.06, blending: THREE.AdditiveBlending
+    }))
+    scene.add(linesMesh)
+
+    // === MOUSE PARALLAX ===
+    let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0
+    const onMouseMove = (e: MouseEvent) => {
+      const rect = container.getBoundingClientRect()
+      mouseX = ((e.clientX - rect.left) / rect.width  - 0.5) * 2
+      mouseY = ((e.clientY - rect.top)  / rect.height - 0.5) * 2
+    }
+    window.addEventListener('mousemove', onMouseMove)
+
+    // === ANIMATION LOOP ===
+    let t = 0
+    let animId: number
+    const animate = () => {
+      animId = requestAnimationFrame(animate)
+      t += 0.004
+
+      targetX += (mouseX - targetX) * 0.03
+      targetY += (mouseY - targetY) * 0.03
+      camera.position.x = targetX * 0.6
+      camera.position.y = -targetY * 0.3
+      camera.lookAt(0, 0, 0)
+
+      particles.rotation.y  = t * 0.06
+      particles.rotation.x  = t * 0.02
+      sparticles.rotation.y = -t * 0.04
+      ico.rotation.x = t * 0.3; ico.rotation.y = t * 0.2
+      oct.rotation.x = t * 0.25; oct.rotation.z = t * 0.15
+      tor.rotation.z = t * 0.1
+      tor2.rotation.y = t * 0.4; tor2.rotation.x = t * 0.2
+      linesMesh.rotation.y = t * 0.03
+
+      const s = 1 + Math.sin(t * 2.5) * 0.15
+      sphere.scale.setScalar(s)
+      ;(sphere.material as THREE.MeshBasicMaterial).opacity = 0.4 + Math.sin(t * 2.5) * 0.25
+      pmat.opacity = 0.45 + Math.sin(t * 0.8) * 0.1
+
+      renderer.render(scene, camera)
+    }
+    animate()
+
+    // Resize handler
+    const onResize = () => {
+      const W2 = container.clientWidth, H2 = container.clientHeight
+      camera.aspect = W2 / H2
+      camera.updateProjectionMatrix()
+      renderer.setSize(W2, H2)
+    }
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      cancelAnimationFrame(animId)
+      window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('resize', onResize)
+      renderer.dispose()
+    }
+  }, [])
+
+  // Typewriter effect
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const currentWord = typeWords[wordIndex]
+      if (!isDeleting) {
+        setTypedWord(currentWord.slice(0, charIndex + 1))
+        if (charIndex + 1 === currentWord.length) {
+          setTimeout(() => setIsDeleting(true), 1600)
+          return
+        }
+        setCharIndex(c => c + 1)
+      } else {
+        setTypedWord(currentWord.slice(0, charIndex - 1))
+        if (charIndex - 1 === 0) {
+          setIsDeleting(false)
+          setWordIndex(i => (i + 1) % typeWords.length)
+          setCharIndex(0)
+          return
+        }
+        setCharIndex(c => c - 1)
+      }
+    }, isDeleting ? 65 : 105)
+    return () => clearTimeout(timeout)
+  }, [charIndex, isDeleting, wordIndex, typeWords])
+
+  return (
+    <section ref={containerRef} className="relative w-full min-h-screen bg-[#111111] overflow-hidden hero-grid-bg">
+      {/* Three.js canvas */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+
+      {/* Content overlay */}
+      <div className="relative z-10 h-full min-h-screen grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-0">
+
+        {/* Left — Hero text */}
+        <div className="flex flex-col justify-center px-12 lg:px-16 py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 border border-[rgba(255,92,0,0.35)] bg-[rgba(255,92,0,0.08)] text-[#FF7A2E] text-[10px] tracking-[0.16em] uppercase px-4 py-2 mb-8 w-fit"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00] animate-pulse" />
+            India{`'`}s Premium AI Agency
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
+            className="font-display text-[clamp(44px,6vw,72px)] font-extrabold text-[#F5F5F5] leading-[1.05] tracking-tight mb-6"
+          >
+            AI-Powered Websites,<br />
+            Videos & Ads That{' '}
+            <span className="text-[#FF5C00]">
+              {typedWord}
+              <span className="inline-block w-[3px] h-[0.85em] bg-[#FF5C00] ml-[3px] align-middle animate-blink" />
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
+            className="font-body text-[15px] text-[rgba(245,245,245,0.5)] max-w-[420px] leading-[1.9] mb-10 font-light"
+          >
+            Custom websites, AI chatbots, viral ads & automation tools.
+            We build what drives real business results.
+          </motion.p>
+
+          <motion.ul
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
+            className="space-y-3 mb-10"
+          >
+            {['Full Stack Web Development', 'AI-Enhanced Video & Ad Production', 'Results in 30 Days or Free Revision', 'Dedicated Account Manager'].map((item) => (
+              <li key={item} className="flex items-center gap-3 text-[13px] text-[rgba(245,245,245,0.65)]">
+                <span className="w-4 h-4 border border-[#FF5C00] flex items-center justify-center text-[#FF5C00] text-[9px] flex-shrink-0">✓</span>
+                {item}
+              </li>
+            ))}
+          </motion.ul>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
+            className="flex items-center gap-4 flex-wrap"
+          >
+            <a href="#consultation" className="bg-[#FF5C00] text-[#111] px-8 py-3.5 text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-colors">
+              Get Free Consultation →
+            </a>
+            <a href="#work" className="text-[#FF7A2E] text-[13px] tracking-wide border-b border-[rgba(255,92,0,0.4)] pb-0.5 hover:border-[#FF5C00] transition-colors">
+              View Our Work
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Right — Lead Form */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
+          className="flex items-center justify-center px-8 py-16 lg:py-24"
+        >
+          <div className="w-full bg-[#FAFAF8] p-8">
+            <p className="font-display text-[22px] font-semibold text-[#1A1814] mb-1">Free Consultation</p>
+            <p className="text-[12px] text-[#6B6560] mb-7 font-body">We call within 2 hours · No commitment</p>
+            <LeadForm compact />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Scrolling Ticker */}
+      <motion.div
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }}
+        className="absolute bottom-0 left-0 right-0 z-10 border-t border-[rgba(255,92,0,0.1)] overflow-hidden bg-[rgba(17,17,17,0.5)]"
+      >
+        <div className="flex animate-ticker whitespace-nowrap py-[14px]">
+          {[...Array(2)].map((_, ri) => (
+            <div key={ri} className="flex shrink-0">
+              {[
+                'Full Stack Web Dev', 'AI Video Production', 'Google & Meta Ads',
+                'AI Chatbots', 'SEO Optimization', 'Brand Identity',
+                'UI/UX Design', 'Workflow Automation',
+              ].map((item) => (
+                <span key={`${ri}-${item}`} className="flex items-center gap-7 px-7 text-[11px] tracking-[0.16em] uppercase text-[rgba(245,245,245,0.28)]">
+                  <span className="text-[#FF5C00] text-sm">✦</span>
+                  {item}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  )
+}
