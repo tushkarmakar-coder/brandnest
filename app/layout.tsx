@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: 'Premium web development, AI tools, influencer marketing & performance ads.',
     images: ['/og-image.jpg'] 
   },
-  robots: { 
+  robots: {
     index: true, 
     follow: true, 
     googleBot: { 
@@ -65,9 +65,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-video-preview': -1,
       'max-snippet': -1
-    },
-    other: {
-      'bingbot': 'index, follow'
     }
   },
   icons: {

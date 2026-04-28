@@ -138,7 +138,6 @@ export const SERVICE_DETAILS = [
 • Expedited: 7-10 days
 • Rush: 3-5 days (premium pricing +40%)
     `,
-    basePrice: '₹40,000',
     deliverables: [
       'Professional scripting & storyboarding',
       'Concept development & creative direction',

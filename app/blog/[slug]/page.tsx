@@ -38,7 +38,7 @@ export default function BlogPostPage() {
       <div className="bg-[#111111] min-h-screen flex items-center justify-center px-6">
         <div className="text-center">
           <h1 className="font-display text-[36px] font-bold text-[#F5F5F5] mb-4">Article Not Found</h1>
-          <p className="text-[14px] text-[rgba(245,245,245,0.6)] mb-8">Sorry, we couldn't find the article you're looking for.</p>
+          <p className="text-[14px] text-[rgba(245,245,245,0.6)] mb-8">Sorry, we couldn&apos;t find the article you&apos;re looking for.</p>
           <Link href="/blog" className="inline-flex items-center gap-2 text-[#FF7A2E] hover:text-[#FF5C00] transition-colors">
             <ArrowLeft size={16} />
             Back to Articles
@@ -106,7 +106,7 @@ export default function BlogPostPage() {
           <div className="mt-12 p-8 rounded-lg border border-[rgba(255,92,0,0.15)] bg-[rgba(255,92,0,0.02)] backdrop-blur-sm">
             <h3 className="font-display text-[24px] font-bold text-[#F5F5F5] mb-3">Ready to implement these strategies?</h3>
             <p className="text-[13px] text-[rgba(245,245,245,0.6)] mb-6">
-              Get expert guidance from our team. We'll help you build the right solutions for your business.
+              Get expert guidance from our team. We&apos;ll help you build the right solutions for your business.
             </p>
             <a href="#consultation" className="inline-flex items-center gap-2 bg-[#FF5C00] text-[#111] px-9 py-3.5 text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-all shadow-lg hover:shadow-[0_0_30px_rgba(255,92,0,0.3)]">
               Get Free Consultation

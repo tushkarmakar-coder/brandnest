@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { motion } from 'framer-motion'
 
@@ -13,7 +13,7 @@ export default function HeroThree() {
   const [wordIndex, setWordIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
 
-  const typeWords = ['Drive Results', 'Build Solutions', 'Scale Your Business']
+  const typeWords = useMemo(() => ['Drive Results', 'Build Solutions', 'Scale Your Business'], [])
 
   useEffect(() => {
     if (!canvasRef.current || !containerRef.current) return
