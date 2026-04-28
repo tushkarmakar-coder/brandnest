@@ -17,10 +17,9 @@ export default function Navbar() {
           <Link href="#services" className="text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Services</Link>
           <Link href="#work" className="text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
           <Link href="#why" className="text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
-          <Link href="#contact" className="text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Contact</Link>
-          <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}`} target="_blank" rel="noopener noreferrer"
+          <a href="#consultation"
             className="bg-[#FF5C00] text-[#111] px-6 py-2 text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors">
-            WhatsApp
+            Get Free Consultation
           </a>
         </div>
 
@@ -37,10 +36,8 @@ export default function Navbar() {
             <Link href="#services" className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Services</Link>
             <Link href="#work" className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
             <Link href="#why" className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
-            <Link href="#contact" className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Contact</Link>
-            <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}`} target="_blank" rel="noopener noreferrer"
-              className="block bg-[#FF5C00] text-[#111] px-6 py-2 text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors text-center">
-              WhatsApp
+            <a href="#consultation" className="block bg-[#FF5C00] text-[#111] px-6 py-2 text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors text-center">
+              Get Free Consultation
             </a>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Syne, Inter } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/components/Navbar'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -19,37 +20,40 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://brandnestagency.vercel.app'),
   title: {
-    default: 'BrandNest | AI-Powered Digital Agency — Websites, Video & Ads India',
+    default: 'Website Development Company in India | AI Digital Agency | BrandNest',
     template: '%s | BrandNest'
   },
-  description: 'BrandNest is a premium AI-powered digital agency across India. Professional developers build full-stack websites with hosting & deployment, AI-enhanced video ads, performance campaigns & AI tools. Free consultation.',
+  description: 'BrandNest is a leading AI-powered digital agency in India offering website development, AI tools, influencer marketing and performance ads. Serving Pan India & Global Clients from Delhi, Noida, Gurgaon.',
   keywords: [
-    'digital marketing agency Delhi',
-    'website development company Noida',
-    'AI digital agency India',
-    'video production agency India',
-    'commercial ads agency Delhi',
-    'full stack web development Delhi',
-    'best marketing agency Noida',
-    'AI integration agency India',
-    'website development agency India',
-    'performance marketing agency India',
-    'Next.js development agency Delhi',
-    'brand identity agency Noida'
+    'website development company India',
+    'digital marketing agency India',
+    'AI agency India',
+    'web development Delhi',
+    'Noida website company',
+    'performance marketing India',
+    'AI digital agency',
+    'web development Gurgaon',
+    'website builder India',
+    'e-commerce development India',
+    'full stack web development',
+    'SaaS development India',
+    'influencer marketing agency India',
+    'AI tools development',
+    'custom web solutions India'
   ],
   openGraph: {
-    title: 'BrandNest | AI-Powered Digital Agency — India',
-    description: 'Premium digital agency — full-stack websites, AI video production, commercial ads & AI tools.',
+    title: 'Website Development Company in India | AI Digital Agency | BrandNest',
+    description: 'BrandNest — Leading AI-powered digital agency in India. Full-stack websites, AI tools, influencer marketing & performance ads.',
     url: 'https://brandnestagency.vercel.app',
     siteName: 'BrandNest',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'BrandNest Digital Agency India' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'BrandNest - Website Development & AI Agency India' }],
     locale: 'en_IN',
     type: 'website',
   },
   twitter: { 
     card: 'summary_large_image', 
-    title: 'BrandNest | AI-Powered Digital Agency', 
-    description: 'Websites, video ads & AI tools. India.',
+    title: 'Website Development Company in India | AI Digital Agency', 
+    description: 'Premium web development, AI tools, influencer marketing & performance ads.',
     images: ['/og-image.jpg'] 
   },
   robots: { 
@@ -58,8 +62,13 @@ export const metadata: Metadata = {
     googleBot: { 
       index: true, 
       follow: true, 
-      'max-image-preview': 'large' 
-    } 
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+      'max-snippet': -1
+    },
+    other: {
+      'bingbot': 'index, follow'
+    }
   },
   icons: {
     icon: '/logo.png',
@@ -75,7 +84,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="bg-[#FAFAF8]">{children}</body>
+      <body className="bg-[#FAFAF8]">
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }

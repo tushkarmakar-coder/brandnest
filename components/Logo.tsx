@@ -17,13 +17,15 @@ export default function Logo({ href = '/', size = 'md', className = '' }: LogoPr
   const { width, height, text } = sizeMap[size]
 
   const content = (
-    <div className={`flex items-center gap-2 font-display font-bold text-[#F5F5F5] tracking-tight ${text} ${className}`}>
+    <div className={`flex items-center gap-2 ${className}`}>
       <Image 
         src="/logo.png" 
         alt="BrandNest" 
         width={width} 
         height={height}
-        className="rounded-md"
+        className="rounded-sm"
+        style={{ mixBlendMode: 'screen' }}
+        priority
       />
     </div>
   )

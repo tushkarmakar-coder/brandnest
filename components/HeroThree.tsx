@@ -2,19 +2,18 @@
 import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { motion } from 'framer-motion'
-import LeadForm from './LeadForm'
 
 export default function HeroThree() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
   // Typewriter effect state
-  const [typedWord, setTypedWord] = useState('Scale')
+  const [typedWord, setTypedWord] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [wordIndex, setWordIndex] = useState(0)
-  const [charIndex, setCharIndex] = useState(5)
+  const [charIndex, setCharIndex] = useState(0)
 
-  const typeWords = ['Scale', 'Convert', 'Dominate', 'Grow', 'Perform']
+  const typeWords = ['Drive Results', 'Build Solutions', 'Scale Your Business']
 
   useEffect(() => {
     if (!canvasRef.current || !containerRef.current) return
@@ -192,7 +191,7 @@ export default function HeroThree() {
       if (!isDeleting) {
         setTypedWord(currentWord.slice(0, charIndex + 1))
         if (charIndex + 1 === currentWord.length) {
-          setTimeout(() => setIsDeleting(true), 1600)
+          setTimeout(() => setIsDeleting(true), 1800)
           return
         }
         setCharIndex(c => c + 1)
@@ -206,7 +205,7 @@ export default function HeroThree() {
         }
         setCharIndex(c => c - 1)
       }
-    }, isDeleting ? 65 : 105)
+    }, isDeleting ? 55 : 90)
     return () => clearTimeout(timeout)
   }, [charIndex, isDeleting, wordIndex, typeWords])
 
@@ -216,43 +215,43 @@ export default function HeroThree() {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Content overlay */}
-      <div className="relative z-10 h-full min-h-screen grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-0">
-
-        {/* Left — Hero text */}
-        <div className="flex flex-col justify-center px-12 lg:px-16 py-24">
+      <div className="relative z-10 h-full min-h-screen flex items-center px-6 lg:px-16">
+        <div className="w-full max-w-7xl mx-auto">
+          {/* Hero text - Full width */}
+          <div className="flex flex-col justify-center py-24 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
             className="inline-flex items-center gap-2 border border-[rgba(255,92,0,0.35)] bg-[rgba(255,92,0,0.08)] text-[#FF7A2E] text-[10px] tracking-[0.16em] uppercase px-4 py-2 mb-8 w-fit"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00] animate-pulse" />
-            India{`'`}s Premium AI Agency
+            India{`'`}s Premium Digital Agency
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-            className="font-display text-[clamp(44px,6vw,72px)] font-extrabold text-[#F5F5F5] leading-[1.05] tracking-tight mb-6"
+            className="font-display text-[clamp(44px,6vw,72px)] font-extrabold text-[#F5F5F5] leading-[0.9] tracking-tighter mb-6"
           >
-            AI-Powered Websites,<br />
-            Videos & Ads That{' '}
-            <span className="text-[#FF5C00]">
+            Full Stack Websites,<br />
+            AI Chatbots, Commercial Ads &<br />
+            Build Your Business<br />
+            <span className="text-[#FF5C00] relative">
               {typedWord}
-              <span className="inline-block w-[3px] h-[0.85em] bg-[#FF5C00] ml-[3px] align-middle animate-blink" />
+              <span className="inline-block w-[2px] h-[0.9em] bg-[#FF5C00] ml-1 align-middle animate-blink" />
             </span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-            className="font-body text-[15px] text-[rgba(245,245,245,0.5)] max-w-[420px] leading-[1.9] mb-10 font-light"
+            className="font-body text-[15px] text-[rgba(245,245,245,0.6)] max-w-[550px] leading-[1.85] mb-10 font-light"
           >
-            Custom websites, AI chatbots, viral ads & automation tools.
-            We build what drives real business results.
+            We build high-converting websites, AI tools, and marketing systems that help businesses grow faster and scale efficiently.
           </motion.p>
 
           <motion.ul
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
             className="space-y-3 mb-10"
           >
-            {['Full Stack Web Development', 'AI-Enhanced Video & Ad Production', 'Results in 30 Days or Free Revision', 'Dedicated Account Manager'].map((item) => (
+            {['Full Stack Web Development', 'AI-Enhanced Video & Ad Production', 'Influencer Marketing Campaigns', 'Results in 30 Days or Free Revision', 'Dedicated Account Manager'].map((item) => (
               <li key={item} className="flex items-center gap-3 text-[13px] text-[rgba(245,245,245,0.65)]">
                 <span className="w-4 h-4 border border-[#FF5C00] flex items-center justify-center text-[#FF5C00] text-[9px] flex-shrink-0">✓</span>
                 {item}
@@ -264,26 +263,15 @@ export default function HeroThree() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
             className="flex items-center gap-4 flex-wrap"
           >
-            <a href="#consultation" className="bg-[#FF5C00] text-[#111] px-8 py-3.5 text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-colors">
+            <a href="#consultation" className="bg-[#FF5C00] text-[#111] px-8 py-3.5 text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,92,0,0.3)]">
               Get Free Consultation →
             </a>
-            <a href="#work" className="text-[#FF7A2E] text-[13px] tracking-wide border-b border-[rgba(255,92,0,0.4)] pb-0.5 hover:border-[#FF5C00] transition-colors">
-              View Our Work
+            <a href="#work" className="text-[#FF7A2E] text-[13px] tracking-wide font-medium border border-[rgba(255,92,0,0.4)] px-7 py-3.5 hover:border-[#FF5C00] hover:bg-[rgba(255,92,0,0.05)] transition-colors">
+              View Case Studies
             </a>
           </motion.div>
-        </div>
-
-        {/* Right — Lead Form */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
-          className="flex items-center justify-center px-8 py-16 lg:py-24"
-        >
-          <div className="w-full bg-[#FAFAF8] p-8">
-            <p className="font-display text-[22px] font-semibold text-[#1A1814] mb-1">Free Consultation</p>
-            <p className="text-[12px] text-[#6B6560] mb-7 font-body">We call within 2 hours · No commitment</p>
-            <LeadForm compact />
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scrolling Ticker */}
@@ -296,7 +284,7 @@ export default function HeroThree() {
             <div key={ri} className="flex shrink-0">
               {[
                 'Full Stack Web Dev', 'AI Video Production', 'Google & Meta Ads',
-                'AI Chatbots', 'SEO Optimization', 'Brand Identity',
+                'AI Chatbots', 'Influencer Marketing', 'SEO Optimization', 'Brand Identity',
                 'UI/UX Design', 'Workflow Automation',
               ].map((item) => (
                 <span key={`${ri}-${item}`} className="flex items-center gap-7 px-7 text-[11px] tracking-[0.16em] uppercase text-[rgba(245,245,245,0.28)]">

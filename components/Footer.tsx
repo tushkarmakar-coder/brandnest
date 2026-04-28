@@ -6,6 +6,7 @@ const QUICK_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '#services' },
   { label: 'Our Work', href: '#work' },
+  { label: 'Blog', href: '/blog' },
   { label: 'AI Tools', href: '#ai' },
   { label: 'About Us', href: '#about' },
   { label: 'Contact', href: '#contact' },
@@ -69,7 +70,9 @@ export default function Footer() {
 
           {/* Column 1 — Logo + About + Social */}
           <div>
-            <Logo size="lg" className="mb-4" />
+            <div className="logo-masked mb-4">
+              <Logo size="lg" />
+            </div>
             <p className="text-[13px] text-[rgba(245,240,232,0.45)] leading-[1.9] font-body mb-6 max-w-[260px]">
               India{`'`}s premium AI-powered digital agency. Our professional developers build full-stack websites with hosting & deployment. We create AI-enhanced videos, run performance ads, and build AI tools — all under one roof.
             </p>
@@ -137,7 +140,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={14} className="text-[#FF5C00] mt-0.5 flex-shrink-0" />
                 <span className="text-[13px] text-[rgba(245,245,245,0.5)] leading-[1.7] font-body">
-                  Noida, India<br />(Serving Pan India remotely)
+                  Noida, India<br />(Serving Pan India and Global Remotely)
                 </span>
               </li>
               <li className="flex items-center gap-3">

@@ -117,6 +117,17 @@ input, textarea, select {
   animation: slideUp 0.6s ease-out;
 }
 
+/* Logo Masking - Remove black background */
+.logo-masked {
+  filter: brightness(1.1) contrast(1.15);
+  mix-blend-mode: lighten;
+}
+
+.logo-masked img {
+  filter: brightness(1.2) saturate(1.05);
+  mix-blend-mode: screen;
+}
+
 /* Selection styling */
 ::selection {
   background: var(--gold);

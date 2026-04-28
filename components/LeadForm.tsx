@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-const SERVICES = ['Website Development', 'Video Production', 'Commercial Ads', 'AI Integration', 'Brand Identity', 'Full Package', 'Not Sure Yet']
+const SERVICES = ['Website Development', 'Video Production', 'Commercial Ads', 'AI Integration', 'Influencer Marketing', 'Brand Identity', 'Full Package', 'Not Sure Yet']
 
 export default function LeadForm({ compact = false }: { compact?: boolean }) {
   const [form, setForm] = useState({ name: '', phone: '', company: '', service: '', message: '' })

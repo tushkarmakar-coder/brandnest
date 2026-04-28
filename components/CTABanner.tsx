@@ -18,7 +18,7 @@ export default function CTABanner() {
             Get a free strategy consultation. {`We'll`} assess your needs and show you exactly how we can help.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#hero" className="bg-[#FF5C00] text-[#111] px-10 py-4 text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-colors">
+            <a href="#consultation" className="bg-[#FF5C00] text-[#111] px-10 py-4 text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-colors">
               Get Free Consultation →
             </a>
             <a

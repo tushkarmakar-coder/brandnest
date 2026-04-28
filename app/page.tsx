@@ -4,11 +4,13 @@ import { useEffect } from 'react'
 import HeroThree from '@/components/HeroThree'
 import TrustBar from '@/components/TrustBar'
 import Services from '@/components/Services'
+import Portfolio from '@/components/Portfolio'
 import WhyUs from '@/components/WhyUs'
 import AISection from '@/components/AISection'
 import Process from '@/components/Process'
 import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
+import ConsultationSection from '@/components/ConsultationSection'
 import CTABanner from '@/components/CTABanner'
 import Footer from '@/components/Footer'
 
@@ -75,6 +77,14 @@ export default function Home() {
                 description: 'Custom AI tools, chatbots and workflow automation' 
               } 
             },
+            { 
+              '@type': 'Offer', 
+              itemOffered: { 
+                '@type': 'Service', 
+                name: 'Influencer Marketing', 
+                description: 'Data-driven influencer partnerships and campaign management' 
+              } 
+            },
           ]
         }
       },
@@ -124,11 +134,13 @@ export default function Home() {
       <HeroThree />
       <TrustBar />
       <Services />
+      <Portfolio />
       <WhyUs />
       <AISection />
       <Process />
       <Testimonials />
       <FAQ />
+      <ConsultationSection />
       <CTABanner />
       <Footer />
     </>
