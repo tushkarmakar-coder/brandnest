@@ -21,10 +21,14 @@ export default function HeroThree() {
     const W = container.clientWidth
     const H = container.clientHeight
 
+    // Detect mobile for optimization
+    const isMobile = window.innerWidth < 768
+    const isTouchDevice = () => (('ontouchstart' in window) || (navigator.maxTouchPoints > 0))
+
     // RENDERER
-    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, antialias: true, alpha: true })
+    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, antialias: !isMobile, alpha: true, powerPreference: 'high-performance' })
     renderer.setSize(W, H)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2))
     renderer.setClearColor(0x111111, 1)
 
     // SCENE + CAMERA
@@ -33,8 +37,8 @@ export default function HeroThree() {
     const camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 1000)
     camera.position.set(0, 0, 5)
 
-    // === GOLD PARTICLE FIELD (1800 particles) ===
-    const particleCount = 1800
+    // === GOLD PARTICLE FIELD (Reduced on mobile) ===
+    const particleCount = isMobile ? 600 : 1800
     const positions = new Float32Array(particleCount * 3)
     for (let i = 0; i < particleCount; i++) {
       positions[i * 3]     = (Math.random() - 0.5) * 28
@@ -44,14 +48,14 @@ export default function HeroThree() {
     const pgeo = new THREE.BufferGeometry()
     pgeo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
     const pmat = new THREE.PointsMaterial({
-      color: 0xFF5C00, size: 0.04, transparent: true, opacity: 0.55,
+      color: 0xFF5C00, size: isMobile ? 0.06 : 0.04, transparent: true, opacity: 0.55,
       sizeAttenuation: true, blending: THREE.AdditiveBlending, depthWrite: false
     })
     const particles = new THREE.Points(pgeo, pmat)
     scene.add(particles)
 
-    // === SILVER/WHITE MICRO PARTICLES (900) ===
-    const scount = 900
+    // === SILVER/WHITE MICRO PARTICLES (Reduced on mobile) ===
+    const scount = isMobile ? 300 : 900
     const spos = new Float32Array(scount * 3)
     for (let i = 0; i < scount; i++) {
       spos[i * 3] = (Math.random() - 0.5) * 32
@@ -61,19 +65,19 @@ export default function HeroThree() {
     const sgeo = new THREE.BufferGeometry()
     sgeo.setAttribute('position', new THREE.BufferAttribute(spos, 3))
     const smat = new THREE.PointsMaterial({
-      color: 0xF5F5F5, size: 0.018, transparent: true, opacity: 0.18,
+      color: 0xF5F5F5, size: isMobile ? 0.025 : 0.018, transparent: true, opacity: 0.18,
       sizeAttenuation: true, blending: THREE.AdditiveBlending, depthWrite: false
     })
     const sparticles = new THREE.Points(sgeo, smat)
     scene.add(sparticles)
 
-    // === WIREFRAME SHAPES ===
+    // === WIREFRAME SHAPES (Reduced detail on mobile) ===
     const wireMat = (opacity = 0.08) => new THREE.MeshBasicMaterial({
       color: 0xFF5C00, wireframe: true, transparent: true, opacity
     })
 
     // Icosahedron (right floating)
-    const ico = new THREE.Mesh(new THREE.IcosahedronGeometry(1.8, 1), wireMat(0.08))
+    const ico = new THREE.Mesh(new THREE.IcosahedronGeometry(1.8, isMobile ? 0 : 1), wireMat(0.08))
     ico.position.set(4.2, 0.4, -1)
     scene.add(ico)
 
@@ -84,7 +88,7 @@ export default function HeroThree() {
 
     // Large torus ring (back center)
     const tor = new THREE.Mesh(
-      new THREE.TorusGeometry(2.4, 0.012, 6, 90),
+      new THREE.TorusGeometry(2.4, 0.012, 6, isMobile ? 45 : 90),
       new THREE.MeshBasicMaterial({ color: 0xFF5C00, transparent: true, opacity: 0.07 })
     )
     tor.rotation.x = Math.PI / 3
@@ -93,7 +97,7 @@ export default function HeroThree() {
 
     // Small torus (foreground left)
     const tor2 = new THREE.Mesh(
-      new THREE.TorusGeometry(1.0, 0.008, 6, 60),
+      new THREE.TorusGeometry(1.0, 0.008, 6, isMobile ? 30 : 60),
       new THREE.MeshBasicMaterial({ color: 0xFF7A2E, transparent: true, opacity: 0.15 })
     )
     tor2.rotation.x = Math.PI / 4
@@ -103,14 +107,14 @@ export default function HeroThree() {
 
     // === PULSING ORANGE SPHERE ===
     const sphere = new THREE.Mesh(
-      new THREE.SphereGeometry(0.28, 32, 32),
+      new THREE.SphereGeometry(0.28, isMobile ? 16 : 32, isMobile ? 16 : 32),
       new THREE.MeshBasicMaterial({ color: 0xFF5C00, transparent: true, opacity: 0.6 })
     )
     sphere.position.set(3.5, -0.5, 1)
     scene.add(sphere)
 
-    // === NETWORK CONNECTING LINES ===
-    const lineCount = 40
+    // === NETWORK CONNECTING LINES (Reduced on mobile) ===
+    const lineCount = isMobile ? 15 : 40
     const lpos = new Float32Array(lineCount * 6)
     for (let i = 0; i < lineCount; i++) {
       lpos[i * 6]     = (Math.random() - 0.5) * 24
@@ -127,14 +131,22 @@ export default function HeroThree() {
     }))
     scene.add(linesMesh)
 
-    // === MOUSE PARALLAX ===
+    // === MOUSE/TOUCH PARALLAX ===
     let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0
     const onMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect()
       mouseX = ((e.clientX - rect.left) / rect.width  - 0.5) * 2
       mouseY = ((e.clientY - rect.top)  / rect.height - 0.5) * 2
     }
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches.length === 0) return
+      const touch = e.touches[0]
+      const rect = container.getBoundingClientRect()
+      mouseX = ((touch.clientX - rect.left) / rect.width  - 0.5) * 2
+      mouseY = ((touch.clientY - rect.top)  / rect.height - 0.5) * 2
+    }
     window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('touchmove', onTouchMove, false)
 
     // === ANIMATION LOOP ===
     let t = 0
@@ -143,8 +155,8 @@ export default function HeroThree() {
       animId = requestAnimationFrame(animate)
       t += 0.004
 
-      targetX += (mouseX - targetX) * 0.03
-      targetY += (mouseY - targetY) * 0.03
+      targetX += (mouseX - targetX) * (isMobile ? 0.01 : 0.03)
+      targetY += (mouseY - targetY) * (isMobile ? 0.01 : 0.03)
       camera.position.x = targetX * 0.6
       camera.position.y = -targetY * 0.3
       camera.lookAt(0, 0, 0)
@@ -179,6 +191,7 @@ export default function HeroThree() {
     return () => {
       cancelAnimationFrame(animId)
       window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('touchmove', onTouchMove)
       window.removeEventListener('resize', onResize)
       renderer.dispose()
     }
@@ -215,10 +228,10 @@ export default function HeroThree() {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Content overlay */}
-      <div className="relative z-10 h-full min-h-screen flex items-center px-6 lg:px-16">
+      <div className="relative z-10 h-full min-h-screen flex items-center px-4 sm:px-6 lg:px-16">
         <div className="w-full max-w-7xl mx-auto">
           {/* Hero text - Full width */}
-          <div className="flex flex-col justify-center py-24 max-w-4xl">
+          <div className="flex flex-col justify-center py-20 sm:py-24 max-w-full sm:max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
             className="inline-flex items-center gap-2 border border-[rgba(255,92,0,0.35)] bg-[rgba(255,92,0,0.08)] text-[#FF7A2E] text-[10px] tracking-[0.16em] uppercase px-4 py-2 mb-8 w-fit"
@@ -229,11 +242,10 @@ export default function HeroThree() {
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-            className="font-display text-[clamp(44px,6vw,72px)] font-extrabold text-[#F5F5F5] leading-[0.9] tracking-tighter mb-6"
+            className="font-display text-[clamp(36px,5vw,72px)] font-extrabold text-[#F5F5F5] leading-[1] tracking-tighter mb-6"
           >
-            Full Stack Websites,<br />
-            AI Chatbots, Commercial Ads &<br />
-            Build Your Business<br />
+            Full Stack Websites, AI Chatbots, Commercial Ads &{' '}
+            <span className="block">Build Your Business</span>
             <span className="text-[#FF5C00] relative">
               {typedWord}
               <span className="inline-block w-[2px] h-[0.9em] bg-[#FF5C00] ml-1 align-middle animate-blink" />
@@ -242,31 +254,31 @@ export default function HeroThree() {
 
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-            className="font-body text-[15px] text-[rgba(245,245,245,0.6)] max-w-[550px] leading-[1.85] mb-10 font-light"
+            className="font-body text-[13px] sm:text-[15px] text-[rgba(245,245,245,0.6)] max-w-[550px] leading-[1.85] mb-10 font-light"
           >
             We build high-converting websites, AI tools, and marketing systems that help businesses grow faster and scale efficiently.
           </motion.p>
 
           <motion.ul
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
-            className="space-y-3 mb-10"
+            className="space-y-2 sm:space-y-3 mb-10"
           >
             {['Full Stack Web Development', 'AI-Enhanced Video & Ad Production', 'Influencer Marketing Campaigns', 'Results in 30 Days or Free Revision', 'Dedicated Account Manager'].map((item) => (
-              <li key={item} className="flex items-center gap-3 text-[13px] text-[rgba(245,245,245,0.65)]">
-                <span className="w-4 h-4 border border-[#FF5C00] flex items-center justify-center text-[#FF5C00] text-[9px] flex-shrink-0">✓</span>
-                {item}
+              <li key={item} className="flex items-start gap-2 sm:gap-3 text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.65)]">
+                <span className="w-4 h-4 border border-[#FF5C00] flex items-center justify-center text-[#FF5C00] text-[8px] flex-shrink-0 mt-0.5">✓</span>
+                <span>{item}</span>
               </li>
             ))}
           </motion.ul>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
-            className="flex items-center gap-4 flex-wrap"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 flex-wrap"
           >
-            <a href="#consultation" className="bg-[#FF5C00] text-[#111] px-8 py-3.5 text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,92,0,0.3)]">
+            <a href="#consultation" className="bg-[#FF5C00] text-[#111] px-6 sm:px-8 py-3 sm:py-3.5 text-[12px] sm:text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,92,0,0.3)] whitespace-nowrap">
               Get Free Consultation →
             </a>
-            <a href="#work" className="text-[#FF7A2E] text-[13px] tracking-wide font-medium border border-[rgba(255,92,0,0.4)] px-7 py-3.5 hover:border-[#FF5C00] hover:bg-[rgba(255,92,0,0.05)] transition-colors">
+            <a href="#work" className="text-[#FF7A2E] text-[12px] sm:text-[13px] tracking-wide font-medium border border-[rgba(255,92,0,0.4)] px-5 sm:px-7 py-3 sm:py-3.5 hover:border-[#FF5C00] hover:bg-[rgba(255,92,0,0.05)] transition-colors whitespace-nowrap">
               View Case Studies
             </a>
           </motion.div>
@@ -277,9 +289,9 @@ export default function HeroThree() {
       {/* Scrolling Ticker */}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }}
-        className="absolute bottom-0 left-0 right-0 z-10 border-t border-[rgba(255,92,0,0.1)] overflow-hidden bg-[rgba(17,17,17,0.5)]"
+        className="absolute bottom-0 left-0 right-0 z-10 border-t border-[rgba(255,92,0,0.1)] overflow-x-auto overflow-y-hidden bg-[rgba(17,17,17,0.5)] scrollbar-hide"
       >
-        <div className="flex animate-ticker whitespace-nowrap py-[14px]">
+        <div className="flex animate-ticker whitespace-nowrap py-3 sm:py-[14px]">
           {[...Array(2)].map((_, ri) => (
             <div key={ri} className="flex shrink-0">
               {[
@@ -287,8 +299,8 @@ export default function HeroThree() {
                 'AI Chatbots', 'Influencer Marketing', 'SEO Optimization', 'Brand Identity',
                 'UI/UX Design', 'Workflow Automation',
               ].map((item) => (
-                <span key={`${ri}-${item}`} className="flex items-center gap-7 px-7 text-[11px] tracking-[0.16em] uppercase text-[rgba(245,245,245,0.28)]">
-                  <span className="text-[#FF5C00] text-sm">✦</span>
+                <span key={`${ri}-${item}`} className="flex items-center gap-4 sm:gap-7 px-4 sm:px-7 text-[9px] sm:text-[11px] tracking-[0.16em] uppercase text-[rgba(245,245,245,0.28)]">
+                  <span className="text-[#FF5C00] text-xs sm:text-sm">✦</span>
                   {item}
                 </span>
               ))}
