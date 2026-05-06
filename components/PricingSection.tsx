@@ -82,6 +82,9 @@ const PricingSection = () => {
         </div>
 
         <div className="text-center">
+          <p className="text-[rgba(245,245,245,0.3)] text-[10px] font-medium uppercase tracking-[0.2em] mb-8">
+            * Backend infrastructure fees are paid directly by the client.
+          </p>
           <Link 
             href="/pricing"
             className="inline-flex items-center gap-3 bg-[#FF5C00] text-[#111] px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#FF7A2E] transition-all shadow-xl shadow-[#FF5C00]/20"

@@ -3,16 +3,16 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  Check, 
-  Globe, 
-  UserCheck, 
-  Layers, 
-  Zap, 
-  Crown, 
-  ShieldCheck, 
-  Mail, 
-  Server, 
+import {
+  Check,
+  Globe,
+  UserCheck,
+  Layers,
+  Zap,
+  Crown,
+  ShieldCheck,
+  Mail,
+  Server,
   Lock,
   ArrowRight,
   Video,
@@ -28,21 +28,21 @@ const PricingPage = () => {
   const [activeCategory, setActiveCategory] = useState('web')
 
   const categories = [
-    { 
-      id: 'web', 
-      label: 'Web Development', 
+    {
+      id: 'web',
+      label: 'Web Development',
       icon: <Globe className="w-4 h-4" />,
-      badges: ['Domain & Hosting Included', 'Professional Mailboxes', 'Turnkey Deployment']
+      badges: ['Infrastructure Setup Included', 'Professional Mailboxes', 'Direct Client Billing for Services']
     },
-    { 
-      id: 'video', 
-      label: 'Video Production', 
+    {
+      id: 'video',
+      label: 'Video Production',
       icon: <Video className="w-4 h-4" />,
       badges: ['4K Export Quality', 'Stock Media Access', 'Pro Sound Design']
     },
-    { 
-      id: 'marketing', 
-      label: 'Ads & Marketing', 
+    {
+      id: 'marketing',
+      label: 'Ads & Marketing',
       icon: <Target className="w-4 h-4" />,
       badges: ['Target Audience Research', 'Performance Analytics', 'Creative Ad Copy']
     }
@@ -95,7 +95,8 @@ const PricingPage = () => {
       icon: <Layers className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Scale Ready",
       examples: "Blogs, Corporate Sites, Real Estate Portals",
-      bonus: null
+      bonus: null,
+      serviceNote: "Server & DB fees billed to client"
     },
     {
       name: "Full Stack (Medium)",
@@ -111,7 +112,8 @@ const PricingPage = () => {
       icon: <Zap className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Commerce Driven",
       examples: "E-commerce Stores, Marketplace MVPs, Booking Engines",
-      bonus: "1 Month Free Maintenance"
+      bonus: "1 Month Free Maintenance",
+      serviceNote: "Platform & API fees billed to client"
     },
     {
       name: "Full Stack (Premium)",
@@ -127,7 +129,8 @@ const PricingPage = () => {
       icon: <Crown className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Enterprise Class",
       examples: "Custom SaaS, AI Platforms, ERP Solutions",
-      bonus: "3 Months Free Maintenance"
+      bonus: "3 Months Free Maintenance",
+      serviceNote: "Cloud infrastructure fees billed to client"
     },
     {
       name: "Custom Enterprise",
@@ -143,7 +146,8 @@ const PricingPage = () => {
       icon: <Layers className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Unlimited Scale",
       bonus: "3 Months Free",
-      examples: "Global SaaS, FinTech, E-commerce Marketplaces"
+      examples: "Global SaaS, FinTech, E-commerce Marketplaces",
+      serviceNote: "Dedicated infrastructure billed to client"
     }
   ]
 
@@ -341,7 +345,7 @@ const PricingPage = () => {
             Our <span className="text-[#FF5C00]">Pricing</span>
           </h1>
           <p className="text-xl text-[rgba(245,245,245,0.6)] max-w-2xl mx-auto mb-12 font-medium">
-            Strategic pricing for brands that don&apos;t settle for average. 
+            Strategic pricing for brands that don&apos;t settle for average.
             Choose your category to explore our packages.
           </p>
 
@@ -360,7 +364,7 @@ const PricingPage = () => {
 
           <div className="flex flex-wrap justify-center gap-4 text-xs font-bold uppercase tracking-widest text-[rgba(245,245,245,0.4)]">
             {categories.find(c => c.id === activeCategory)?.badges.map((badge, bIdx) => (
-              <motion.span 
+              <motion.span
                 key={`${activeCategory}-${badge}`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -393,7 +397,7 @@ const PricingPage = () => {
                     {plan.bonus}
                   </div>
                 )}
-                
+
                 <div className="mb-8 p-5 bg-[#111] border border-[rgba(255,92,0,0.1)] rounded-3xl w-fit text-[#FF5C00]">
                   {plan.icon}
                 </div>
@@ -430,7 +434,16 @@ const PricingPage = () => {
                   </div>
                 )}
 
-                <a 
+                {/* @ts-ignore */}
+                {plan.serviceNote && (
+                  <div className="mb-10 flex items-center gap-3 p-4 bg-[#FF5C00]/5 border border-[#FF5C00]/10 rounded-2xl">
+                    <Server className="w-4 h-4 text-[#FF5C00]" />
+                    {/* @ts-ignore */}
+                    <p className="text-[11px] text-[#FF5C00] font-bold uppercase tracking-wider">{plan.serviceNote}</p>
+                  </div>
+                )}
+
+                <a
                   href={`https://wa.me/917894935653?text=Hi BrandNest, I'm interested in the ${plan.name} (${activeCategory}) package. Please share the details.`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -442,6 +455,18 @@ const PricingPage = () => {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Billing Disclaimer */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="mt-16 p-8 rounded-[2.5rem] border border-[rgba(255,92,0,0.1)] bg-[#1A1A1A]/20 backdrop-blur-sm text-center"
+        >
+          <p className="text-[rgba(245,245,245,0.5)] text-sm font-medium leading-relaxed max-w-3xl mx-auto">
+            <span className="text-[#FF5C00] font-bold uppercase tracking-[0.2em] text-[10px] block mb-2">Important Note on Infrastructure Costs</span>
+            All backend service fees (including but not limited to Hosting, Databases, Third-party APIs, and Domain renewals) are paid directly by the client to the respective service providers. These costs are not included in our professional service/development fees.
+          </p>
+        </motion.div>
       </section>
 
       {/* Maintenance & Turnkey Section */}
@@ -457,7 +482,7 @@ const PricingPage = () => {
                 Ongoing <span className="text-[#FF5C00]">Maintenance</span>
               </h2>
               <p className="text-[rgba(245,245,245,0.5)] text-lg mb-12 font-medium leading-[1.8]">
-                Peak performance requires constant care. Our maintenance plans cover security audits, 
+                Peak performance requires constant care. Our maintenance plans cover security audits,
                 bug fixes, and core updates to ensure your digital asset never stops growing.
               </p>
 
@@ -474,7 +499,7 @@ const PricingPage = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-12 space-y-4">
                 <div className="flex items-center gap-4 p-5 bg-[#FF5C00]/5 border border-[#FF5C00]/10 rounded-2xl">
                   <div className="bg-[#FF5C00] p-1.5 rounded-full">
@@ -538,7 +563,7 @@ const PricingPage = () => {
             </motion.div>
           </div>
         </div>
-        
+
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FF5C00]/5 blur-[120px] -mr-64 -mt-64 rounded-full"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#FF5C00]/5 blur-[120px] -ml-64 -mb-64 rounded-full"></div>

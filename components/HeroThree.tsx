@@ -26,10 +26,10 @@ export default function HeroThree() {
     const isTouchDevice = () => (('ontouchstart' in window) || (navigator.maxTouchPoints > 0))
 
     // RENDERER
-    const renderer = new THREE.WebGLRenderer({ 
-      canvas: canvasRef.current, 
-      antialias: false, 
-      alpha: true, 
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvasRef.current,
+      antialias: false,
+      alpha: true,
       powerPreference: 'high-performance',
       stencil: false,
       depth: true
@@ -48,7 +48,7 @@ export default function HeroThree() {
     const particleCount = isMobile ? 400 : 1200
     const positions = new Float32Array(particleCount * 3)
     for (let i = 0; i < particleCount; i++) {
-      positions[i * 3]     = (Math.random() - 0.5) * 28
+      positions[i * 3] = (Math.random() - 0.5) * 28
       positions[i * 3 + 1] = (Math.random() - 0.5) * 16
       positions[i * 3 + 2] = (Math.random() - 0.5) * 12
     }
@@ -124,10 +124,10 @@ export default function HeroThree() {
     const lineCount = isMobile ? 15 : 40
     const lpos = new Float32Array(lineCount * 6)
     for (let i = 0; i < lineCount; i++) {
-      lpos[i * 6]     = (Math.random() - 0.5) * 24
+      lpos[i * 6] = (Math.random() - 0.5) * 24
       lpos[i * 6 + 1] = (Math.random() - 0.5) * 12
       lpos[i * 6 + 2] = (Math.random() - 0.5) * 8
-      lpos[i * 6 + 3] = lpos[i * 6]     + (Math.random() - 0.5) * 4
+      lpos[i * 6 + 3] = lpos[i * 6] + (Math.random() - 0.5) * 4
       lpos[i * 6 + 4] = lpos[i * 6 + 1] + (Math.random() - 0.5) * 3
       lpos[i * 6 + 5] = lpos[i * 6 + 2] + (Math.random() - 0.5) * 2
     }
@@ -142,15 +142,15 @@ export default function HeroThree() {
     let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0
     const onMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect()
-      mouseX = ((e.clientX - rect.left) / rect.width  - 0.5) * 2
-      mouseY = ((e.clientY - rect.top)  / rect.height - 0.5) * 2
+      mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2
+      mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2
     }
     const onTouchMove = (e: TouchEvent) => {
       if (e.touches.length === 0) return
       const touch = e.touches[0]
       const rect = container.getBoundingClientRect()
-      mouseX = ((touch.clientX - rect.left) / rect.width  - 0.5) * 2
-      mouseY = ((touch.clientY - rect.top)  / rect.height - 0.5) * 2
+      mouseX = ((touch.clientX - rect.left) / rect.width - 0.5) * 2
+      mouseY = ((touch.clientY - rect.top) / rect.height - 0.5) * 2
     }
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('touchmove', onTouchMove, false)
@@ -168,8 +168,8 @@ export default function HeroThree() {
       camera.position.y = -targetY * 0.3
       camera.lookAt(0, 0, 0)
 
-      particles.rotation.y  = t * 0.06
-      particles.rotation.x  = t * 0.02
+      particles.rotation.y = t * 0.06
+      particles.rotation.x = t * 0.02
       sparticles.rotation.y = -t * 0.04
       ico.rotation.x = t * 0.3; ico.rotation.y = t * 0.2
       oct.rotation.x = t * 0.25; oct.rotation.z = t * 0.15
@@ -179,7 +179,7 @@ export default function HeroThree() {
 
       const s = 1 + Math.sin(t * 2.5) * 0.15
       sphere.scale.setScalar(s)
-      ;(sphere.material as THREE.MeshBasicMaterial).opacity = 0.4 + Math.sin(t * 2.5) * 0.25
+        ; (sphere.material as THREE.MeshBasicMaterial).opacity = 0.4 + Math.sin(t * 2.5) * 0.25
       pmat.opacity = 0.45 + Math.sin(t * 0.8) * 0.1
 
       renderer.render(scene, camera)
@@ -239,56 +239,56 @@ export default function HeroThree() {
         <div className="w-full max-w-7xl mx-auto">
           {/* Hero text - Full width */}
           <div className="flex flex-col justify-center py-20 sm:py-24 max-w-full sm:max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 border border-[rgba(255,92,0,0.35)] bg-[rgba(255,92,0,0.08)] text-[#FF7A2E] text-[10px] tracking-[0.16em] uppercase px-4 py-2 mb-8 w-fit"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00] animate-pulse" />
-            India{`'`}s Premium Digital Agency
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 border border-[rgba(255,92,0,0.35)] bg-[rgba(255,92,0,0.08)] text-[#FF7A2E] text-[10px] tracking-[0.16em] uppercase px-4 py-2 mb-8 w-fit"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00] animate-pulse" />
+              India{`'`}s Premium Digital Agency
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-            className="font-display text-[clamp(36px,5vw,72px)] font-extrabold text-[#F5F5F5] leading-[1] tracking-tighter mb-6"
-          >
-            Full Stack Websites, AI Chatbots, Commercial Ads &{' '}
-            <span className="block">Build Your Business</span>
-            <span className="text-[#FF5C00] relative">
-              {typedWord}
-              <span className="inline-block w-[2px] h-[0.9em] bg-[#FF5C00] ml-1 align-middle animate-blink" />
-            </span>
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
+              className="font-display text-[clamp(36px,5vw,72px)] font-extrabold text-[#F5F5F5] leading-[1] tracking-tighter mb-6"
+            >
+              Full Stack Websites, AI Chatbots, Commercial Ads &{' '}
+              <span className="block">Build Your Business</span>
+              <span className="text-[#FF5C00] relative">
+                {typedWord}
+                <span className="inline-block w-[2px] h-[0.9em] bg-[#FF5C00] ml-1 align-middle animate-blink" />
+              </span>
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-            className="font-body text-[13px] sm:text-[15px] text-[rgba(245,245,245,0.6)] max-w-[550px] leading-[1.85] mb-10 font-light"
-          >
-            We build high-converting websites, AI tools, and marketing systems that help businesses grow faster and scale efficiently.
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
+              className="font-body text-[13px] sm:text-[15px] text-[rgba(245,245,245,0.6)] max-w-[550px] leading-[1.85] mb-10 font-light"
+            >
+              We build high-converting websites, AI tools, and marketing systems that help businesses grow faster and scale efficiently.
+            </motion.p>
 
-          <motion.ul
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
-            className="space-y-2 sm:space-y-3 mb-10"
-          >
-            {['Full Stack Web Development', 'AI-Enhanced Video & Ad Production', 'Influencer Marketing Campaigns', 'Results in 30 Days or Free Revision', 'Dedicated Account Manager'].map((item) => (
-              <li key={item} className="flex items-start gap-2 sm:gap-3 text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.65)]">
-                <span className="w-4 h-4 border border-[#FF5C00] flex items-center justify-center text-[#FF5C00] text-[8px] flex-shrink-0 mt-0.5">✓</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </motion.ul>
+            <motion.ul
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
+              className="space-y-2 sm:space-y-3 mb-10"
+            >
+              {['Full Stack Web Development', 'AI-Enhanced Video & Ad Production', 'Influencer Marketing Campaigns', 'Results in 30 Days or Free Revision', 'Dedicated Account Manager'].map((item) => (
+                <li key={item} className="flex items-start gap-2 sm:gap-3 text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.65)]">
+                  <span className="w-4 h-4 border border-[#FF5C00] flex items-center justify-center text-[#FF5C00] text-[8px] flex-shrink-0 mt-0.5">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </motion.ul>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 flex-wrap"
-          >
-            <a href="#consultation" className="bg-[#FF5C00] text-[#111] px-6 sm:px-8 py-3 sm:py-3.5 text-[12px] sm:text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,92,0,0.3)] whitespace-nowrap">
-              Get Free Consultation →
-            </a>
-            <a href="#work" className="text-[#FF7A2E] text-[12px] sm:text-[13px] tracking-wide font-medium border border-[rgba(255,92,0,0.4)] px-5 sm:px-7 py-3 sm:py-3.5 hover:border-[#FF5C00] hover:bg-[rgba(255,92,0,0.05)] transition-colors whitespace-nowrap">
-              View Case Studies
-            </a>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 flex-wrap"
+            >
+              <a href="#consultation" className="bg-[#FF5C00] text-[#111] px-6 sm:px-8 py-3 sm:py-3.5 text-[12px] sm:text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,92,0,0.3)] whitespace-nowrap">
+                Get Free Consultation →
+              </a>
+              <a href="#work" className="text-[#FF7A2E] text-[12px] sm:text-[13px] tracking-wide font-medium border border-[rgba(255,92,0,0.4)] px-5 sm:px-7 py-3 sm:py-3.5 hover:border-[#FF5C00] hover:bg-[rgba(255,92,0,0.05)] transition-colors whitespace-nowrap">
+                View Case Studies
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
