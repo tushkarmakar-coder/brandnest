@@ -128,6 +128,22 @@ const PricingPage = () => {
       tag: "Enterprise Class",
       examples: "Custom SaaS, AI Platforms, ERP Solutions",
       bonus: "3 Months Free Maintenance"
+    },
+    {
+      name: "Custom Enterprise",
+      price: "Custom",
+      description: "Bespoke digital ecosystems for large-scale operations and high-growth brands.",
+      features: [
+        "Everything in Premium",
+        "Dedicated Server Setup",
+        "Custom Feature Development",
+        "24/7 Priority Support",
+        "Lifetime Free Maintenance"
+      ],
+      icon: <Layers className="w-8 h-8 text-[#FF5C00]" />,
+      tag: "Unlimited Scale",
+      bonus: "3 Months Free",
+      examples: "Global SaaS, FinTech, E-commerce Marketplaces"
     }
   ]
 
@@ -179,6 +195,38 @@ const PricingPage = () => {
       tag: "Performance Ad",
       bonus: null,
       examples: null
+    },
+    {
+      name: "Custom Production",
+      price: "Custom",
+      description: "Full-scale brand documentaries, feature films, or complex marketing campaigns.",
+      features: [
+        "On-Location Shoots",
+        "Professional Scripting",
+        "Cinema-Grade Post-Pro",
+        "Global Rights Licensing",
+        "Dedicated Creative Lead"
+      ],
+      icon: <Video className="w-8 h-8 text-[#FF5C00]" />,
+      tag: "Grand Scale",
+      bonus: null,
+      examples: null
+    },
+    {
+      name: "Custom Enterprise",
+      price: "Custom",
+      description: "Full-service production house partnership for enterprise brand scalability.",
+      features: [
+        "Everything in Custom",
+        "Retainer Production Team",
+        "High-Volume Content Pipeline",
+        "Priority Post-Production",
+        "Dedicated Project Lead"
+      ],
+      icon: <Crown className="w-8 h-8 text-[#FF5C00]" />,
+      tag: "Unlimited Scale",
+      bonus: null,
+      examples: "Series Production, Ad Campaigns, Brand Films"
     }
   ]
 
@@ -230,6 +278,38 @@ const PricingPage = () => {
       tag: "Scale Focused",
       bonus: null,
       examples: null
+    },
+    {
+      name: "Enterprise Growth",
+      price: "Custom",
+      description: "Dominate your niche with aggressive multi-channel performance marketing.",
+      features: [
+        "Multi-Channel Strategy",
+        "Competitor Conquesting",
+        "Unlimited Ad Management",
+        "Weekly Data Deep-Dives",
+        "Performance Guarantee"
+      ],
+      icon: <Crown className="w-8 h-8 text-[#FF5C00]" />,
+      tag: "Dominance",
+      bonus: null,
+      examples: null
+    },
+    {
+      name: "Custom Enterprise",
+      price: "Custom",
+      description: "Total market domination with bespoke growth and performance marketing.",
+      features: [
+        "Everything in Enterprise",
+        "In-house Growth Team",
+        "Direct API Integration",
+        "Custom Creative Studio",
+        "Priority 24/7 Monitoring"
+      ],
+      icon: <Layers className="w-8 h-8 text-[#FF5C00]" />,
+      tag: "Unlimited Scale",
+      bonus: null,
+      examples: "Global Rollouts, VC/Startup Scaling"
     }
   ]
 
@@ -257,7 +337,7 @@ const PricingPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl md:text-8xl font-syne font-extrabold text-[#F5F5F5] mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-syne font-extrabold text-[#F5F5F5] mb-6 leading-tight">
             Our <span className="text-[#FF5C00]">Pricing</span>
           </h1>
           <p className="text-xl text-[rgba(245,245,245,0.6)] max-w-2xl mx-auto mb-12 font-medium">
@@ -297,7 +377,7 @@ const PricingPage = () => {
       {/* Pricing Grid */}
       <section className="max-w-7xl mx-auto px-6 mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="popLayout">
             {getCurrentPlans().map((plan, index) => (
               <motion.div
                 key={`${activeCategory}-${index}`}
@@ -306,7 +386,7 @@ const PricingPage = () => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className={`relative flex flex-col p-10 rounded-[2.5rem] border ${plan.name.includes('Premium') || plan.name.includes('Growth') ? 'border-[#FF5C00] bg-[#1A1A1A] shadow-2xl' : 'border-[rgba(255,92,0,0.08)] bg-[#1A1A1A]/40 backdrop-blur-sm hover:border-[rgba(255,92,0,0.2)]'}`}
+                className={`relative flex flex-col p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border ${plan.name.includes('Premium') || plan.name.includes('Custom') || plan.name.includes('Enterprise') ? 'border-[#FF5C00] bg-[#1A1A1A] shadow-2xl' : 'border-[rgba(255,92,0,0.08)] bg-[#1A1A1A]/40 backdrop-blur-sm hover:border-[rgba(255,92,0,0.2)]'}`}
               >
                 {plan.bonus && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FF5C00] text-[#111] px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-lg">
@@ -328,15 +408,15 @@ const PricingPage = () => {
                   <span className="text-[rgba(245,245,245,0.3)] text-xs font-bold uppercase tracking-widest">{plan.price.includes('/') ? '' : 'start'}</span>
                 </div>
 
-                <p className="text-[rgba(245,245,245,0.5)] text-sm mb-10 leading-[1.8] font-medium">
+                <p className="text-[rgba(245,245,245,0.4)] text-[12px] mb-10 leading-relaxed min-h-[60px]">
                   {plan.description}
                 </p>
 
                 <div className="space-y-4 mb-10 flex-grow">
-                  {plan.features.map((feature, fIndex) => (
-                    <div key={fIndex} className="flex items-center gap-4">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#FF5C00]/10 border border-[#FF5C00]/20 flex items-center justify-center">
-                        <Check className="w-3 h-3 text-[#FF5C00]" />
+                  {plan.features.map((feature, fIdx) => (
+                    <div key={fIdx} className="flex items-start gap-3">
+                      <div className="mt-1">
+                        <Check className="w-3.5 h-3.5 text-[#FF5C00]" />
                       </div>
                       <span className="text-[13px] text-[rgba(245,245,245,0.7)] font-medium">{feature}</span>
                     </div>
@@ -350,9 +430,14 @@ const PricingPage = () => {
                   </div>
                 )}
 
-                <button className={`w-full py-5 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center gap-3 ${plan.name.includes('Premium') || plan.name.includes('Growth') ? 'bg-[#FF5C00] text-[#111] hover:bg-[#FF7A2E] shadow-xl shadow-[#FF5C00]/20' : 'bg-transparent border border-[rgba(255,92,0,0.2)] text-[#F5F5F5] hover:bg-[#FF5C00] hover:text-[#111] hover:border-[#FF5C00]'}`}>
-                  Get Started <ArrowRight className="w-4 h-4" />
-                </button>
+                <a 
+                  href={`https://wa.me/917894935653?text=Hi BrandNest, I'm interested in the ${plan.name} (${activeCategory}) package. Please share the details.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all text-center flex items-center justify-center gap-2 ${plan.name.includes('Premium') || plan.name.includes('Custom') || plan.name.includes('Enterprise') ? 'bg-[#FF5C00] text-[#111] hover:bg-[#FF7A2E] shadow-xl shadow-[#FF5C00]/20' : 'bg-[#1A1A1A] border border-[rgba(255,92,0,0.2)] text-[#F5F5F5] hover:border-[#FF5C00] hover:text-[#FF5C00]'}`}
+                >
+                  {plan.price === 'Custom' ? 'Get Custom Quote' : 'Get Started'} <ArrowRight className="w-4 h-4" />
+                </a>
               </motion.div>
             ))}
           </AnimatePresence>

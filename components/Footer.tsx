@@ -164,16 +164,22 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[rgba(255,92,0,0.1)]">
-        <div className="max-w-7xl mx-auto px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-[rgba(245,245,245,0.3)] font-body">
+        <div className="max-w-7xl mx-auto px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <p className="text-[12px] text-[rgba(245,245,245,0.3)] font-body order-3 md:order-1">
             © {new Date().getFullYear()} BrandNest. All rights reserved.
           </p>
-          <p className="text-[12px] text-[rgba(245,245,245,0.3)] font-body">
+          <p className="text-[12px] text-[rgba(245,245,245,0.3)] font-body order-2 md:order-2">
             AI-Powered. Brand-Obsessed. India.
           </p>
-          <p className="text-[12px] text-[rgba(245,245,245,0.3)] font-body">
-            Made with {`♥`} in India
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 order-1 md:order-3">
+            <a href="https://tushkarmakar.vercel.app/client" target="_blank" rel="noopener noreferrer"
+              className="text-[12px] text-[#FF5C00] hover:text-[#FF7A2E] font-bold tracking-wide transition-all border border-[rgba(255,92,0,0.2)] px-3 py-1 rounded-md hover:bg-[rgba(255,92,0,0.05)]">
+              Contact Developer
+            </a>
+            <p className="text-[12px] text-[rgba(245,245,245,0.3)] font-body">
+              Made with {`♥`} in India
+            </p>
+          </div>
         </div>
       </div>
     </footer>

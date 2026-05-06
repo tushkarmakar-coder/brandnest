@@ -26,9 +26,16 @@ export default function HeroThree() {
     const isTouchDevice = () => (('ontouchstart' in window) || (navigator.maxTouchPoints > 0))
 
     // RENDERER
-    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, antialias: !isMobile, alpha: true, powerPreference: 'high-performance' })
+    const renderer = new THREE.WebGLRenderer({ 
+      canvas: canvasRef.current, 
+      antialias: false, 
+      alpha: true, 
+      powerPreference: 'high-performance',
+      stencil: false,
+      depth: true
+    })
     renderer.setSize(W, H)
-    renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5))
     renderer.setClearColor(0x111111, 1)
 
     // SCENE + CAMERA
@@ -37,8 +44,8 @@ export default function HeroThree() {
     const camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 1000)
     camera.position.set(0, 0, 5)
 
-    // === GOLD PARTICLE FIELD (Reduced on mobile) ===
-    const particleCount = isMobile ? 600 : 1800
+    // === GOLD PARTICLE FIELD (Reduced for performance) ===
+    const particleCount = isMobile ? 400 : 1200
     const positions = new Float32Array(particleCount * 3)
     for (let i = 0; i < particleCount; i++) {
       positions[i * 3]     = (Math.random() - 0.5) * 28

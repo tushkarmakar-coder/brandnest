@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Check, ArrowRight, Globe, Video, Target } from 'lucide-react'
+import { Check, ArrowRight, Globe, Video, Target, Crown } from 'lucide-react'
 
 const PricingSection = () => {
   const previews = [
@@ -24,6 +24,12 @@ const PricingSection = () => {
       price: "₹14,999",
       icon: <Target className="w-6 h-6 text-[#FF5C00]" />,
       desc: "Performance ad campaign setup."
+    },
+    {
+      name: "Custom Solution",
+      price: "Custom",
+      icon: <Crown className="w-6 h-6 text-[#FF5C00]" />,
+      desc: "Enterprise grade bespoke systems."
     }
   ]
 
@@ -50,7 +56,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {previews.map((item, idx) => (
             <motion.div 
               key={idx}
