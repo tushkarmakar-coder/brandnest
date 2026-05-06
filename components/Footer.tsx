@@ -4,6 +4,7 @@ import { Instagram, Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } 
 
 const QUICK_LINKS = [
   { label: 'Home', href: '/' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Services', href: '#services' },
   { label: 'Our Work', href: '#work' },
   { label: 'Blog', href: '/blog' },

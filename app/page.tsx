@@ -10,6 +10,7 @@ import AISection from '@/components/AISection'
 import Process from '@/components/Process'
 import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
+import PricingSection from '@/components/PricingSection'
 import ConsultationSection from '@/components/ConsultationSection'
 import CTABanner from '@/components/CTABanner'
 import Footer from '@/components/Footer'
@@ -134,6 +135,7 @@ export default function Home() {
       <HeroThree />
       <TrustBar />
       <Services />
+      <PricingSection />
       <Portfolio />
       <WhyUs />
       <AISection />

@@ -17,6 +17,7 @@ export default function Navbar() {
           <Link href="#services" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Services</Link>
           <Link href="#work" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Our Work</Link>
           <Link href="#why" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Why Us</Link>
+          <Link href="/pricing" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Pricing</Link>
           <a href="#consultation"
             className="bg-[#FF5C00] text-[#111] px-5 sm:px-6 py-2 text-[11px] sm:text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors whitespace-nowrap">
             Get Free Consultation
@@ -36,6 +37,7 @@ export default function Navbar() {
             <Link href="#services" className="block text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Services</Link>
             <Link href="#work" className="block text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
             <Link href="#why" className="block text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
+            <Link href="/pricing" className="block text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Pricing</Link>
             <a href="#consultation" className="block bg-[#FF5C00] text-[#111] px-5 sm:px-6 py-2 text-[11px] sm:text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors text-center">
               Get Free Consultation
             </a>
