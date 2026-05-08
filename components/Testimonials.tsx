@@ -4,32 +4,51 @@ import { Star } from 'lucide-react'
 
 const TESTIMONIALS = [
   {
-    name: 'Rajesh Patel',
-    company: 'TechVenture Startup',
-    text: 'BrandNest built our website in 2 weeks. The quality is exceptional, and their team is incredibly responsive.',
+    quote: "BrandNest ne hamare cloud kitchen ka poora digital setup kiya — website, Razorpay, SMM aur AI ads sab. 3 mahine mein online orders 200% badh gaye. Sales badhane ki strategy aur technical support amazing hai.",
+    name: "Manju Karmakar",
+    role: "Owner, Littiwale — Cloud Kitchen, Barbil, Odisha",
+    initials: "MK",
+    service: "Full Digital Ecosystem (Web + Ads + SMM)",
     rating: 5
   },
   {
-    name: 'Priya Sharma',
-    company: 'Sharma Fashion Brands',
-    text: 'Their video ads tripled our Instagram engagement. The ROI has been amazing. Highly recommend!',
+    quote: "Pehle sirf walk-ins the. BrandNest ne website banayi aur social media marketing/commercial ads se online footfall aur delivery orders 45% badha di. Sales grow karne ka inka approach aur execution bilkul perfect hai.",
+    name: "Shubham Sharma",
+    role: "Owner, Chaiwale Café — Rohini, Delhi",
+    initials: "SS",
+    service: "Web Dev + SMM + Commercial Ads",
     rating: 5
   },
   {
-    name: 'Amit Kumar',
-    company: 'Digital Marketing Agency',
-    text: 'We partner with BrandNest for client projects. Their AI integration and automation capabilities are industry-leading.',
+    quote: "Desi Chulha ka brand identity aur website dono BrandNest ne banaye. AI commercial ad ne humara reach 3x kar diya pehle month mein hi. Authentic Indian feel perfectly capture hua.",
+    name: "Desi Chulha Owner",
+    role: "Owner, Desi Chulha — Restaurant, Kendujhar, Odisha",
+    initials: "DC",
+    service: "AI Commercial Ad + Website",
     rating: 5
   },
   {
-    name: 'Neha Singh',
-    company: 'E-Commerce Store Owner',
-    text: 'From concept to launch, the entire experience was smooth. They truly care about results.',
+    quote: "AI influencer campaign tool ne mera kaam completely automate kar diya. Outreach, ROI tracking, brief generation — sab kuch. 3x faster workflow aur clients bhi zyada impress hote hain.",
+    name: "Simran Sharma",
+    role: "Influencer & Founder, AI Influencer Campaign Tool",
+    initials: "SS",
+    service: "AI Tools Development",
+    rating: 5
+  },
+  {
+    quote: "WareXhub ka poora B2B marketplace — vendor dashboards, commission system, buyer/seller protection, admin approval panel, DEV/UAT deployment — BrandNest ne end-to-end flawlessly deliver kiya.",
+    name: "Rohit Karmakar",
+    role: "Founder & CEO, WareXhub",
+    initials: "RK",
+    service: "Marketplace Development",
     rating: 5
   }
-]
+];
+
+import { useTranslations } from 'next-intl'
 
 export default function Testimonials() {
+  const t = useTranslations('Sections')
   return (
     <section className="bg-[#111111] py-[100px] px-6 md:py-[120px] border-t border-[rgba(255,92,0,0.1)]">
       <div className="max-w-7xl mx-auto">
@@ -41,11 +60,11 @@ export default function Testimonials() {
         >
           <p className="text-[10px] tracking-[0.14em] uppercase text-[#FF5C00] mb-4 font-medium">Client Love</p>
           <h2 className="font-display text-[48px] font-extrabold text-[#F5F5F5] mb-4 leading-[1.1]">
-            What Our Clients Say
+            {t('testimonials').split('Clients')[0]} <span className="text-[#FF5C00]">{t('testimonials').includes('Clients') ? 'Clients' : ''}</span> {t('testimonials').split('Clients')[1] || ''}
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {TESTIMONIALS.map((testimonial, idx) => (
             <motion.div
               key={testimonial.name}
@@ -53,23 +72,31 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-[#1A1A1A] border border-[rgba(255,92,0,0.1)] p-8"
+              className="bg-[#1A1A1A] border border-[rgba(255,92,0,0.1)] p-8 flex flex-col"
             >
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-6">
                 {Array(testimonial.rating).fill(0).map((_, i) => (
-                  <Star key={i} size={16} className="fill-[#FF5C00] text-[#FF5C00]" />
+                  <Star key={i} size={14} className="fill-[#FF5C00] text-[#FF5C00]" />
                 ))}
               </div>
-              <p className="text-[14px] text-[#F5F5F5] leading-[1.8] mb-6">
-                {`"`}{testimonial.text}{`"`}
+              <p className="text-[14px] text-[#F5F5F5] leading-[1.8] mb-8 flex-grow italic">
+                {`"`}{testimonial.quote}{`"`}
               </p>
-              <div>
-                <p className="font-display text-[14px] font-semibold text-[#F5F5F5]">
-                  {testimonial.name}
-                </p>
-                <p className="text-[12px] text-[rgba(245,245,245,0.5)]">
-                  {testimonial.company}
-                </p>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-[rgba(255,92,0,0.1)] border border-[rgba(255,92,0,0.2)] flex items-center justify-center text-[#FF5C00] font-bold text-xs">
+                  {testimonial.initials}
+                </div>
+                <div>
+                  <p className="font-display text-[14px] font-bold text-[#F5F5F5]">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-[11px] text-[rgba(245,245,245,0.4)] font-medium">
+                    {testimonial.role}
+                  </p>
+                  <p className="text-[10px] text-[#FF5C00] uppercase tracking-wider font-bold mt-1">
+                    {testimonial.service}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

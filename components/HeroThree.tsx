@@ -2,8 +2,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 export default function HeroThree() {
+  const t_hero = useTranslations('Hero')
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -23,8 +25,7 @@ export default function HeroThree() {
 
     // Detect mobile for optimization
     const isMobile = window.innerWidth < 768
-    const isTouchDevice = () => (('ontouchstart' in window) || (navigator.maxTouchPoints > 0))
-
+    
     // RENDERER
     const renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current,
@@ -44,7 +45,7 @@ export default function HeroThree() {
     const camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 1000)
     camera.position.set(0, 0, 5)
 
-    // === GOLD PARTICLE FIELD (Reduced for performance) ===
+    // === GOLD PARTICLE FIELD ===
     const particleCount = isMobile ? 400 : 1200
     const positions = new Float32Array(particleCount * 3)
     for (let i = 0; i < particleCount; i++) {
@@ -61,7 +62,7 @@ export default function HeroThree() {
     const particles = new THREE.Points(pgeo, pmat)
     scene.add(particles)
 
-    // === SILVER/WHITE MICRO PARTICLES (Reduced on mobile) ===
+    // === SILVER/WHITE MICRO PARTICLES ===
     const scount = isMobile ? 300 : 900
     const spos = new Float32Array(scount * 3)
     for (let i = 0; i < scount; i++) {
@@ -78,22 +79,19 @@ export default function HeroThree() {
     const sparticles = new THREE.Points(sgeo, smat)
     scene.add(sparticles)
 
-    // === WIREFRAME SHAPES (Reduced detail on mobile) ===
+    // === WIREFRAME SHAPES ===
     const wireMat = (opacity = 0.08) => new THREE.MeshBasicMaterial({
       color: 0xFF5C00, wireframe: true, transparent: true, opacity
     })
 
-    // Icosahedron (right floating)
     const ico = new THREE.Mesh(new THREE.IcosahedronGeometry(1.8, isMobile ? 0 : 1), wireMat(0.08))
     ico.position.set(4.2, 0.4, -1)
     scene.add(ico)
 
-    // Octahedron (left floating)
     const oct = new THREE.Mesh(new THREE.OctahedronGeometry(1.1), wireMat(0.07))
     oct.position.set(-5, -0.5, -2)
     scene.add(oct)
 
-    // Large torus ring (back center)
     const tor = new THREE.Mesh(
       new THREE.TorusGeometry(2.4, 0.012, 6, isMobile ? 45 : 90),
       new THREE.MeshBasicMaterial({ color: 0xFF5C00, transparent: true, opacity: 0.07 })
@@ -102,7 +100,6 @@ export default function HeroThree() {
     tor.position.set(1, 0, -3)
     scene.add(tor)
 
-    // Small torus (foreground left)
     const tor2 = new THREE.Mesh(
       new THREE.TorusGeometry(1.0, 0.008, 6, isMobile ? 30 : 60),
       new THREE.MeshBasicMaterial({ color: 0xFF7A2E, transparent: true, opacity: 0.15 })
@@ -112,7 +109,6 @@ export default function HeroThree() {
     tor2.position.set(-2.5, 1, 0.5)
     scene.add(tor2)
 
-    // === PULSING ORANGE SPHERE ===
     const sphere = new THREE.Mesh(
       new THREE.SphereGeometry(0.28, isMobile ? 16 : 32, isMobile ? 16 : 32),
       new THREE.MeshBasicMaterial({ color: 0xFF5C00, transparent: true, opacity: 0.6 })
@@ -120,7 +116,6 @@ export default function HeroThree() {
     sphere.position.set(3.5, -0.5, 1)
     scene.add(sphere)
 
-    // === NETWORK CONNECTING LINES (Reduced on mobile) ===
     const lineCount = isMobile ? 15 : 40
     const lpos = new Float32Array(lineCount * 6)
     for (let i = 0; i < lineCount; i++) {
@@ -138,7 +133,6 @@ export default function HeroThree() {
     }))
     scene.add(linesMesh)
 
-    // === MOUSE/TOUCH PARALLAX ===
     let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0
     const onMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect()
@@ -155,7 +149,6 @@ export default function HeroThree() {
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('touchmove', onTouchMove, false)
 
-    // === ANIMATION LOOP ===
     let t = 0
     let animId: number
     const animate = () => {
@@ -179,14 +172,13 @@ export default function HeroThree() {
 
       const s = 1 + Math.sin(t * 2.5) * 0.15
       sphere.scale.setScalar(s)
-        ; (sphere.material as THREE.MeshBasicMaterial).opacity = 0.4 + Math.sin(t * 2.5) * 0.25
+      ; (sphere.material as THREE.MeshBasicMaterial).opacity = 0.4 + Math.sin(t * 2.5) * 0.25
       pmat.opacity = 0.45 + Math.sin(t * 0.8) * 0.1
 
       renderer.render(scene, camera)
     }
     animate()
 
-    // Resize handler
     const onResize = () => {
       const W2 = container.clientWidth, H2 = container.clientHeight
       camera.aspect = W2 / H2
@@ -204,7 +196,6 @@ export default function HeroThree() {
     }
   }, [])
 
-  // Typewriter effect
   useEffect(() => {
     const timeout = setTimeout(() => {
       const currentWord = typeWords[wordIndex]
@@ -231,13 +222,9 @@ export default function HeroThree() {
 
   return (
     <section ref={containerRef} className="relative w-full min-h-screen bg-[#111111] overflow-hidden hero-grid-bg">
-      {/* Three.js canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-
-      {/* Content overlay */}
       <div className="relative z-10 h-full min-h-screen flex items-center px-4 sm:px-6 lg:px-16">
         <div className="w-full max-w-7xl mx-auto">
-          {/* Hero text - Full width */}
           <div className="flex flex-col justify-center py-20 sm:py-24 max-w-full sm:max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
@@ -251,9 +238,8 @@ export default function HeroThree() {
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
               className="font-display text-[clamp(36px,5vw,72px)] font-extrabold text-[#F5F5F5] leading-[1] tracking-tighter mb-6"
             >
-              We Build Marketplaces, SaaS Platforms & Custom Dashboards for{' '}
-              <span className="block">Indian Founders</span>
-              <span className="text-[#FF5C00] relative">
+              {t_hero('headline')}
+              <span className="text-[#FF5C00] relative block mt-2">
                 {typedWord}
                 <span className="inline-block w-[2px] h-[0.9em] bg-[#FF5C00] ml-1 align-middle animate-blink" />
               </span>
@@ -263,7 +249,7 @@ export default function HeroThree() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
               className="font-body text-[13px] sm:text-[15px] text-[rgba(245,245,245,0.6)] max-w-[650px] leading-[1.85] mb-10 font-light"
             >
-              From IndiaMART-style B2B marketplaces to multi-vendor e-commerce and admin platforms — we handle the full stack: frontend, backend, dashboards, approval workflows, and deployment. Websites and marketing too.
+              {t_hero('subtext')}
             </motion.p>
 
             <motion.ul
@@ -289,17 +275,16 @@ export default function HeroThree() {
               className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 flex-wrap"
             >
               <a href="#consultation" className="bg-[#FF5C00] text-[#111] px-6 sm:px-8 py-3 sm:py-3.5 text-[12px] sm:text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,92,0,0.3)] whitespace-nowrap">
-                Get Free Consultation →
+                {t_hero('cta1')}
               </a>
               <a href="#work" className="text-[#FF7A2E] text-[12px] sm:text-[13px] tracking-wide font-medium border border-[rgba(255,92,0,0.4)] px-5 sm:px-7 py-3 sm:py-3.5 hover:border-[#FF5C00] hover:bg-[rgba(255,92,0,0.05)] transition-colors whitespace-nowrap">
-                View Case Studies
+                {t_hero('cta2')}
               </a>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Scrolling Ticker */}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }}
         className="absolute bottom-0 left-0 right-0 z-10 border-t border-[rgba(255,92,0,0.1)] overflow-x-auto overflow-y-hidden bg-[rgba(17,17,17,0.5)] scrollbar-hide"

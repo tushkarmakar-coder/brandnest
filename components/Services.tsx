@@ -7,7 +7,7 @@ import { SERVICE_DETAILS } from '@/lib/serviceDetails'
 
 const SERVICES = [
   { num: '01', icon: Globe, title: 'Marketplace & Platform Development', description: 'B2B marketplaces, multi-vendor platforms, buyer/seller dashboards, admin panels with approval workflows. End-to-end IndiaMART-style solutions.' },
-  { num: '02', icon: Code2, title: 'Full Stack Web Development', description: 'Custom websites fully functional and operational with hosting, deployment, SEO, and 24/7 support.' },
+  { num: '02', icon: Code2, title: 'Full Stack Web Development', description: 'Custom websites fully functional and operational with hosting, deployment, SEO, and 24/7 support. ✓ Custom Food Ordering Platforms — Zero Swiggy/Zomato Commission' },
   { num: '03', icon: Video, title: 'AI-Enhanced Video Production', description: 'Brand films, commercials, YouTube ads — AI-accelerated workflow, 4K delivery.' },
   { num: '04', icon: Zap, title: 'AI-Powered Commercial Ads', description: 'Google, Meta & YouTube campaigns with AI optimization for maximum ROI.' },
   { num: '05', icon: Sparkles, title: 'AI Tools & Automation', description: 'Custom GPT-4 / Claude chatbots, workflow automation, and intelligent analytics.' },
@@ -17,7 +17,10 @@ const SERVICES = [
 ]
 
 
+import { useTranslations } from 'next-intl'
+
 export default function Services() {
+  const t = useTranslations('Sections')
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null)
   const selectedService = SERVICE_DETAILS.find(s => s.id === selectedServiceId)
 
@@ -32,8 +35,9 @@ export default function Services() {
               What We Offer
             </p>
             <h2 className="font-display text-[clamp(36px,5vw,62px)] font-extrabold text-[#F5F5F5] leading-[1.05] tracking-tight max-w-[560px]">
-              Services Built for{' '}
-              <em className="italic text-transparent" style={{ WebkitTextStroke: '1.5px #F5F5F5' }}>Growth</em>
+              {t('services').split('Growth')[0]}
+              <em className="italic text-transparent" style={{ WebkitTextStroke: '1.5px #F5F5F5' }}>{t('services').includes('Growth') ? 'Growth' : ''}</em>
+              {t('services').split('Growth')[1] || ''}
             </h2>
           </motion.div>
 
@@ -86,7 +90,7 @@ export default function Services() {
 
           {/* Stats row */}
           <div className="grid grid-cols-2 md:grid-cols-4 border border-[rgba(255,92,0,0.1)] border-t-0" style={{ gap: '1px', background: 'rgba(255,92,0,0.1)' }}>
-            {[['50+', 'Projects Delivered'], ['3×', 'Faster with AI'], ['98%', 'Client Satisfaction'], ['24h', 'Response Time']].map(([num, label]) => (
+            {[['50+', 'Projects Delivered'], ['Expert-Led', 'AI Velocity'], ['98%', 'Client Satisfaction'], ['24h', 'Response Time']].map(([num, label]) => (
               <div key={label} className="bg-[#111111] px-8 py-10 text-center hover:bg-[#161616] transition-colors">
                 <p className="font-display text-[46px] font-extrabold text-[#FF5C00] leading-none mb-2 tracking-tight">{num}</p>
                 <p className="text-[11px] text-[rgba(245,245,245,0.35)] tracking-[0.1em] uppercase">{label}</p>

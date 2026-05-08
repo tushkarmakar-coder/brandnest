@@ -20,7 +20,7 @@ export default function Logo({ href = '/', size = 'md', className = '' }: LogoPr
     <div className={`flex items-center gap-2 ${className}`}>
       <Image 
         src="/logo.png" 
-        alt="BrandNest" 
+        alt="BrandNest - Marketplace Development Agency India" 
         width={width} 
         height={height}
         className="rounded-sm"

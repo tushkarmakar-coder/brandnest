@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect } from 'react'
 import HeroThree from '@/components/HeroThree'
 import TrustBar from '@/components/TrustBar'
 import Services from '@/components/Services'

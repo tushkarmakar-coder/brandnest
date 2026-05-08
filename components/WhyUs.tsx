@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
 
 const WHY_US = [
-  { title: 'AI-First Approach', desc: 'Every project uses cutting-edge AI tools — faster delivery, lower costs, higher quality.' },
+  { title: 'AI-Accelerated Development', desc: 'AI tools speed up our workflow, but every project is hand-coded and audited by expert developers for a perfect result.' },
   { title: '30-Day Results Guarantee', desc: 'We deliver results within 30 days or offer free revisions. No hidden clauses.' },
   { title: 'End-to-End Solutions', desc: 'From websites to videos to ads — everything under one roof. No juggling agencies.' },
   { title: 'India Experts', desc: 'Pan-India presence, 24/7 support. We understand your market deeply.' },
@@ -11,7 +11,10 @@ const WHY_US = [
   { title: 'Transparent Pricing', desc: 'No hidden fees. Fixed packages starting ₹25K. Pay only for what you need.' }
 ]
 
+import { useTranslations } from 'next-intl'
+
 export default function WhyUs() {
+  const t = useTranslations('Sections')
   return (
     <section id="why" className="bg-[#111111] py-[100px] px-6 md:py-[120px]">
       <div className="max-w-7xl mx-auto">
@@ -23,7 +26,7 @@ export default function WhyUs() {
         >
           <p className="text-[10px] tracking-[0.14em] uppercase text-[#FF5C00] mb-4 font-medium">Why Choose BrandNest</p>
           <h2 className="font-display text-[48px] font-extrabold text-[#F5F5F5] mb-4 leading-[1.1]">
-            Why {`We're`} Different
+            {t('whyUs')}
           </h2>
           <p className="text-[15px] text-[rgba(245,245,245,0.5)] max-w-[520px] mx-auto leading-[1.8]">
             We {`don't`} just build websites. We build results. Your growth is our success.

@@ -12,9 +12,9 @@ export default function AISection() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <p className="text-[10px] tracking-[0.14em] uppercase text-[#FF5C00] mb-4 font-medium">AI-Powered Difference</p>
+          <p className="text-[10px] tracking-[0.14em] uppercase text-[#FF5C00] mb-4 font-medium">The BrandNest Advantage</p>
           <h2 className="font-display text-[48px] font-extrabold text-[#F5F5F5] mb-4 leading-[1.1]">
-            The Power of AI at Every Step
+            Expert-Led, AI-Accelerated Workflow
           </h2>
         </motion.div>
 
@@ -22,18 +22,18 @@ export default function AISection() {
           {[
             {
               icon: Zap,
-              title: '3× Faster',
-              desc: 'AI automation reduces development time from weeks to days.'
+              title: '3× Faster Development',
+              desc: 'AI speeds up the boilerplate, while our developers focus on logic, deep audits, and perfect UI/UX.'
             },
             {
               icon: BarChart3,
-              title: '2× Better ROI',
-              desc: 'AI-optimized campaigns deliver better results with lower ad spend.'
+              title: 'Data-Driven ROI',
+              desc: 'AI-optimized campaigns analyzed by our marketing experts deliver 2x better results with lower spend.'
             },
             {
               icon: Cpu,
-              title: '∞ Scalability',
-              desc: 'AI tools handle complex tasks, freeing our team for strategy.'
+              title: 'Infinite Scalability',
+              desc: 'AI handles repetitive tasks, freeing our human experts to solve your complex business challenges.'
             }
           ].map((item, idx) => {
             const Icon = item.icon
@@ -67,10 +67,10 @@ export default function AISection() {
           className="mt-16 bg-[#1A1A1A] border border-[rgba(255,92,0,0.1)] p-8"
         >
           <p className="text-[14px] text-[#F5F5F5] leading-[1.9] mb-6">
-            <strong>Our AI Stack:</strong> We use Claude, ChatGPT-4, Midjourney, RunwayML, Adobe Firefly, and custom AI models to automate content creation, video editing, copywriting, and campaign optimization. This {`isn't`} just faster — {`it's`} smarter.
+            <strong>The Human Edge:</strong> While we use cutting-edge AI like Claude, ChatGPT-4, and Midjourney to accelerate our work, every line of code, every pixel, and every ad campaign is <strong>audited and perfected by our expert developers and designers</strong> for a premium, professional look.
           </p>
           <a href="#consultation" className="inline-block bg-[#FF5C00] text-[#111] px-8 py-3 text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-colors">
-            Discover How AI Can Help You →
+            Get Your Perfect Website →
           </a>
         </motion.div>
       </div>

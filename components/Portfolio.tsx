@@ -7,33 +7,34 @@ import DetailModal from './DetailModal'
 const PORTFOLIO_ITEMS = [
   {
     id: 1,
-    title: 'Littiwale',
-    subtitle: 'Cloud Kitchen Website',
-    problem: 'Cloud kitchen startup needed a professional online presence to attract customers and enable online ordering.',
-    solution: 'Built full-stack e-commerce website with real-time order tracking, payment integration (Razorpay), and AI-powered recommendation engine.',
-    result: '200% increase in online orders within 3 months. Average order value increased by 35%.',
+    title: 'Littiwale — Cloud Kitchen Platform',
+    subtitle: 'Full Digital Ecosystem (Web + SMM + Ads) — Barbil, Odisha',
+    problem: 'Cloud kitchen ko apna ordering system chahiye tha aur online sales badhane ke liye effective marketing aur sales strategy ki zarurat thi.',
+    solution: 'Phase 1: Professional website with menu & Razorpay. Phase 2: Full-stack ordering platform. Phase 3: Integrated Social Media Marketing (SMM) and AI commercial ads to drive direct traffic and bypass commissions.',
+    result: '200% increase in online orders within 3 months. Zero-commission revenue model successfully implemented. Sales strategy optimized for local market growth.',
+    badge: 'Phase 2 In Progress 🔄',
     image: 'bg-gradient-to-br from-orange-600 to-red-600',
     color: '#FF5C00'
   },
   {
     id: 2,
     title: 'Chaiwale',
-    subtitle: 'Café Website – Rohini, Delhi',
-    problem: 'Local café wanted to increase foot traffic and build online presence for delivery orders.',
-    solution: 'Created responsive website with Swiggy/Zomato integration, Instagram feed display, reservation system, and mobile app landing page.',
-    result: '150% increase in delivery orders. 45% of new customers discovered via online presence.',
+    subtitle: 'Café Website + SMM + Commercial Ads — Rohini, Delhi',
+    problem: 'Local café wanted to increase foot traffic and delivery sales through targeted online marketing and professional branding.',
+    solution: 'Created responsive website with delivery integrations. Implemented aggressive Social Media Marketing (SMM) and produced high-converting AI commercial ads to capture local attention.',
+    result: '45% total sales growth. 150% increase in delivery orders. Instagram reach boosted by 280% in first month via targeted AI ads.',
     image: 'bg-gradient-to-br from-amber-500 to-orange-600',
     color: '#FF7A2E'
   },
   {
     id: 3,
-    title: 'AI Job Search Tool',
-    subtitle: 'Career Intelligence Platform',
-    problem: 'Job seekers struggled to find relevant opportunities with poor match rates and time-consuming applications.',
-    solution: 'Developed AI-powered job matching platform using GPT-4 and Claude API. Auto-generates tailored cover letters, tracks applications, and analyzes job trends.',
-    result: '100+ active users. 3.5× faster job search process. 65% increase in interview callback rates for users.',
-    image: 'bg-gradient-to-br from-blue-600 to-purple-600',
-    color: '#3B82F6'
+    title: 'Desi Chulha',
+    subtitle: 'Restaurant Website + AI Commercial Ad — Kendujhar, Odisha',
+    problem: 'Traditional dhaba-style restaurant wanted modern online presence while keeping authentic desi brand identity intact.',
+    solution: 'Built mobile-first restaurant website with full menu, online enquiry system, and Google Maps integration. Produced AI-powered commercial ad capturing authentic Indian flavours and atmosphere.',
+    result: 'Brand reach increased 3x in first month via AI commercial ad. Online enquiries up 120%. Featured in local Odisha food blogs.',
+    image: 'bg-gradient-to-br from-red-600 to-orange-700',
+    color: '#D32F2F'
   },
   {
     id: 4,
@@ -50,7 +51,7 @@ const PORTFOLIO_ITEMS = [
     title: 'Surprise Planner',
     subtitle: 'Romantic Event Planning Platform',
     problem: 'Couples and loved ones struggled to plan memorable special occasions - anniversaries, proposals, birthdays. Manual coordination across vendors, budgeting confusion, and no way to capture and share those special moments on social media.',
-    solution: 'Built a full-stack event planning platform with 500+ pre-vetted vendor marketplace, real-time couple collaboration dashboard, AI-powered social media integration for viral content, automated video montage creation, and budget tracking. Features romantic templates for anniversaries, proposals, girlfriend birthdays, and husband-wife reconciliation surprises.',
+    solution: 'Built a full-stack event planning platform with 500+ pre-vetted vendor marketplace, real-time couple collaboration dashboard, AI-powered social media integration for viral content, automated video montage creation, and budget tracking.',
     result: '500+ events planned. 4.8/5 rating. 60% repeat customers. 80+ active couples monthly. Hundreds of memorable moments created and shared.',
     image: 'bg-gradient-to-br from-purple-600 to-pink-600',
     color: '#9333EA',
@@ -71,18 +72,17 @@ const PORTFOLIO_ITEMS = [
   },
   {
     id: 6,
-    title: 'Multi-Vendor Marketplace',
+    title: 'WareXhub — B2B Multi-Vendor Marketplace',
     subtitle: 'E-Commerce Platform',
-    problem: 'Small sellers needed a united platform to sell alongside established retailers with low overhead costs.',
-    solution: 'Developed scalable multi-vendor marketplace with vendor dashboard, commission management, real-time inventory sync, automated payouts, and dispute resolution.',
-    result: '150+ active vendors onboarded. Commission management, real-time inventory sync, buyer/seller identity protection, admin approval workflows, and DEV/UAT deployment. 45% operational efficiency improvement post-launch.',
+    problem: 'Small sellers needed a unified B2B platform with buyer/seller identity protection to prevent direct bypass deals.',
+    solution: 'Full-stack marketplace: vendor dashboards, commission management, real-time inventory sync, buyer/seller identity protection, admin approval workflows, automated payouts, dispute resolution, DEV/UAT deployment.',
+    result: '150+ active vendors onboarded. 45% operational efficiency improvement. End-to-end delivered: frontend, backend, admin panel, deployment.',
     image: 'bg-gradient-to-br from-green-600 to-emerald-600',
     color: '#059669',
     techStack: 'React / Next.js • Node.js • PostgreSQL • Razorpay • AWS / Vercel',
     quote: 'The platform handles deal flow end-to-end — buyer and seller details stay protected to prevent direct bypass.'
   }
-
-]
+];
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null)

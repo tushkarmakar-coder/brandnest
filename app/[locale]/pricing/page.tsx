@@ -62,6 +62,7 @@ const PricingPage = () => {
       ],
       icon: <Globe className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Ideal for Portfolios",
+      market: "₹50,000",
       bonus: null,
       examples: null
     },
@@ -78,6 +79,7 @@ const PricingPage = () => {
       ],
       icon: <UserCheck className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Community Ready",
+      market: "₹1,50,000",
       bonus: null,
       examples: null
     },
@@ -94,6 +96,7 @@ const PricingPage = () => {
       ],
       icon: <Layers className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Scale Ready",
+      market: "₹3,00,000",
       examples: "Blogs, Corporate Sites, Real Estate Portals",
       bonus: null,
       serviceNote: "Server & DB fees billed to client"
@@ -111,6 +114,7 @@ const PricingPage = () => {
       ],
       icon: <Zap className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Commerce Driven",
+      market: "₹6,00,000",
       examples: "E-commerce Stores, Marketplace MVPs, Booking Engines",
       bonus: "1 Month Free Maintenance",
       serviceNote: "Platform & API fees billed to client"
@@ -128,6 +132,7 @@ const PricingPage = () => {
       ],
       icon: <Crown className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Enterprise Class",
+      market: "₹10,00,000",
       examples: "Custom SaaS, AI Platforms, ERP Solutions",
       bonus: "3 Months Free Maintenance",
       serviceNote: "Cloud infrastructure fees billed to client"
@@ -165,6 +170,7 @@ const PricingPage = () => {
       ],
       icon: <Instagram className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Social Growth",
+      market: "₹8,000",
       bonus: null,
       examples: null
     },
@@ -181,6 +187,7 @@ const PricingPage = () => {
       ],
       icon: <PlayCircle className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Brand Authority",
+      market: "₹20,000",
       bonus: null,
       examples: null
     },
@@ -197,6 +204,7 @@ const PricingPage = () => {
       ],
       icon: <Video className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Performance Ad",
+      market: "₹50,000",
       bonus: null,
       examples: null
     },
@@ -248,6 +256,7 @@ const PricingPage = () => {
       ],
       icon: <Instagram className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Essential",
+      market: "₹40,000",
       bonus: null,
       examples: null
     },
@@ -264,6 +273,7 @@ const PricingPage = () => {
       ],
       icon: <Megaphone className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Performance",
+      market: "₹30,000",
       bonus: null,
       examples: null
     },
@@ -280,6 +290,7 @@ const PricingPage = () => {
       ],
       icon: <Zap className="w-8 h-8 text-[#FF5C00]" />,
       tag: "Scale Focused",
+      market: "₹1,00,000",
       bonus: null,
       examples: null
     },
@@ -407,9 +418,18 @@ const PricingPage = () => {
                   <h3 className="text-2xl font-syne font-bold text-[#F5F5F5] mt-2">{plan.name}</h3>
                 </div>
 
-                <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-5xl font-extrabold text-[#F5F5F5]">{plan.price}</span>
-                  <span className="text-[rgba(245,245,245,0.3)] text-xs font-bold uppercase tracking-widest">{plan.price.includes('/') ? '' : 'start'}</span>
+                <div className="flex flex-col mb-8">
+                  {/* @ts-ignore */}
+                  {plan.market && (
+                    <span className="text-[rgba(245,245,245,0.3)] text-sm font-bold line-through mb-1">
+                      {/* @ts-ignore */}
+                      {plan.market}
+                    </span>
+                  )}
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-5xl font-extrabold text-[#FF5C00]">{plan.price}</span>
+                    <span className="text-[rgba(245,245,245,0.3)] text-xs font-bold uppercase tracking-widest">{plan.price.includes('/') ? '' : 'start'}</span>
+                  </div>
                 </div>
 
                 <p className="text-[rgba(245,245,245,0.4)] text-[12px] mb-10 leading-relaxed min-h-[60px]">

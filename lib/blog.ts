@@ -14,6 +14,72 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '5',
+    slug: 'build-b2b-marketplace-india',
+    title: 'How We Built an IndiaMART-Style B2B Marketplace in India: Tech Stack, Cost & Timeline (2025)',
+    excerpt: 'Real case study from WareXhub — how BrandNest built a complete B2B multi-vendor marketplace with vendor dashboards, buyer protection, admin workflows. Cost, timeline, and lessons learned.',
+    date: '2026-05-08',
+    author: 'BrandNest Team',
+    category: 'Marketplace Development',
+    readTime: '15 min',
+    metaDescription: 'Real case study from WareXhub — how BrandNest built a complete B2B multi-vendor marketplace with vendor dashboards, buyer protection, admin workflows. Cost, timeline, and lessons learned.',
+    keywords: ['B2B marketplace development India', 'IndiaMART clone cost', 'multi-vendor platform development', 'WareXhub case study'],
+    content: `
+# How We Built an IndiaMART-Style B2B Marketplace in India: Tech Stack, Cost & Timeline
+
+When a founder came to us with a clear vision — build something like IndiaMART but for a specific industry vertical — we knew this would be one of the most complex projects we had taken on. That project became **WareXhub**.
+
+This is the full story: what we built, how we built it, how long it took, and what it cost.
+
+## The Problem
+Small sellers in a niche B2B market had no unified platform. They were either listing on IndiaMART (expensive, crowded) or doing deals on WhatsApp (unstructured, no protection). The client needed a platform where:
+- Sellers could list products with full dashboards
+- Buyers could browse and connect safely
+- The platform handled deal flow and took commission
+- Buyer and seller identities were protected to prevent bypass deals
+
+## What We Built
+We built the complete platform in phases:
+
+**Phase 1 — Seller Side:** Vendor registration, product listing, inventory management, seller dashboard with analytics.
+
+**Phase 2 — Buyer Side:** Browse, search/filter, inquiry system, buyer dashboard, saved products.
+
+**Phase 3 — Admin Panel:** Approval workflows, commission management, dispute resolution, automated payouts, user management.
+
+**Phase 4 — Infrastructure:** DEV environment for testing, UAT for client review, Production deployment. CI/CD pipeline setup.
+
+## Tech Stack
+- **Frontend:** Next.js + Tailwind CSS
+- **Backend:** Node.js + Express
+- **Database:** PostgreSQL
+- **Payments:** Razorpay
+- **Hosting:** Vercel (frontend) + Railway (backend)
+- **Auth:** JWT + role-based access control
+
+## Timeline & Cost
+Total timeline: **14 weeks** from kickoff to production.
+- **Week 1–2:** Discovery, wireframes, database schema
+- **Week 3–6:** Core marketplace (listings, search, dashboards)
+- **Week 7–10:** Admin panel, commission system, approval workflows
+- **Week 11–12:** Payments, notifications, security hardening
+- **Week 13–14:** UAT, bug fixes, production deployment
+
+**Investment:** ₹2,20,000 for full platform.
+
+## What We Learned
+The hardest part was buyer/seller identity protection — showing enough info for buyers to trust sellers, but not enough to bypass the platform. We solved it with a tiered reveal system: basic info visible to all, contact info only after platform-mediated connection.
+
+**150+ vendors onboarded. 45% operational efficiency improvement.** The client now has a real asset — a platform that generates recurring commission revenue.
+
+## Building a Marketplace? Talk to Us.
+We know the complexity because we've done it. If you're building a marketplace, B2B platform, or multi-vendor system — we can help.
+
+**Free consultation on WhatsApp:** [wa.me/917894935653](https://wa.me/917894935653)
+**Or fill the form:** [brandnestagency.vercel.app/#consultation](https://brandnestagency.vercel.app/#consultation)
+`
+  },
+  {
     id: '1',
     slug: 'best-website-development-company-india-2026',
     title: 'Best Website Development Company in India (2026 Guide)',

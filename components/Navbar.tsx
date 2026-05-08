@@ -1,11 +1,15 @@
 'use client'
 import { useState } from 'react'
-import Link from 'next/link'
+import { Link, usePathname } from '@/i18n/navigation'
+import { useLocale } from 'next-intl'
 import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const locale = useLocale()
+  const pathname = usePathname()
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(17,17,17,0.95)] border-b border-[rgba(255,92,0,0.08)] backdrop-blur-sm overflow-x-hidden">
@@ -14,10 +18,13 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          <Link href="#services" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Services</Link>
-          <Link href="#work" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Our Work</Link>
-          <Link href="#why" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Why Us</Link>
+          <Link href="/#services" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Services</Link>
+          <Link href="/#work" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Our Work</Link>
+          <Link href="/#why" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Why Us</Link>
           <Link href="/pricing" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Pricing</Link>
+          
+          <LanguageSwitcher />
+
           <a href="#consultation"
             className="bg-[#FF5C00] text-[#111] px-5 sm:px-6 py-2 text-[11px] sm:text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors whitespace-nowrap">
             Get Free Consultation
@@ -33,12 +40,17 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden border-t border-[rgba(255,92,0,0.08)] bg-[rgba(17,17,17,0.98)] overflow-x-hidden">
-          <div className="px-4 sm:px-6 py-4 space-y-3">
-            <Link href="#services" className="block text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Services</Link>
-            <Link href="#work" className="block text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
-            <Link href="#why" className="block text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
-            <Link href="/pricing" className="block text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Pricing</Link>
-            <a href="#consultation" className="block bg-[#FF5C00] text-[#111] px-5 sm:px-6 py-2 text-[11px] sm:text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors text-center">
+          <div className="px-4 sm:px-6 py-6 space-y-4">
+            <Link href="/#services" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Services</Link>
+            <Link href="/#work" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
+            <Link href="/#why" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
+            <Link href="/pricing" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Pricing</Link>
+            
+            <div className="py-2">
+              <LanguageSwitcher />
+            </div>
+
+            <a href="#consultation" onClick={() => setIsOpen(false)} className="block bg-[#FF5C00] text-[#111] px-5 sm:px-6 py-3 text-[13px] font-semibold hover:bg-[#FF7A2E] transition-colors text-center shadow-lg">
               Get Free Consultation
             </a>
           </div>
