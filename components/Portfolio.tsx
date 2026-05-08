@@ -75,10 +75,13 @@ const PORTFOLIO_ITEMS = [
     subtitle: 'E-Commerce Platform',
     problem: 'Small sellers needed a united platform to sell alongside established retailers with low overhead costs.',
     solution: 'Developed scalable multi-vendor marketplace with vendor dashboard, commission management, real-time inventory sync, automated payouts, and dispute resolution.',
-    result: '150+ active vendors. 45% efficiency improvement. Strong vendor retention & satisfaction.',
+    result: '150+ active vendors onboarded. Commission management, real-time inventory sync, buyer/seller identity protection, admin approval workflows, and DEV/UAT deployment. 45% operational efficiency improvement post-launch.',
     image: 'bg-gradient-to-br from-green-600 to-emerald-600',
-    color: '#059669'
+    color: '#059669',
+    techStack: 'React / Next.js • Node.js • PostgreSQL • Razorpay • AWS / Vercel',
+    quote: 'The platform handles deal flow end-to-end — buyer and seller details stay protected to prevent direct bypass.'
   }
+
 ]
 
 export default function Portfolio() {
@@ -226,6 +229,20 @@ export default function Portfolio() {
               </div>
             )}
 
+            {/* Tech Stack */}
+            {selectedItem.techStack && (
+              <div>
+                <h3 className="text-sm font-bold text-[#FF5C00] mb-2 uppercase tracking-wider">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedItem.techStack.split(' • ').map((tech, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-[rgba(255,92,0,0.1)] border border-[rgba(255,92,0,0.2)] rounded-full text-[11px] text-[#F5F5F5]">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Results */}
             <div>
               <h3 className="text-lg font-bold text-[#FF5C00] mb-3 flex items-center gap-2">
@@ -240,6 +257,16 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
+
+            {/* Quote */}
+            {selectedItem.quote && (
+              <div className="mt-8 p-6 bg-[rgba(255,92,0,0.03)] border-l-4 border-[#FF5C00] italic">
+                <p className="text-[15px] text-[rgba(245,245,245,0.8)] leading-relaxed">
+                  &quot;{selectedItem.quote}&quot;
+                </p>
+              </div>
+            )}
+
           </div>
         )}
       </DetailModal>

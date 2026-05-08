@@ -13,7 +13,7 @@ export default function HeroThree() {
   const [wordIndex, setWordIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
 
-  const typeWords = useMemo(() => ['Drive Results', 'Build Solutions', 'Scale Your Business'], [])
+  const typeWords = useMemo(() => ['Scale Fast', 'Build Marketplaces', 'SaaS Dashboards'], [])
 
   useEffect(() => {
     if (!canvasRef.current || !containerRef.current) return
@@ -251,8 +251,8 @@ export default function HeroThree() {
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
               className="font-display text-[clamp(36px,5vw,72px)] font-extrabold text-[#F5F5F5] leading-[1] tracking-tighter mb-6"
             >
-              Full Stack Websites, AI Chatbots, Commercial Ads &{' '}
-              <span className="block">Build Your Business</span>
+              We Build Marketplaces, SaaS Platforms & Custom Dashboards for{' '}
+              <span className="block">Indian Founders</span>
               <span className="text-[#FF5C00] relative">
                 {typedWord}
                 <span className="inline-block w-[2px] h-[0.9em] bg-[#FF5C00] ml-1 align-middle animate-blink" />
@@ -261,16 +261,22 @@ export default function HeroThree() {
 
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-              className="font-body text-[13px] sm:text-[15px] text-[rgba(245,245,245,0.6)] max-w-[550px] leading-[1.85] mb-10 font-light"
+              className="font-body text-[13px] sm:text-[15px] text-[rgba(245,245,245,0.6)] max-w-[650px] leading-[1.85] mb-10 font-light"
             >
-              We build high-converting websites, AI tools, and marketing systems that help businesses grow faster and scale efficiently.
+              From IndiaMART-style B2B marketplaces to multi-vendor e-commerce and admin platforms — we handle the full stack: frontend, backend, dashboards, approval workflows, and deployment. Websites and marketing too.
             </motion.p>
 
             <motion.ul
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
               className="space-y-2 sm:space-y-3 mb-10"
             >
-              {['Full Stack Web Development', 'AI-Enhanced Video & Ad Production', 'Influencer Marketing Campaigns', 'Results in 30 Days or Free Revision', 'Dedicated Account Manager'].map((item) => (
+              {[
+                'B2B & Multi-Vendor Marketplace Development',
+                'Admin Panels, Dashboards & Approval Workflows',
+                'Full Stack Web & SaaS Platform Development',
+                'AI Tools, Chatbots & Business Automation',
+                'Results Delivered in 30 Days — or Free Revision'
+              ].map((item) => (
                 <li key={item} className="flex items-start gap-2 sm:gap-3 text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.65)]">
                   <span className="w-4 h-4 border border-[#FF5C00] flex items-center justify-center text-[#FF5C00] text-[8px] flex-shrink-0 mt-0.5">✓</span>
                   <span>{item}</span>

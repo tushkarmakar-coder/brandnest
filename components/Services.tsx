@@ -6,14 +6,16 @@ import DetailModal from './DetailModal'
 import { SERVICE_DETAILS } from '@/lib/serviceDetails'
 
 const SERVICES = [
-  { num: '01', icon: Code2, title: 'Full Stack Web Development', description: 'Custom websites fully functional and operational with hosting, deployment, SEO, and 24/7 support.' },
-  { num: '02', icon: Video, title: 'AI-Enhanced Video Production', description: 'Brand films, commercials, YouTube ads — AI-accelerated workflow, 4K delivery.' },
-  { num: '03', icon: Zap, title: 'AI-Powered Commercial Ads', description: 'Google, Meta & YouTube campaigns with AI optimization for maximum ROI.' },
-  { num: '04', icon: Sparkles, title: 'AI Tools & Automation', description: 'Custom GPT-4 / Claude chatbots, workflow automation, and intelligent analytics.' },
-  { num: '05', icon: Users, title: 'Influencer Marketing Campaigns', description: 'Data-driven influencer partnerships, campaign management, content creation, and ROI tracking.' },
-  { num: '06', icon: BarChart2, title: 'SEO & Performance', description: 'Technical SEO, Core Web Vitals, content strategy to rank and convert.' },
-  { num: '07', icon: Globe, title: 'Brand Identity & UI/UX', description: 'Logo, visual identity, Figma design systems — cohesive brand from day one.' },
+  { num: '01', icon: Globe, title: 'Marketplace & Platform Development', description: 'B2B marketplaces, multi-vendor platforms, buyer/seller dashboards, admin panels with approval workflows. End-to-end IndiaMART-style solutions.' },
+  { num: '02', icon: Code2, title: 'Full Stack Web Development', description: 'Custom websites fully functional and operational with hosting, deployment, SEO, and 24/7 support.' },
+  { num: '03', icon: Video, title: 'AI-Enhanced Video Production', description: 'Brand films, commercials, YouTube ads — AI-accelerated workflow, 4K delivery.' },
+  { num: '04', icon: Zap, title: 'AI-Powered Commercial Ads', description: 'Google, Meta & YouTube campaigns with AI optimization for maximum ROI.' },
+  { num: '05', icon: Sparkles, title: 'AI Tools & Automation', description: 'Custom GPT-4 / Claude chatbots, workflow automation, and intelligent analytics.' },
+  { num: '06', icon: Users, title: 'Influencer Marketing Campaigns', description: 'Data-driven influencer partnerships, campaign management, content creation, and ROI tracking.' },
+  { num: '07', icon: BarChart2, title: 'SEO & Performance', description: 'Technical SEO, Core Web Vitals, content strategy to rank and convert.' },
+  { num: '08', icon: Globe, title: 'Brand Identity & UI/UX', description: 'Logo, visual identity, Figma design systems — cohesive brand from day one.' },
 ]
+
 
 export default function Services() {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null)
@@ -60,14 +62,24 @@ export default function Services() {
                   <h3 className="font-display text-[19px] font-bold text-[#F5F5F5] mb-3 leading-snug tracking-tight relative z-10 group-hover:text-white transition-colors">{svc.title}</h3>
                   <p className="text-[13px] text-[rgba(245,245,245,0.42)] leading-[1.8] mb-6 relative z-10 group-hover:text-[rgba(245,245,245,0.55)] transition-colors">{svc.description}</p>
 
-                  {/* Learn More Link */}
-                  <div
-                    onClick={() => serviceDetail && setSelectedServiceId(serviceDetail.id)}
-                    className="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[#FF7A2E] font-semibold cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10"
-                  >
-                    Learn More →
-                  </div>
+                  {/* Learn More / See Live Example Link */}
+                  {svc.num === '01' ? (
+                    <a
+                      href="#work"
+                      className="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[#FF7A2E] font-semibold cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10"
+                    >
+                      See Live Example →
+                    </a>
+                  ) : (
+                    <div
+                      onClick={() => serviceDetail && setSelectedServiceId(serviceDetail.id)}
+                      className="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[#FF7A2E] font-semibold cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10"
+                    >
+                      Learn More →
+                    </div>
+                  )}
                 </motion.div>
+
               )
             })}
           </div>

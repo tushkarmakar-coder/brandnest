@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import { Syne, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
+import WhatsAppFloat from '@/components/WhatsAppFloat'
+
 
 const syne = Syne({
   subsets: ['latin'],
@@ -28,10 +30,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://brandnestagency.vercel.app'),
   title: {
-    default: 'Website Development Company in India | AI Digital Agency | BrandNest',
+    default: 'Marketplace & Platform Development Agency India | BrandNest',
     template: '%s | BrandNest'
   },
-  description: 'BrandNest is a leading AI-powered digital agency in India offering website development, AI tools, influencer marketing and performance ads. Serving Pan India & Global Clients from Delhi, Noida, Gurgaon.',
+  description: 'BrandNest builds B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders. Based in Noida, serving pan-India & global. Starting ₹25,000.',
   keywords: [
     'website development company India',
     'digital marketing agency India',
@@ -50,8 +52,8 @@ export const metadata: Metadata = {
     'custom web solutions India'
   ],
   openGraph: {
-    title: 'Website Development Company in India | AI Digital Agency | BrandNest',
-    description: 'BrandNest — Leading AI-powered digital agency in India. Full-stack websites, AI tools, influencer marketing & performance ads.',
+    title: 'Marketplace & Platform Development Agency India | BrandNest',
+    description: 'BrandNest builds B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders. Starting ₹25,000.',
     url: 'https://brandnestagency.vercel.app',
     siteName: 'BrandNest',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'BrandNest - Website Development & AI Agency India' }],
@@ -60,8 +62,8 @@ export const metadata: Metadata = {
   },
   twitter: { 
     card: 'summary_large_image', 
-    title: 'Website Development Company in India | AI Digital Agency', 
-    description: 'Premium web development, AI tools, influencer marketing & performance ads.',
+    title: 'Marketplace & Platform Development Agency India', 
+    description: 'B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders.',
     images: ['/og-image.jpg'] 
   },
   robots: {
@@ -80,7 +82,7 @@ export const metadata: Metadata = {
     apple: '/logo.png',
   },
   alternates: { canonical: 'https://brandnestagency.vercel.app' },
-  verification: { google: 'YOUR_GOOGLE_SEARCH_CONSOLE_CODE' },
+  verification: { google: 'googledb9e7856a7c5812f' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -89,6 +91,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-[#FAFAF8]">
         <Navbar />
         {children}
+        <WhatsAppFloat />
+
       </body>
     </html>
   )

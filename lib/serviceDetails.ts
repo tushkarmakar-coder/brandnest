@@ -3,6 +3,75 @@ import { Code2, Video, Zap, Sparkles, BarChart2, Globe, Users, Check } from 'luc
 
 export const SERVICE_DETAILS = [
   {
+    id: 'marketplace-platform',
+    title: 'Marketplace & Platform Development',
+    icon: Globe,
+    description: 'B2B marketplaces, multi-vendor platforms, buyer/seller dashboards, admin panels with approval workflows, member login systems, guest access, and multi-environment deployment (DEV/UAT). We\'ve built IndiaMART-style platforms end-to-end.',
+    basePrice: '₹1,50,000',
+    priceRange: '₹1,50,000 - ₹5,00,000',
+    timelineRange: '30-60 days',
+    fullDescription: `We specialize in building complex, high-transaction marketplaces and SaaS platforms for Indian founders. From IndiaMART-style B2B portals to multi-vendor consumer marketplaces, we handle everything from database architecture to complex approval workflows.`,
+    detailedContent: `
+**What We Build:**
+• B2B & B2C Multi-Vendor Marketplaces
+• Buyer/Seller Dashboards & Member Portals
+• Admin Panels with Complex Approval Workflows
+• Multi-Vendor Inventory & Commission Management
+• Secure Messaging & Identity Protection Systems
+• IndiaMART-style Lead Management Systems
+• Multi-Environment Deployment (DEV/UAT/PROD)
+• Real-time Analytics & Transaction Monitoring
+
+**Core Platform Features:**
+• User Authentication (OTP, Social, Member Login)
+• Vendor Onboarding & Verification Systems
+• Commission & Payout Management (Razorpay/Stripe)
+• Real-time Chat & Notification Engines
+• Advanced Search & Filtering (Elasticsearch ready)
+• Product/Service Listing Approval Queues
+• Detailed Reporting for Admins & Vendors
+• Guest Access & Limited Preview Modes
+
+**Why Choose Our Platform Expertise:**
+✓ Specialized in Indian Marketplace Dynamics (B2B/B2C)
+✓ Security-first approach to protect buyer/seller data
+✓ Scalable architecture built for 100k+ users
+✓ Multi-environment setup for risk-free updates
+✓ Integration with local Indian payment & shipping APIs
+✓ 24/7 Monitoring & DevOps support included
+    `,
+    deliverables: [
+      'Multi-vendor platform architecture',
+      'Vendor & Buyer dashboards',
+      'Admin panel with approval workflows',
+      'Commission & wallet management system',
+      'Real-time inventory & order sync',
+      'Identity protection & privacy features',
+      'DEV/UAT/PROD deployment setup',
+      'API documentation & postman collection',
+      'Training sessions for admin staff',
+      '3 months premium support',
+    ],
+    whyChoose: [
+      'End-to-end IndiaMART-style platform expertise',
+      'Scalable multi-tenant architecture',
+      'Security focused buyer/seller protection',
+      'Complete control over your data & users',
+      'Integrated Indian payment & logistics',
+      'Proven track record with high-scale platforms',
+    ],
+    packages: [
+      { name: 'Standard Marketplace', price: '₹1,50,000', desc: 'Core multi-vendor features with basic dashboards' },
+      { name: 'Enterprise Platform', price: '₹3,50,000', desc: 'Custom workflows, advanced analytics & scaling' },
+      { name: 'Custom SaaS', price: '₹5,00,000+', desc: 'Full-scale platform with custom business logic' },
+    ],
+    faq: [
+      { q: 'How do you handle vendor payouts?', a: 'We integrate Razorpay Route or Stripe Connect for automated commissions.' },
+      { q: 'Can the platform handle high traffic?', a: 'Yes, we use Next.js and PostgreSQL on AWS/Vercel for auto-scaling.' },
+      { q: 'Do you provide maintenance?', a: 'Yes, we offer premium maintenance packages starting at ₹15,000/month.' },
+    ]
+  },
+  {
     id: 'web-development',
     title: 'Full Stack Web Development',
     icon: Code2,

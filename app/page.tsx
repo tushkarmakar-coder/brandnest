@@ -14,6 +14,8 @@ import PricingSection from '@/components/PricingSection'
 import ConsultationSection from '@/components/ConsultationSection'
 import CTABanner from '@/components/CTABanner'
 import Footer from '@/components/Footer'
+import Industries from '@/components/Industries'
+
 
 export default function Home() {
   const jsonLd = {
@@ -135,6 +137,8 @@ export default function Home() {
       <HeroThree />
       <TrustBar />
       <Services />
+      <Industries />
+
       <PricingSection />
       <Portfolio />
       <WhyUs />
