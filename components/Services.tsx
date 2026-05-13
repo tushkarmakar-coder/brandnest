@@ -91,9 +91,9 @@ export default function Services() {
           {/* Stats row */}
           <div className="grid grid-cols-2 md:grid-cols-4 border border-[rgba(255,92,0,0.1)] border-t-0" style={{ gap: '1px', background: 'rgba(255,92,0,0.1)' }}>
             {[['50+', 'Projects Delivered'], ['₹25K–₹2L', 'Project Budgets'], ['Pan India', '& Global'], ['⭐ 4.9', 'Google Rating']].map(([num, label]) => (
-              <div key={label} className="bg-[#111111] px-8 py-10 text-center hover:bg-[#161616] transition-colors">
-                <p className="font-display text-[46px] font-extrabold text-[#FF5C00] leading-none mb-2 tracking-tight">{num}</p>
-                <p className="text-[11px] text-[rgba(245,245,245,0.35)] tracking-[0.1em] uppercase">{label}</p>
+              <div key={label} className="bg-[#111111] px-2 sm:px-4 md:px-8 py-8 md:py-10 flex flex-col justify-center items-center text-center hover:bg-[#161616] transition-colors">
+                <p className="font-display text-[26px] sm:text-[32px] md:text-[46px] font-extrabold text-[#FF5C00] leading-[1.1] mb-2 tracking-tight whitespace-nowrap">{num}</p>
+                <p className="text-[10px] sm:text-[11px] text-[rgba(245,245,245,0.35)] tracking-[0.05em] sm:tracking-[0.1em] uppercase">{label}</p>
               </div>
             ))}
           </div>
