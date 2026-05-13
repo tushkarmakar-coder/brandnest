@@ -30,10 +30,10 @@ export default function Navbar() {
             💬 WhatsApp
           </a>
 
-          <a href="#consultation"
+          <Link href="/#consultation"
             className="bg-[#FF5C00] text-[#111] px-5 sm:px-6 py-2 text-[11px] sm:text-[12px] font-semibold hover:bg-[#FF7A2E] transition-colors whitespace-nowrap">
             Get Free Consultation
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -59,9 +59,9 @@ export default function Navbar() {
               💬 WhatsApp
             </a>
 
-            <a href="#consultation" onClick={() => setIsOpen(false)} className="block bg-[#FF5C00] text-[#111] px-5 sm:px-6 py-3 text-[13px] font-semibold hover:bg-[#FF7A2E] transition-colors text-center shadow-lg">
+            <Link href="/#consultation" onClick={() => setIsOpen(false)} className="block bg-[#FF5C00] text-[#111] px-5 sm:px-6 py-3 text-[13px] font-semibold hover:bg-[#FF7A2E] transition-colors text-center shadow-lg">
               Get Free Consultation
-            </a>
+            </Link>
           </div>
         </div>
       )}
