@@ -4,7 +4,7 @@ import { useState } from 'react'
 const SERVICES = ['Website Development', 'Video Production', 'Commercial Ads', 'AI Integration', 'Influencer Marketing', 'Brand Identity', 'Full Package', 'Not Sure Yet']
 
 export default function LeadForm({ compact = false }: { compact?: boolean }) {
-  const [form, setForm] = useState({ name: '', phone: '', company: '', service: '', message: '' })
+  const [form, setForm] = useState({ name: '', phone: '', email: '', company: '', service: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [msg, setMsg] = useState('')
 
@@ -23,7 +23,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
       if (res.ok) {
         setStatus('success')
         setMsg(data.message)
-        setForm({ name: '', phone: '', company: '', service: '', message: '' })
+        setForm({ name: '', phone: '', email: '', company: '', service: '', message: '' })
       } else {
         setStatus('error')
         setMsg(data.error)
@@ -70,6 +70,17 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
             className={inputClass}
           />
         </div>
+      </div>
+      <div>
+        <label className={labelClass}>Email ID *</label>
+        <input
+          required
+          type="email"
+          placeholder="your@email.com"
+          value={form.email}
+          onChange={e => update('email', e.target.value)}
+          className={inputClass}
+        />
       </div>
       <div>
         <label className={labelClass}>Company</label>

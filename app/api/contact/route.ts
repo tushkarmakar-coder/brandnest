@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, phone, company, service, message } = await req.json()
+    const { name, phone, email, company, service, message } = await req.json()
 
     if (!name || !phone) {
       return NextResponse.json(
@@ -36,6 +36,7 @@ export async function POST(req: NextRequest) {
                   <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
                     <tr style="border-bottom: 1px solid rgba(255,92,0,0.1);"><td style="padding: 12px 0; color: rgba(245,245,245,0.6); font-weight: 600; width: 120px;">Full Name</td><td style="padding: 12px 0; color: #F5F5F5; font-weight: 500;">${name}</td></tr>
                     <tr style="border-bottom: 1px solid rgba(255,92,0,0.1);"><td style="padding: 12px 0; color: rgba(245,245,245,0.6); font-weight: 600;">Phone</td><td style="padding: 12px 0;"><a href="tel:${phone}" style="color: #FF5C00; text-decoration: none; font-weight: 500;">${phone}</a></td></tr>
+                    ${email ? `<tr style="border-bottom: 1px solid rgba(255,92,0,0.1);"><td style="padding: 12px 0; color: rgba(245,245,245,0.6); font-weight: 600;">Email</td><td style="padding: 12px 0;"><a href="mailto:${email}" style="color: #FF5C00; text-decoration: none; font-weight: 500;">${email}</a></td></tr>` : ''}
                     <tr style="border-bottom: 1px solid rgba(255,92,0,0.1);"><td style="padding: 12px 0; color: rgba(245,245,245,0.6); font-weight: 600;">Company</td><td style="padding: 12px 0; color: #F5F5F5;">${company || 'Not specified'}</td></tr>
                     <tr style="border-bottom: 1px solid rgba(255,92,0,0.1);"><td style="padding: 12px 0; color: rgba(245,245,245,0.6); font-weight: 600;">Service</td><td style="padding: 12px 0;"><span style="background: rgba(255,92,0,0.15); color: #FF7A2E; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600;">${service || 'Not specified'}</span></td></tr>
                     ${message ? `<tr style="border-bottom: 1px solid rgba(255,92,0,0.1);"><td style="padding: 12px 0; color: rgba(245,245,245,0.6); font-weight: 600; vertical-align: top;">Message</td><td style="padding: 12px 0; color: #F5F5F5; line-height: 1.6;">${message}</td></tr>` : ''}
@@ -64,6 +65,7 @@ export async function POST(req: NextRequest) {
     console.log('📬 New Lead Received:', {
       name,
       phone,
+      email,
       company,
       service,
       message,
@@ -72,7 +74,7 @@ export async function POST(req: NextRequest) {
     })
 
     // Send WhatsApp notification to admin
-    const whatsappMessage = `🚀 *New Inquiry - BrandNest*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Company:* ${company || 'N/A'}\n*Service:* ${service || 'N/A'}\n*Message:* ${message || 'N/A'}`
+    const whatsappMessage = `🚀 *New Inquiry - BrandNest*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email || 'N/A'}\n*Company:* ${company || 'N/A'}\n*Service:* ${service || 'N/A'}\n*Message:* ${message || 'N/A'}`
     
     if (process.env.NEXT_PUBLIC_WHATSAPP) {
       // Note: WhatsApp API would go here if you have Twilio or similar
