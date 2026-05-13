@@ -4,7 +4,7 @@ import { Code2, Video, Zap, Sparkles, BarChart2, Globe, Users, Check } from 'luc
 export const SERVICE_DETAILS = [
   {
     id: 'marketplace-platform',
-    title: 'Marketplace & Platform Development',
+    title: 'Website & Online Store Development',
     icon: Globe,
     description: 'B2B marketplaces, multi-vendor platforms, buyer/seller dashboards, admin panels with approval workflows, member login systems, guest access, and multi-environment deployment (DEV/UAT). We\'ve built IndiaMART-style platforms end-to-end.',
     basePrice: '₹1,50,000',
@@ -73,7 +73,7 @@ export const SERVICE_DETAILS = [
   },
   {
     id: 'web-development',
-    title: 'Full Stack Web Development',
+    title: 'Professional Business Websites',
     icon: Code2,
     description: 'Custom websites fully functional and operational with hosting, deployment, SEO, and 24/7 support.',
     basePrice: '₹25,000',
@@ -152,7 +152,7 @@ export const SERVICE_DETAILS = [
   },
   {
     id: 'video-production',
-    title: 'AI-Enhanced Video Production',
+    title: 'Video Production & Reels',
     icon: Video,
     description: 'Brand films, commercials, YouTube ads — AI-accelerated workflow, 4K delivery.',
     basePrice: '₹40,000',
@@ -241,7 +241,7 @@ export const SERVICE_DETAILS = [
   },
   {
     id: 'commercial-ads',
-    title: 'AI-Powered Commercial Ads',
+    title: 'ADs Created through AI Tools',
     icon: Zap,
     description: 'Google, Meta & YouTube campaigns with AI optimization for maximum ROI.',
     basePrice: '₹30,000',
@@ -345,7 +345,7 @@ export const SERVICE_DETAILS = [
   },
   {
     id: 'ai-tools',
-    title: 'AI Tools & Automation',
+    title: 'AI Tools & Business Automation',
     icon: Sparkles,
     description: 'Custom GPT-4 / Claude chatbots, workflow automation, and intelligent analytics.',
     basePrice: '₹35,000',
@@ -619,7 +619,7 @@ export const SERVICE_DETAILS = [
   },
   {
     id: 'seo-performance',
-    title: 'SEO & Performance',
+    title: 'SEO & Google Ranking',
     icon: BarChart2,
     description: 'Technical SEO, Core Web Vitals, content strategy to rank and convert.',
     basePrice: '₹20,000',

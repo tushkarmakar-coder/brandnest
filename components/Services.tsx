@@ -6,13 +6,13 @@ import DetailModal from './DetailModal'
 import { SERVICE_DETAILS } from '@/lib/serviceDetails'
 
 const SERVICES = [
-  { num: '01', icon: Globe, title: 'Marketplace & Platform Development', description: 'B2B marketplaces, multi-vendor platforms, buyer/seller dashboards, admin panels with approval workflows. End-to-end IndiaMART-style solutions.' },
-  { num: '02', icon: Code2, title: 'Full Stack Web Development', description: 'Custom websites fully functional and operational with hosting, deployment, SEO, and 24/7 support. ✓ Custom Food Ordering Platforms — Zero Swiggy/Zomato Commission' },
-  { num: '03', icon: Video, title: 'AI-Enhanced Video Production', description: 'Brand films, commercials, YouTube ads — AI-accelerated workflow, 4K delivery.' },
-  { num: '04', icon: Zap, title: 'AI-Powered Commercial Ads', description: 'Google, Meta & YouTube campaigns with AI optimization for maximum ROI.' },
-  { num: '05', icon: Sparkles, title: 'AI Tools & Automation', description: 'Custom GPT-4 / Claude chatbots, workflow automation, and intelligent analytics.' },
+  { num: '01', icon: Globe, title: 'Website & Online Store Development', description: 'B2B marketplaces, multi-vendor platforms, buyer/seller dashboards, admin panels with approval workflows. End-to-end IndiaMART-style solutions.' },
+  { num: '02', icon: Code2, title: 'Professional Business Websites', description: 'Custom websites fully functional and operational with hosting, deployment, SEO, and 24/7 support. ✓ Custom Food Ordering Platforms — Zero Swiggy/Zomato Commission' },
+  { num: '03', icon: Video, title: 'Video Production & Reels', description: 'Brand films, commercials, YouTube ads — AI-accelerated workflow, 4K delivery.' },
+  { num: '04', icon: Zap, title: 'ADs Created through AI Tools', description: 'Google, Meta & YouTube campaigns with AI optimization for maximum ROI.' },
+  { num: '05', icon: Sparkles, title: 'AI Tools & Business Automation', description: 'Custom GPT-4 / Claude chatbots, workflow automation, and intelligent analytics.' },
   { num: '06', icon: Users, title: 'Influencer Marketing Campaigns', description: 'Data-driven influencer partnerships, campaign management, content creation, and ROI tracking.' },
-  { num: '07', icon: BarChart2, title: 'SEO & Performance', description: 'Technical SEO, Core Web Vitals, content strategy to rank and convert.' },
+  { num: '07', icon: BarChart2, title: 'SEO & Google Ranking', description: 'Technical SEO, Core Web Vitals, content strategy to rank and convert.' },
   { num: '08', icon: Globe, title: 'Brand Identity & UI/UX', description: 'Logo, visual identity, Figma design systems — cohesive brand from day one.' },
 ]
 
@@ -90,7 +90,7 @@ export default function Services() {
 
           {/* Stats row */}
           <div className="grid grid-cols-2 md:grid-cols-4 border border-[rgba(255,92,0,0.1)] border-t-0" style={{ gap: '1px', background: 'rgba(255,92,0,0.1)' }}>
-            {[['50+', 'Projects Delivered'], ['Expert-Led', 'AI Velocity'], ['98%', 'Client Satisfaction'], ['24h', 'Response Time']].map(([num, label]) => (
+            {[['50+', 'Projects Delivered'], ['₹25K–₹2L', 'Project Budgets'], ['Pan India', '& Global'], ['⭐ 4.9', 'Google Rating']].map(([num, label]) => (
               <div key={label} className="bg-[#111111] px-8 py-10 text-center hover:bg-[#161616] transition-colors">
                 <p className="font-display text-[46px] font-extrabold text-[#FF5C00] leading-none mb-2 tracking-tight">{num}</p>
                 <p className="text-[11px] text-[rgba(245,245,245,0.35)] tracking-[0.1em] uppercase">{label}</p>

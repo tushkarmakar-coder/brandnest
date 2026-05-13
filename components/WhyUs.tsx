@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
 
 const WHY_US = [
-  { title: 'AI-Accelerated Development', desc: 'AI tools speed up our workflow, but every project is hand-coded and audited by expert developers for a perfect result.' },
+  { title: 'Fast & Quality Delivery', desc: 'We deliver professional websites and digital solutions faster than traditional agencies — without compromising on quality or design.' },
   { title: '30-Day Results Guarantee', desc: 'We deliver results within 30 days or offer free revisions. No hidden clauses.' },
   { title: 'End-to-End Solutions', desc: 'From websites to videos to ads — everything under one roof. No juggling agencies.' },
   { title: 'India Experts', desc: 'Pan-India presence, 24/7 support. We understand your market deeply.' },

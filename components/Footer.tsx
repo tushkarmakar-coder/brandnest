@@ -169,7 +169,7 @@ export default function Footer() {
             © {new Date().getFullYear()} BrandNest. All rights reserved.
           </p>
           <p className="text-[12px] text-[rgba(245,245,245,0.3)] font-body order-2 md:order-2">
-            AI-Powered. Brand-Obsessed. India.
+            Results-Driven. Brand-Obsessed. Made in India. 🇮🇳
           </p>
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 order-1 md:order-3">
             <a href="https://tushkarmakar.vercel.app/client" target="_blank" rel="noopener noreferrer"
