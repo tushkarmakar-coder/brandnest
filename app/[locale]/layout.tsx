@@ -32,11 +32,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://brandnestagency.vercel.app'),
   title: {
-    default: 'Marketplace & Platform Development Agency India | BrandNest',
+    default: 'BrandNest | AI-Powered Digital Agency',
     template: '%s | BrandNest'
   },
-  description: 'BrandNest builds B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders. Based in Noida, serving pan-India & global. Starting ₹25,000.',
+  description: 'BrandNest is an AI-powered digital agency building B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders. Based in Noida, serving pan-India & global. Starting ₹25,000.',
   keywords: [
+    "AI-powered digital agency India",
     "marketplace development agency India",
     "B2B marketplace development Noida",
     "multi-vendor platform development India",
@@ -50,19 +51,19 @@ export const metadata: Metadata = {
     "web development company Delhi NCR"
   ],
   openGraph: {
-    title: 'Marketplace & Platform Development Agency India | BrandNest',
-    description: 'BrandNest builds B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders. Starting ₹25,000.',
+    title: 'BrandNest | AI-Powered Digital Agency',
+    description: 'BrandNest is an AI-powered digital agency building B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders. Starting ₹25,000.',
     url: 'https://brandnestagency.vercel.app',
     siteName: 'BrandNest',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'BrandNest - Marketplace Development Agency India' }],
+    images: [{ url: '/logo.png', width: 1200, height: 630, alt: 'BrandNest - AI-Powered Digital Agency' }],
     locale: 'en_IN',
     type: 'website',
   },
   twitter: { 
     card: 'summary_large_image', 
-    title: 'Marketplace & Platform Development Agency India', 
-    description: 'B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders.',
-    images: ['/og-image.jpg'] 
+    title: 'BrandNest | AI-Powered Digital Agency', 
+    description: 'AI-powered digital agency building B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders.',
+    images: ['/logo.png'] 
   },
   robots: {
     index: true, 
@@ -76,7 +77,11 @@ export const metadata: Metadata = {
     }
   },
   icons: {
-    icon: '/logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
     apple: '/logo.png',
   },
   alternates: { 

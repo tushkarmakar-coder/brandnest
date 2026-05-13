@@ -4,25 +4,30 @@ import { blogPosts } from '@/lib/blog'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://brandnestagency.vercel.app'
 
-  const staticRoutes = [
+  const locales = ['', '/hi']
+  
+  const staticRoutes = locales.flatMap(locale => [
     {
-      url: baseUrl,
+      url: `${baseUrl}${locale}`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/pricing`,
+      url: `${baseUrl}${locale}/pricing`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog`,
+      url: `${baseUrl}${locale}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
+  ])
+
+  const utilityRoutes = [
     {
       url: `${baseUrl}/terms`,
       lastModified: new Date(),
@@ -37,12 +42,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const blogRoutes = blogPosts.map(post => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: post.slug === 'build-b2b-marketplace-india' ? 0.9 : 0.7,
-  }))
+  const blogRoutes = locales.flatMap(locale => 
+    blogPosts.map(post => ({
+      url: `${baseUrl}${locale}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: post.slug === 'build-b2b-marketplace-india' ? 0.9 : 0.7,
+    }))
+  )
 
-  return [...staticRoutes, ...blogRoutes]
+  return [...staticRoutes, ...utilityRoutes, ...blogRoutes]
 }

@@ -22,7 +22,7 @@ export default function Home() {
         '@type': 'LocalBusiness',
         '@id': 'https://brandnestagency.vercel.app/#business',
         name: 'BrandNest',
-        description: 'AI-powered digital agency — website development, video production, commercial ads and AI integration. India.',
+        description: 'BrandNest is an AI-powered digital agency building B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders.',
         url: 'https://brandnestagency.vercel.app',
         telephone: '+91-7894935653',
         email: 'brandnest.team@gmail.com',
