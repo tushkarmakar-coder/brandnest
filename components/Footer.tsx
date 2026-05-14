@@ -32,8 +32,6 @@ const SERVICES_LINKS = [
 
 const SOCIALS = [
   { icon: Instagram, href: 'https://instagram.com/thebrandnestofficial', label: 'Instagram' },
-  { icon: Linkedin, href: 'https://linkedin.com/company/brandnest', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com/brandnest', label: 'Twitter' },
   { icon: Globe, href: 'https://linktr.ee/thebrandnestofficial', label: 'Linktree' },
   { icon: Star, href: 'https://g.page/r/CSqSwDfqcFHIEAE/review', label: 'Google Reviews' },
 ]
