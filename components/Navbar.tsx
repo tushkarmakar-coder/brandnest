@@ -14,7 +14,7 @@ export default function Navbar() {
   const t = useTranslations('Sections')
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(17,17,17,0.95)] border-b border-[rgba(255,92,0,0.08)] backdrop-blur-sm overflow-x-hidden">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#111111]/95 border-b border-[rgba(255,107,43,0.08)] backdrop-blur-sm overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Logo size="md" />
 
@@ -23,6 +23,7 @@ export default function Navbar() {
           <Link href="/#services" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Services</Link>
           <Link href="/#work" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Our Work</Link>
           <Link href="/#why" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Why Us</Link>
+          <Link href="/founders" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Our Story</Link>
           <Link href="/pricing" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Pricing</Link>
           <a href="https://linktr.ee/thebrandnestofficial" target="_blank" rel="noopener noreferrer" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">{t('links')}</a>
           
@@ -52,6 +53,7 @@ export default function Navbar() {
             <Link href="/#services" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Services</Link>
             <Link href="/#work" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
             <Link href="/#why" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
+            <Link href="/founders" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Story</Link>
             <Link href="/pricing" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Pricing</Link>
             <a href="https://linktr.ee/thebrandnestofficial" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">{t('links')} (Linktree)</a>
             

@@ -12,6 +12,7 @@ import ConsultationSection from '@/components/ConsultationSection'
 import CTABanner from '@/components/CTABanner'
 import Footer from '@/components/Footer'
 import Industries from '@/components/Industries'
+import FounderTeaser from '@/components/FounderTeaser'
 
 
 export default function Home() {
@@ -126,7 +127,6 @@ export default function Home() {
       }
     ]
   }
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -137,6 +137,7 @@ export default function Home() {
 
       <PricingSection />
       <Portfolio />
+      <FounderTeaser />
       <WhyUs />
       <AISection />
       <Process />
@@ -148,3 +149,4 @@ export default function Home() {
     </>
   )
 }
+

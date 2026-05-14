@@ -9,7 +9,7 @@ const QUICK_LINKS = [
   { label: 'Our Work', href: '#work' },
   { label: 'Blog', href: '/blog' },
   { label: 'AI Tools', href: '#ai' },
-  { label: 'About Us', href: '#about' },
+  { label: 'Our Story', href: '/founders' },
   { label: 'Contact', href: '#contact' },
 ]
 

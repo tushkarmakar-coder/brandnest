@@ -106,9 +106,9 @@ const PricingSection = () => {
             </thead>
             <tbody>
               {[
-                { package: "Landing Page / Business Site", market: "₹50,000+", price: "₹25,000+", timeline: "1 Week" },
-                { package: "E-Commerce / B2B Marketplace", market: "₹1,20,000+", price: "₹60,000+", timeline: "3-5 Weeks" },
-                { package: "SaaS / Admin Dashboard", market: "₹1,80,000+", price: "₹80,000+", timeline: "4-6 Weeks" },
+                { package: "Landing Page / Business Site", market: "₹50,000+", price: "₹25,000+", timeline: "1 Week", badge: "FAST DELIVERY" },
+                { package: "E-Commerce / B2B Marketplace", market: "₹1,20,000+", price: "₹60,000+", timeline: "3-5 Weeks", badge: "MOST POPULAR" },
+                { package: "SaaS / Admin Dashboard", market: "₹1,80,000+", price: "₹80,000+", timeline: "4-6 Weeks", badge: "ENTERPRISE" },
                 { package: "Reels & Video Editing", market: "₹8,000+", price: "₹3,999+", timeline: "48 Hours" },
                 { package: "Commercial Video Ads", market: "₹50,000+", price: "₹24,999+", timeline: "1 Week" },
                 { package: "Performance Ad Campaigns", market: "₹30,000+", price: "₹14,999+", timeline: "Ongoing" },
@@ -120,7 +120,16 @@ const PricingSection = () => {
                   transition={{ delay: idx * 0.05 }}
                   className="border-b border-[rgba(255,92,0,0.05)] hover:bg-[rgba(255,92,0,0.02)] transition-colors group"
                 >
-                  <td className="py-6 px-4 text-[#F5F5F5] font-bold text-sm md:text-base group-hover:text-[#FF5C00] transition-colors">{item.package}</td>
+                  <td className="py-6 px-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-[#F5F5F5] font-bold text-sm md:text-base group-hover:text-[#FF5C00] transition-colors">{item.package}</span>
+                      {item.badge && (
+                        <span className="text-[8px] font-black bg-[#FF5C00]/10 text-[#FF5C00] px-2 py-0.5 rounded-full border border-[#FF5C00]/20 tracking-tighter">
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+                  </td>
                   <td className="py-6 px-4 text-[rgba(245,245,245,0.3)] font-bold text-sm md:text-base line-through">{item.market}</td>
                   <td className="py-6 px-4 text-[#F5F5F5] font-black text-sm md:text-base">{item.price}</td>
                   <td className="py-6 px-4 text-[rgba(245,245,245,0.5)] text-xs md:text-sm font-medium">{item.timeline}</td>

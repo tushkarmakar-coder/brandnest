@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Syne, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
-import WhatsAppFloat from '@/components/WhatsAppFloat'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 
@@ -133,11 +133,11 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="bg-[#FAFAF8]">
+      <body className="bg-[#111111]">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
-          <WhatsAppFloat />
+          <FloatingWhatsApp />
         </NextIntlClientProvider>
       </body>
     </html>

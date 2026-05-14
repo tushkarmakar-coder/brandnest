@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 export default function HeroThree() {
   const t_hero = useTranslations('Hero')
@@ -280,6 +281,39 @@ export default function HeroThree() {
               <a href="#work" className="text-[#FF7A2E] text-[12px] sm:text-[13px] tracking-wide font-medium border border-[rgba(255,92,0,0.4)] px-5 sm:px-7 py-3 sm:py-3.5 hover:border-[#FF5C00] hover:bg-[rgba(255,92,0,0.05)] transition-colors whitespace-nowrap">
                 {t_hero('cta2')}
               </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+              className="mt-12 flex items-center gap-4"
+            >
+              <div className="flex -space-x-3">
+                {[
+                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop"
+                ].map((src, i) => (
+                  <div key={i} className="relative w-10 h-10 rounded-full border-2 border-[#111] bg-[#1A1A1A] flex items-center justify-center overflow-hidden">
+                    <Image 
+                      src={src} 
+                      alt="Founder" 
+                      fill 
+                      className="object-cover grayscale hover:grayscale-0 transition-all" 
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-0.5">
+                  {[1,2,3,4,5].map(i => (
+                    <span key={i} className="text-[#FF5C00] text-xs">★</span>
+                  ))}
+                </div>
+                <p className="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Trusted by 20+ Founders & VCs</p>
+              </div>
             </motion.div>
           </div>
         </div>
