@@ -37,9 +37,10 @@ export default function Home() {
         priceRange: '₹₹',
         areaServed: ['Delhi', 'Noida', 'Gurgaon', 'Faridabad', 'India'],
         sameAs: [
-          'https://instagram.com/brandnest', 
+          'https://instagram.com/thebrandnestofficial', 
           'https://linkedin.com/company/brandnest', 
-          'https://twitter.com/brandnest'
+          'https://twitter.com/brandnest',
+          'https://linktr.ee/thebrandnestofficial'
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',

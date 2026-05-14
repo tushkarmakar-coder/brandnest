@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Link, usePathname } from '@/i18n/navigation'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
 import { LanguageSwitcher } from './LanguageSwitcher'
@@ -10,6 +10,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const locale = useLocale()
   const pathname = usePathname()
+
+  const t = useTranslations('Sections')
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(17,17,17,0.95)] border-b border-[rgba(255,92,0,0.08)] backdrop-blur-sm overflow-x-hidden">
@@ -22,6 +24,7 @@ export default function Navbar() {
           <Link href="/#work" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Our Work</Link>
           <Link href="/#why" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Why Us</Link>
           <Link href="/pricing" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Pricing</Link>
+          <a href="https://linktr.ee/thebrandnestofficial" target="_blank" rel="noopener noreferrer" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">{t('links')}</a>
           
           <LanguageSwitcher />
 
@@ -50,6 +53,7 @@ export default function Navbar() {
             <Link href="/#work" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
             <Link href="/#why" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
             <Link href="/pricing" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Pricing</Link>
+            <a href="https://linktr.ee/thebrandnestofficial" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">{t('links')} (Linktree)</a>
             
             <div className="py-2">
               <LanguageSwitcher />

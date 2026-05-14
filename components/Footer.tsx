@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Logo from './Logo'
-import { Instagram, Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from 'lucide-react'
+import { Instagram, Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin, Globe, Star } from 'lucide-react'
 
 const QUICK_LINKS = [
   { label: 'Home', href: '/' },
@@ -31,11 +31,11 @@ const SERVICES_LINKS = [
 ]
 
 const SOCIALS = [
-  { icon: Instagram, href: 'https://instagram.com/brandnest', label: 'Instagram' },
+  { icon: Instagram, href: 'https://instagram.com/thebrandnestofficial', label: 'Instagram' },
   { icon: Linkedin, href: 'https://linkedin.com/company/brandnest', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://twitter.com/brandnest', label: 'Twitter' },
-  { icon: Youtube, href: 'https://youtube.com/@brandnest', label: 'YouTube' },
-  { icon: Facebook, href: 'https://facebook.com/brandnest', label: 'Facebook' },
+  { icon: Globe, href: 'https://linktr.ee/thebrandnestofficial', label: 'Linktree' },
+  { icon: Star, href: 'https://g.page/r/CSqSwDfqcFHIEAE/review', label: 'Google Reviews' },
 ]
 
 export default function Footer() {
