@@ -9,7 +9,15 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Our Story | Meet The Founders',
   description: 'The story of BrandNest — from freelancing to building a premium digital growth agency. Meet Tushar Karmakar and Simran Sharma.',
+  alternates: {
+    canonical: 'https://brandnestagency.vercel.app/founders',
+    languages: {
+      'en': 'https://brandnestagency.vercel.app/founders',
+      'hi': 'https://brandnestagency.vercel.app/hi/founders',
+    },
+  },
 }
+
 
 export default function FoundersPage() {
   return (

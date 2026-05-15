@@ -13,9 +13,20 @@ import CTABanner from '@/components/CTABanner'
 import Footer from '@/components/Footer'
 import Industries from '@/components/Industries'
 import FounderTeaser from '@/components/FounderTeaser'
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://brandnestagency.vercel.app',
+    languages: {
+      'en': 'https://brandnestagency.vercel.app',
+      'hi': 'https://brandnestagency.vercel.app/hi',
+    },
+  },
+}
 
 export default function Home() {
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [

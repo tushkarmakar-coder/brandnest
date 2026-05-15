@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: 'Blog - Latest Articles on Web Development, AI & Digital Marketing | BrandNest',
   description: 'Read articles on website development, AI tools, influencer marketing, and digital strategies for Indian businesses. SEO tips, startup growth, and agency insights.',
   keywords: ['digital marketing blog', 'web development articles', 'AI insights', 'startup growth tips'],
+  alternates: {
+    canonical: 'https://brandnestagency.vercel.app/blog',
+    languages: {
+      'en': 'https://brandnestagency.vercel.app/blog',
+      'hi': 'https://brandnestagency.vercel.app/hi/blog',
+    },
+  },
   openGraph: {
     title: 'BrandNest Blog - Web Dev, AI & Marketing Insights',
     description: 'Expert articles on website development, AI tools, digital marketing, and business growth.',
@@ -15,6 +22,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
 }
+
 
 export default function BlogPage() {
   return (

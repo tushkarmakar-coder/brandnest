@@ -3,7 +3,15 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Refund Policy | BrandNest',
   description: 'Our refund and satisfaction guarantee policy.',
+  alternates: {
+    canonical: 'https://brandnestagency.vercel.app/refund-policy',
+    languages: {
+      'en': 'https://brandnestagency.vercel.app/refund-policy',
+      'hi': 'https://brandnestagency.vercel.app/hi/refund-policy',
+    },
+  },
 }
+
 
 export default function RefundPolicy() {
   return (

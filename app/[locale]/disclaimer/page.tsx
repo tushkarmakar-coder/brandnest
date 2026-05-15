@@ -3,7 +3,15 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Disclaimer | BrandNest',
   description: 'Legal disclaimer for BrandNest website and services.',
+  alternates: {
+    canonical: 'https://brandnestagency.vercel.app/disclaimer',
+    languages: {
+      'en': 'https://brandnestagency.vercel.app/disclaimer',
+      'hi': 'https://brandnestagency.vercel.app/hi/disclaimer',
+    },
+  },
 }
+
 
 export default function Disclaimer() {
   return (

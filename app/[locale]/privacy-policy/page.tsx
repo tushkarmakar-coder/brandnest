@@ -3,7 +3,15 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacy Policy | BrandNest',
   description: 'Our privacy policy explains how BrandNest collects, uses, and protects your personal information.',
+  alternates: {
+    canonical: 'https://brandnestagency.vercel.app/privacy-policy',
+    languages: {
+      'en': 'https://brandnestagency.vercel.app/privacy-policy',
+      'hi': 'https://brandnestagency.vercel.app/hi/privacy-policy',
+    },
+  },
 }
+
 
 export default function PrivacyPolicy() {
   return (

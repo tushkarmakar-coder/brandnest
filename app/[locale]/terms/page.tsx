@@ -3,7 +3,15 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms & Conditions | BrandNest',
   description: 'Terms and conditions for using BrandNest services.',
+  alternates: {
+    canonical: 'https://brandnestagency.vercel.app/terms',
+    languages: {
+      'en': 'https://brandnestagency.vercel.app/terms',
+      'hi': 'https://brandnestagency.vercel.app/hi/terms',
+    },
+  },
 }
+
 
 export default function Terms() {
   return (

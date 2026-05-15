@@ -84,13 +84,6 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/logo.png',
   },
-  alternates: { 
-    canonical: 'https://brandnestagency.vercel.app',
-    languages: {
-      'en': 'https://brandnestagency.vercel.app/',
-      'hi': 'https://brandnestagency.vercel.app/hi/',
-    },
-  },
   verification: { google: 'googledb9e7856a7c5812f' },
 }
 

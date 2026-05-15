@@ -6,41 +6,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const locales = ['', '/hi']
   
-  const staticRoutes = locales.flatMap(locale => [
-    {
-      url: `${baseUrl}${locale}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}${locale}/pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}${locale}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-  ])
-
-  const utilityRoutes = [
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
+  // Define all static pages that exist in both locales
+  const pages = [
+    '',
+    '/pricing',
+    '/blog',
+    '/founders',
+    '/disclaimer',
+    '/privacy-policy',
+    '/refund-policy',
+    '/terms',
   ]
+
+  const staticRoutes = locales.flatMap(locale => 
+    pages.map(page => ({
+      url: `${baseUrl}${locale}${page}`,
+      lastModified: new Date(),
+      changeFrequency: (page === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
+      priority: page === '' ? 1.0 : (page === '/founders' ? 0.9 : 0.8),
+    }))
+  )
 
   const blogRoutes = locales.flatMap(locale => 
     blogPosts.map(post => ({
@@ -51,5 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  return [...staticRoutes, ...utilityRoutes, ...blogRoutes]
+  return [...staticRoutes, ...blogRoutes]
 }
+
