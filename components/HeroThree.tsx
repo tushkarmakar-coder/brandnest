@@ -232,7 +232,7 @@ export default function HeroThree() {
               className="inline-flex items-center gap-2 border border-[rgba(255,92,0,0.35)] bg-[rgba(255,92,0,0.08)] text-[#FF7A2E] text-[10px] tracking-[0.16em] uppercase px-4 py-2 mb-8 w-fit"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00] animate-pulse" />
-              India{`'`}s Premium Digital Agency
+              BrandNest - India{`'`}s Premium Digital Agency
             </motion.div>
 
             <motion.h1

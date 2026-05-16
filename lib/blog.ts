@@ -14,6 +14,88 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '6',
+    slug: 'ai-powered-video-production-india-2026',
+    title: 'AI-Powered Video Production in India: How to Create High-Converting Brand Films (2026)',
+    excerpt: 'Discover how AI is revolutionizing video editing and production for Indian brands. Learn about 4K commercial ads, Reels strategy, and AI-accelerated workflows.',
+    date: '2026-05-15',
+    author: 'BrandNest Team',
+    category: 'Video Production',
+    readTime: '10 min',
+    metaDescription: 'Complete guide to AI-powered video production in India. Learn about commercial ads, brand films, and how to create high-converting video content for your business.',
+    keywords: ['video editing agency India', 'commercial video ads', 'brand films India', 'AI video production'],
+    content: `
+# AI-Powered Video Production in India: How to Create High-Converting Brand Films (2026)
+
+In 2026, video is no longer just "content" — it's the primary way customers interact with your brand. With the rise of AI-powered video editing, the barrier to creating world-class commercial ads has disappeared.
+
+At **BrandNest**, we combine the artistic touch of professional editors with the speed of AI to deliver 4K brand films that don't just look good — they sell.
+
+## Why Video Editing & Production is Critical for Indian Brands
+
+- **90% of consumers** say video helps them make buying decisions.
+- **Social media algorithms** (Instagram, YouTube, TikTok) prioritize video over images.
+- **AI-accelerated workflows** allow us to deliver professional videos 3x faster than traditional agencies.
+
+## Our Video Services
+
+### 1. Commercial Ads & Brand Films
+High-impact videos that tell your story and build trust. Perfect for website headers and YouTube ads.
+
+### 2. AI-Enhanced Social Media Reels
+Fast-paced, engaging short-form content designed to go viral and drive brand awareness.
+
+### 3. Explainer & Product Videos
+Clearly communicate the value of your product or service with motion graphics and AI-generated voiceovers.
+
+## The BrandNest Video Process
+
+1. **Strategy & Scripting:** We define the hook, the story, and the call-to-action.
+2. **AI-Enhanced Production:** Using cutting-edge tools for color grading, sound design, and motion graphics.
+3. **4K Delivery:** High-resolution output optimized for every platform.
+
+**Ready to launch your video campaign?**
+[Chat with us on WhatsApp](https://wa.me/917894935653)
+`
+  },
+  {
+    id: '7',
+    slug: 'seo-google-ads-experts-india-2026',
+    title: 'Top SEO & Google Ads Experts in India: The 2026 Strategy for First-Page Rankings',
+    excerpt: 'Learn the exact strategies used by top SEO experts in India to rank on the first page of Google. Master Google Ads, Technical SEO, and Content Strategy.',
+    date: '2026-05-12',
+    author: 'BrandNest Team',
+    category: 'Search Marketing',
+    readTime: '12 min',
+    metaDescription: 'How to rank on the first page of Google in India. Expert tips on SEO, Google Ads, and performance marketing strategies for 2026.',
+    keywords: ['SEO experts India', 'Google Ads management India', 'first page Google ranking', 'performance marketing agency'],
+    content: `
+# Top SEO & Google Ads Experts in India: The 2026 Strategy for First-Page Rankings
+
+Ranking on the first page of Google is the holy grail of digital marketing. In 2026, the competition is fiercer than ever, but the rewards are also higher.
+
+## The 3 Pillars of First-Page Ranking
+
+### 1. Technical SEO & Core Web Vitals
+Your website must be fast, mobile-friendly, and error-free. We optimize Next.js sites to pass every Google performance audit.
+
+### 2. High-Authority Content (The Blog Strategy)
+Google loves depth. By creating detailed guides (like this one), you signal to Google that you are an authority in your field.
+
+### 3. ROI-Focused Google Ads
+Sometimes you need results today. Our Google Ads experts create high-converting campaigns that put you at the top of search results instantly while your organic SEO builds up.
+
+## Why Choose BrandNest for SEO?
+
+- **Data-Driven Approach:** We don't guess; we use analytics to drive decisions.
+- **AI Optimization:** We use AI tools to find "gap keywords" your competitors missed.
+- **Transparent Reporting:** You see exactly where your money is going and what results it's bringing.
+
+**Want to dominate Google Search?**
+[Get a Free SEO Audit](https://wa.me/917894935653)
+`
+  },
+  {
     id: '5',
     slug: 'build-b2b-marketplace-india',
     title: 'How We Built an IndiaMART-Style B2B Marketplace in India: Tech Stack, Cost & Timeline (2025)',

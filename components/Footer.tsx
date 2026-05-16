@@ -5,12 +5,12 @@ import { Instagram, Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin, G
 const QUICK_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Services', href: '#services' },
-  { label: 'Our Work', href: '#work' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Our Work', href: '/#work' },
   { label: 'Blog', href: '/blog' },
-  { label: 'AI Tools', href: '#ai' },
+  { label: 'AI Tools', href: '/#ai' },
   { label: 'Our Story', href: '/founders' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 const SUPPORT_LINKS = [
@@ -22,12 +22,12 @@ const SUPPORT_LINKS = [
 ]
 
 const SERVICES_LINKS = [
-  { label: 'Website Development', href: '#services' },
-  { label: 'Video Production', href: '#services' },
-  { label: 'Commercial Ads', href: '#services' },
-  { label: 'AI Integration', href: '#services' },
-  { label: 'Brand Identity', href: '#services' },
-  { label: 'SEO & Content', href: '#services' },
+  { label: 'Website Development', href: '/#services' },
+  { label: 'Video Production', href: '/#services' },
+  { label: 'Commercial Ads', href: '/#services' },
+  { label: 'AI Integration', href: '/#services' },
+  { label: 'Brand Identity', href: '/#services' },
+  { label: 'SEO & Content', href: '/#services' },
 ]
 
 const SOCIALS = [
@@ -139,7 +139,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={14} className="text-[#FF5C00] mt-0.5 flex-shrink-0" />
                 <span className="text-[13px] text-[rgba(245,245,245,0.5)] leading-[1.7] font-body">
-                  Noida, India<br />(Serving Pan India and Global Remotely)
+                  Sec-16B, Noida Extension, India<br />(Serving Pan India & Global)
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -170,9 +170,9 @@ export default function Footer() {
             Results-Driven. Brand-Obsessed. Made in India. 🇮🇳
           </p>
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 order-1 md:order-3">
-            <a href="https://tushkarmakar.vercel.app/client" target="_blank" rel="noopener noreferrer"
+            <a href="https://brandnestagency.vercel.app" target="_blank" rel="noopener noreferrer"
               className="text-[12px] text-[#FF5C00] hover:text-[#FF7A2E] font-bold tracking-wide transition-all border border-[rgba(255,92,0,0.2)] px-3 py-1 rounded-md hover:bg-[rgba(255,92,0,0.05)]">
-              Contact Developer
+              Developed by Brandnest - India{`'`}s First AI Powered Digital agency
             </a>
             <p className="text-[12px] text-[rgba(245,245,245,0.3)] font-body">
               Made with {`♥`} in India

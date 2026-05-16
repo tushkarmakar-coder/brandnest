@@ -16,7 +16,8 @@ export async function POST(req: NextRequest) {
     // Send via Resend email API
     if (process.env.RESEND_API_KEY) {
       try {
-        const response = await fetch('https://api.resend.com/emails', {
+        // 1. Send notification to ADMIN
+        const adminResponse = await fetch('https://api.resend.com/emails', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
@@ -25,9 +26,9 @@ export async function POST(req: NextRequest) {
           body: JSON.stringify({
             from: 'BrandNest <onboarding@resend.dev>',
             to: process.env.CONTACT_EMAIL || 'hello@brandnest.in',
-            subject: `New Inquiry for BrandNest — ${name}`,
+            subject: `🚀 New Lead: ${name} — ${service || 'General Inquiry'}`,
             html: `
-              <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; background: #111111;">
+              <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; background: #111111; color: #F5F5F5;">
                 <div style="background: #111111; padding: 24px 28px; border-bottom: 2px solid #FF5C00;">
                   <h2 style="color: #FF5C00; margin: 0; font-size: 22px; font-weight: bold;">🚀 New Inquiry for BrandNest</h2>
                   <p style="color: rgba(245,245,245,0.5); margin: 6px 0 0; font-size: 12px;">${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
@@ -43,47 +44,65 @@ export async function POST(req: NextRequest) {
                   </table>
                 </div>
                 <div style="background: #1A1A1A; padding: 16px 28px; text-align: center; border-top: 1px solid rgba(255,92,0,0.1);">
-                  <p style="margin: 0; color: rgba(245,245,245,0.4); font-size: 11px;">BrandNest — AI-Powered Digital Agency</p>
+                  <p style="margin: 0; color: rgba(245,245,245,0.4); font-size: 11px;">Developed by Brandnest — India's First AI Powered Digital Agency</p>
                 </div>
               </div>
             `
           })
         })
 
-        if (response.ok) {
-          emailSent = true
-        } else {
-          const error = await response.text()
-          console.error('Resend API error:', error)
+        if (adminResponse.ok) emailSent = true
+
+        // 2. Send "Thank You" to CLIENT (User)
+        if (email) {
+          await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              from: 'BrandNest <onboarding@resend.dev>',
+              to: email,
+              subject: `Thank you for reaching out to BrandNest!`,
+              html: `
+                <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; background: #111111; color: #F5F5F5; border: 1px solid rgba(255,92,0,0.15);">
+                  <div style="padding: 40px 30px; text-align: center; background: linear-gradient(180deg, rgba(255,92,0,0.05) 0%, transparent 100%);">
+                    <div style="margin-bottom: 24px; color: #FF5C00; font-size: 40px;">✓</div>
+                    <h1 style="color: #F5F5F5; margin: 0 0 10px; font-size: 24px; font-weight: 800; letter-spacing: -0.02em;">We've Received Your Request!</h1>
+                    <p style="color: rgba(245,245,245,0.6); margin: 0; font-size: 14px; line-height: 1.6;">Hi ${name}, thank you for choosing BrandNest. Our team is reviewing your requirements for <strong>${service || 'your project'}</strong>.</p>
+                  </div>
+                  
+                  <div style="padding: 0 30px 40px;">
+                    <div style="background: rgba(255,92,0,0.05); border: 1px border(255,92,0,0.1); padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+                      <p style="margin: 0 0 10px; color: #FF7A2E; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Next Steps</p>
+                      <p style="margin: 0; color: rgba(245,245,245,0.8); font-size: 13px; line-height: 1.6;">A specialist will call you at <strong>${phone}</strong> within the next 2 hours to discuss the timeline and strategy. We can't wait to build something remarkable with you.</p>
+                    </div>
+
+                    <div style="text-align: center;">
+                      <p style="color: rgba(245,245,245,0.4); font-size: 13px; margin-bottom: 20px;">Need an instant response?</p>
+                      <a href="https://wa.me/917894935653?text=Hi, I just filled out the inquiry form." style="display: inline-block; background: #25D366; color: #FFFFFF; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px;">Message us on WhatsApp</a>
+                    </div>
+                  </div>
+
+                  <div style="background: #1A1A1A; padding: 20px 30px; text-align: center; border-top: 1px solid rgba(255,92,0,0.1);">
+                    <p style="margin: 0 0 4px; color: #FF5C00; font-weight: 700; font-size: 12px;">BrandNest Digital Agency</p>
+                    <p style="margin: 0; color: rgba(245,245,245,0.3); font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Developed by Brandnest — India's First AI Powered Digital Agency</p>
+                    <p style="margin: 10px 0 0; color: rgba(245,245,245,0.2); font-size: 9px;">Noida Extension Sec-16B, India • 201308</p>
+                  </div>
+                </div>
+              `
+            })
+          })
         }
       } catch (emailError) {
         console.error('Email sending error:', emailError)
       }
     }
 
-    // Console log for backup
-    console.log('📬 New Lead Received:', {
-      name,
-      phone,
-      email,
-      company,
-      service,
-      message,
-      timestamp: new Date().toISOString(),
-      emailSent
-    })
-
-    // Send WhatsApp notification to admin
-    const whatsappMessage = `🚀 *New Inquiry - BrandNest*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email || 'N/A'}\n*Company:* ${company || 'N/A'}\n*Service:* ${service || 'N/A'}\n*Message:* ${message || 'N/A'}`
-    
-    if (process.env.NEXT_PUBLIC_WHATSAPP) {
-      // Note: WhatsApp API would go here if you have Twilio or similar
-      console.log('WhatsApp would be sent to:', process.env.NEXT_PUBLIC_WHATSAPP)
-    }
-
     return NextResponse.json({ 
       success: true, 
-      message: 'Request received! We will call you within 2 hours. You can also message us on WhatsApp for instant response.' 
+      message: 'Request received! We will call you within 2 hours. Check your email for confirmation.' 
     })
   } catch (error) {
     console.error('Contact form error:', error)

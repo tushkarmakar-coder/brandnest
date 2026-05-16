@@ -16,6 +16,8 @@ import FounderTeaser from '@/components/FounderTeaser'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: "BrandNest | AI Powered Marketing & Website Development",
+  description: "AI Websites, Marketing & Branding for Startups. Starting ₹25k. Grow your business online fast.",
   alternates: {
     canonical: 'https://brandnestagency.vercel.app',
     languages: {
@@ -33,59 +35,78 @@ export default function Home() {
       {
         '@type': 'LocalBusiness',
         '@id': 'https://brandnestagency.vercel.app/#business',
-        name: 'BrandNest',
-        description: 'BrandNest is an AI-powered digital agency building B2B marketplaces, multi-vendor platforms, SaaS dashboards, and full-stack websites for Indian founders.',
+        name: 'BrandNest Digital Agency',
+        description: "AI Websites, Marketing & Branding for Startups. Starting ₹25k. Websites, SEO, Ads & AI Tools. Grow your business online fast.",
         url: 'https://brandnestagency.vercel.app',
         telephone: '+91-7894935653',
         email: 'brandnest.team@gmail.com',
         address: { 
           '@type': 'PostalAddress', 
-          addressLocality: 'Noida', 
+          streetAddress: 'Sec-16B, Noida Extension',
+          addressLocality: 'Greater Noida', 
           addressRegion: 'Uttar Pradesh', 
+          postalCode: '201308',
           addressCountry: 'IN' 
         },
-        geo: { '@type': 'GeoCoordinates', latitude: '28.6139', longitude: '77.2090' },
+        geo: { '@type': 'GeoCoordinates', latitude: '28.5996', longitude: '77.4475' },
         openingHours: 'Mo-Sa 09:00-19:00',
-        priceRange: '₹₹',
-        areaServed: ['Delhi', 'Noida', 'Gurgaon', 'Faridabad', 'India'],
+        priceRange: '₹25,000 - ₹5,000,000',
+        areaServed: ['Delhi', 'Noida', 'Gurgaon', 'Faridabad', 'India', 'United States', 'United Kingdom', 'United Arab Emirates', 'Canada', 'Australia', 'Singapore', 'Worldwide'],
         sameAs: [
           'https://instagram.com/thebrandnestofficial', 
+          'https://linkedin.com/company/brandnest',
           'https://linktr.ee/thebrandnestofficial'
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Digital Services',
+          name: 'Digital Agency Services & Solutions',
           itemListElement: [
             { 
               '@type': 'Offer', 
               itemOffered: { 
                 '@type': 'Service', 
-                name: 'Website Development', 
-                description: 'Full stack React and Next.js website development' 
+                name: 'Custom Website Development', 
+                description: 'High-performance, custom full-stack website development using React, Next.js, and modern web technologies for businesses, startups, and enterprises.' 
               } 
             },
             { 
               '@type': 'Offer', 
               itemOffered: { 
                 '@type': 'Service', 
-                name: 'Video Production', 
-                description: 'AI-enhanced brand films and commercial video ads' 
+                name: 'B2B Marketplace & Multi-Vendor Platforms', 
+                description: 'Custom B2B marketplaces, multi-vendor e-commerce platforms, and complex transactional web applications tailored for Indian and global founders.' 
               } 
             },
             { 
               '@type': 'Offer', 
               itemOffered: { 
                 '@type': 'Service', 
-                name: 'Commercial Ads', 
-                description: 'Google, Meta and YouTube performance campaigns' 
+                name: 'SaaS Dashboard Development', 
+                description: 'Bespoke SaaS web application development, custom admin panels, analytics dashboards, and scalable cloud software solutions.' 
               } 
             },
             { 
               '@type': 'Offer', 
               itemOffered: { 
                 '@type': 'Service', 
-                name: 'AI Integration', 
-                description: 'Custom AI tools, chatbots and workflow automation' 
+                name: 'Cloud Kitchen & Restaurant Ordering Platforms', 
+                description: 'Swiggy-style direct food ordering platforms, restaurant websites, and cloud kitchen management web apps with zero commission structures.' 
+              } 
+            },
+            { 
+              '@type': 'Offer', 
+              itemOffered: { 
+                '@type': 'Service', 
+                name: 'Commercial Video Production & Brand Films', 
+                description: 'End-to-end commercial video production, AI-enhanced brand films, promotional video ads, and high-converting video marketing assets.' 
+              } 
+            },
+            { 
+              '@type': 'Offer', 
+              itemOffered: { 
+                '@type': 'Service', 
+                name: 'Performance Marketing & Commercial Ads', 
+                description: 'ROI-focused digital advertising campaigns across Google Ads, Meta (Facebook & Instagram) Ads, and YouTube to drive lead generation and sales.' 
               } 
             },
             { 
@@ -93,9 +114,17 @@ export default function Home() {
               itemOffered: { 
                 '@type': 'Service', 
                 name: 'Influencer Marketing', 
-                description: 'Data-driven influencer partnerships and campaign management' 
+                description: 'Data-driven influencer marketing campaigns, creator partnerships, and brand collaborations for maximum reach and engagement.' 
               } 
             },
+            { 
+              '@type': 'Offer', 
+              itemOffered: { 
+                '@type': 'Service', 
+                name: 'AI Tool Integration & Automation', 
+                description: 'Custom AI workflow automation, chatbot development, and generative AI tool integration to increase business efficiency.' 
+              } 
+            }
           ]
         }
       },
