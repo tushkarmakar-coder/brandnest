@@ -49,25 +49,19 @@ const PORTFOLIO_ITEMS = [
   {
     id: 5,
     title: 'Surprise Planner',
-    subtitle: 'Romantic Event Planning Platform',
-    problem: 'Couples and loved ones struggled to plan memorable special occasions - anniversaries, proposals, birthdays. Manual coordination across vendors, budgeting confusion, and no way to capture and share those special moments on social media.',
-    solution: 'Built a full-stack event planning platform with 500+ pre-vetted vendor marketplace, real-time couple collaboration dashboard, AI-powered social media integration for viral content, automated video montage creation, and budget tracking.',
-    result: '500+ events planned. 4.8/5 rating. 63% repeat customers. 5+ active couples monthly. Hundreds of memorable moments created and shared.',
-    image: 'bg-gradient-to-br from-purple-600 to-pink-600',
-    color: '#9333EA',
+    subtitle: 'Digital Surprises, Lovey-Dovey Websites & Animated Stories',
+    problem: 'Logon ko apne partners ke liye traditional gifts ke alawa kuch unique aur emotional chahiye tha — jaise birthdays aur anniversaries ke liye personalized digital surprises, par unke paas technical skills nahi the.',
+    solution: 'Humne custom "lovey-dovey" websites, cute animated love story videos, aur personalized digital surprise links banaye jo seedha dil ko chhu jayein.',
+    result: '50+ personalized digital surprises delivered successfully. 100% emotional impact and tears of joy. Highly loved and shared among couples.',
+    image: 'bg-gradient-to-br from-pink-500 to-rose-500',
+    color: '#E11D48',
     romanticFeatures: [
-      'Wife surprise & reconciliation planning',
-      'Girlfriend birthday special packages',
-      'Romantic dinner coordination',
-      'Proposal planning with expert guidance',
-      'Anniversary celebration templates',
-      'Viral content creation tools (TikTok, Instagram Reels)',
-      'AI video montage from friends/family',
-      'Social media calendar & hashtag generator',
-      'Couples collaboration dashboard',
-      'Vendor comparison & booking',
-      'Budget management & expense tracking',
-      'Event countdown & sharing features'
+      'Custom Lovey-Dovey Websites',
+      'Cute Animated Love Story Videos',
+      'Personalized Birthday Surprise Links',
+      'Interactive Relationship Timelines',
+      'Digital Memory Vaults',
+      'Secret QR Code Reveals'
     ]
   },
   {
