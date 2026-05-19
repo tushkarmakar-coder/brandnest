@@ -71,7 +71,17 @@ const FounderProfiles = () => {
                     The Engineer & Creator 🛠️
                   </motion.div>
                   
-                  <h3 className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight group-hover:text-[#FF5C00] transition-colors">Tushar Karmakar</h3>
+                  <a 
+                    href="https://tushkarmakar.vercel.app/portfolio" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-block hover:-translate-y-1 transition-transform cursor-pointer"
+                  >
+                    <h3 className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight group-hover:text-[#FF5C00] transition-colors flex items-center gap-2">
+                      Tushar Karmakar
+                      <span className="text-[#FF5C00] text-2xl opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+                    </h3>
+                  </a>
                   <p className="text-lg font-bold text-orange-400/80 mb-6">Co-Founder</p>
                   
                   <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-10 font-medium">
