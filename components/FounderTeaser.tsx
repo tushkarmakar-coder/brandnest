@@ -50,7 +50,7 @@ const FounderTeaser = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative w-full max-w-[500px] lg:w-1/2"
           >
-            <div className="relative aspect-[4/5] w-full mx-auto">
+            <div className="relative w-full mx-auto min-h-[400px] sm:min-h-[500px] aspect-[4/5]">
               {/* Premium Glow Base */}
               <div className="absolute -inset-4 bg-[#FF5C00]/20 rounded-full blur-[100px] animate-pulse" />
               

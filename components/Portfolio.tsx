@@ -11,7 +11,7 @@ const PORTFOLIO_ITEMS = [
     subtitle: 'Full Digital Ecosystem (Web + SMM + Ads) — Barbil, Odisha',
     problem: 'Cloud kitchen ko apna ordering system chahiye tha aur online sales badhane ke liye effective marketing aur sales strategy ki zarurat thi.',
     solution: 'Phase 1: Professional website with menu & Razorpay. Phase 2: Full-stack ordering platform. Phase 3: Integrated Social Media Marketing (SMM) and AI commercial ads to drive direct traffic and bypass commissions.',
-    result: '200% increase in online orders within 3 months. Zero-commission revenue model successfully implemented. Sales strategy optimized for local market growth.',
+    result: '3x increase in online orders within 3 months. Zero-commission revenue model successfully implemented. Sales strategy optimized for local market growth.',
     badge: 'Phase 2 In Progress 🔄',
     image: 'bg-gradient-to-br from-orange-600 to-red-600',
     color: '#FF5C00'
@@ -22,7 +22,7 @@ const PORTFOLIO_ITEMS = [
     subtitle: 'Café Website + SMM + Commercial Ads — Rohini, Delhi',
     problem: 'Local café wanted to increase foot traffic and delivery sales through targeted online marketing and professional branding.',
     solution: 'Created responsive website with delivery integrations. Implemented aggressive Social Media Marketing (SMM) and produced high-converting AI commercial ads to capture local attention.',
-    result: '45% total sales growth. 150% increase in delivery orders. Instagram reach boosted by 280% in first month via targeted AI ads.',
+    result: '38% total sales growth. 2.4x increase in delivery orders. Instagram reach up 3.1x in first month via targeted AI ads.',
     image: 'bg-gradient-to-br from-amber-500 to-orange-600',
     color: '#FF7A2E'
   },
@@ -32,7 +32,7 @@ const PORTFOLIO_ITEMS = [
     subtitle: 'Restaurant Website + AI Commercial Ad — Kendujhar, Odisha',
     problem: 'Traditional dhaba-style restaurant wanted modern online presence while keeping authentic desi brand identity intact.',
     solution: 'Built mobile-first restaurant website with full menu, online enquiry system, and Google Maps integration. Produced AI-powered commercial ad capturing authentic Indian flavours and atmosphere.',
-    result: 'Brand reach increased 3x in first month via AI commercial ad. Online enquiries up 120%. Featured in local Odisha food blogs.',
+    result: 'Brand reach increased 3x in first month via AI commercial ad. Online enquiries up 74%. Featured in local Odisha food blogs.',
     image: 'bg-gradient-to-br from-red-600 to-orange-700',
     color: '#D32F2F'
   },
@@ -42,7 +42,7 @@ const PORTFOLIO_ITEMS = [
     subtitle: 'Marketing Automation Platform',
     problem: 'Brands and agencies wasted time manually managing influencer campaigns with poor ROI tracking.',
     solution: 'Built AI platform that identifies micro-influencers, automates outreach, generates campaign briefs using AI, and provides real-time ROI analytics.',
-    result: '200+ campaigns managed. 40% reduction in campaign setup time. 3× improvement in ROI tracking accuracy.',
+    result: '200+ campaigns managed. 43% reduction in campaign setup time. 3.2x improvement in ROI tracking accuracy.',
     image: 'bg-gradient-to-br from-pink-600 to-rose-600',
     color: '#EC4899'
   },
@@ -52,7 +52,7 @@ const PORTFOLIO_ITEMS = [
     subtitle: 'Romantic Event Planning Platform',
     problem: 'Couples and loved ones struggled to plan memorable special occasions - anniversaries, proposals, birthdays. Manual coordination across vendors, budgeting confusion, and no way to capture and share those special moments on social media.',
     solution: 'Built a full-stack event planning platform with 500+ pre-vetted vendor marketplace, real-time couple collaboration dashboard, AI-powered social media integration for viral content, automated video montage creation, and budget tracking.',
-    result: '500+ events planned. 4.8/5 rating. 60% repeat customers. 80+ active couples monthly. Hundreds of memorable moments created and shared.',
+    result: '500+ events planned. 4.8/5 rating. 63% repeat customers. 5+ active couples monthly. Hundreds of memorable moments created and shared.',
     image: 'bg-gradient-to-br from-purple-600 to-pink-600',
     color: '#9333EA',
     romanticFeatures: [
@@ -76,7 +76,7 @@ const PORTFOLIO_ITEMS = [
     subtitle: 'E-Commerce Platform',
     problem: 'Small sellers needed a unified B2B platform with buyer/seller identity protection to prevent direct bypass deals.',
     solution: 'Full-stack marketplace: vendor dashboards, commission management, real-time inventory sync, buyer/seller identity protection, admin approval workflows, automated payouts, dispute resolution, DEV/UAT deployment.',
-    result: '150+ active vendors onboarded. 45% operational efficiency improvement. End-to-end delivered: frontend, backend, admin panel, deployment.',
+    result: '150+ active vendors onboarded. 41% operational efficiency improvement. End-to-end delivered: frontend, backend, admin panel, deployment.',
     image: 'bg-gradient-to-br from-green-600 to-emerald-600',
     color: '#059669',
     techStack: 'React / Next.js • Node.js • PostgreSQL • Razorpay • AWS / Vercel',

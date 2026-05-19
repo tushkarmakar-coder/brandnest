@@ -42,7 +42,7 @@ const FounderProfiles = () => {
               <div className="flex flex-col md:flex-row gap-12 items-center md:items-start text-center md:text-left">
                 
             {/* Image Section with 3D Float */}
-            <div className="relative w-full max-w-[240px] aspect-[3/4] flex-shrink-0 mx-auto md:mx-0">
+            <div className="relative w-full max-w-[240px] min-h-[320px] aspect-[3/4] flex-shrink-0 mx-auto md:mx-0">
               <motion.div 
                 whileHover={{ rotateY: 15, rotateX: -5, scale: 1.05 }}
                 className="relative w-full h-full perspective-1000"
@@ -107,7 +107,7 @@ const FounderProfiles = () => {
               <div className="flex flex-col md:flex-row gap-12 items-center md:items-start text-center md:text-left">
                 
                 {/* Image Section with 3D Float */}
-                <div className="relative w-full max-w-[240px] aspect-[3/4] flex-shrink-0 mx-auto md:mx-0">
+                <div className="relative w-full max-w-[240px] min-h-[320px] aspect-[3/4] flex-shrink-0 mx-auto md:mx-0">
                   <motion.div 
                     whileHover={{ rotateY: -15, rotateX: -5, scale: 1.05 }}
                     className="relative w-full h-full perspective-1000"

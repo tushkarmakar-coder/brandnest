@@ -26,7 +26,7 @@ export default function HeroThree() {
 
     // Detect mobile for optimization
     const isMobile = window.innerWidth < 768
-    
+
     // RENDERER
     const renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current,
@@ -173,7 +173,7 @@ export default function HeroThree() {
 
       const s = 1 + Math.sin(t * 2.5) * 0.15
       sphere.scale.setScalar(s)
-      ; (sphere.material as THREE.MeshBasicMaterial).opacity = 0.4 + Math.sin(t * 2.5) * 0.25
+        ; (sphere.material as THREE.MeshBasicMaterial).opacity = 0.4 + Math.sin(t * 2.5) * 0.25
       pmat.opacity = 0.45 + Math.sin(t * 0.8) * 0.1
 
       renderer.render(scene, camera)
@@ -291,28 +291,26 @@ export default function HeroThree() {
             >
               <div className="flex -space-x-3">
                 {[
-                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
-                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-                  "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop"
+                  "/founders/tushar.jpg",
+                  "/founders/founder2.jpg"
                 ].map((src, i) => (
                   <div key={i} className="relative w-10 h-10 rounded-full border-2 border-[#111] bg-[#1A1A1A] flex items-center justify-center overflow-hidden">
-                    <Image 
-                      src={src} 
-                      alt="Founder" 
-                      fill 
-                      className="object-cover grayscale hover:grayscale-0 transition-all" 
+                    <Image
+                      src={src}
+                      alt="Founder"
+                      fill
+                      className="object-cover grayscale hover:grayscale-0 transition-all"
                     />
                   </div>
                 ))}
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-0.5">
-                  {[1,2,3,4,5].map(i => (
+                  {[1, 2, 3, 4, 5].map(i => (
                     <span key={i} className="text-[#FF5C00] text-xs">★</span>
                   ))}
                 </div>
-                <p className="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Trusted by 20+ Founders & VCs</p>
+                <p className="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Trusted by 20+ Business Owners Across India</p>
               </div>
             </motion.div>
           </div>

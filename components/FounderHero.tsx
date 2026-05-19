@@ -119,7 +119,7 @@ const FounderHero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
-              className="relative aspect-[3/4] max-w-[500px] mx-auto"
+              className="relative min-h-[400px] sm:min-h-[500px] aspect-[3/4] max-w-[500px] mx-auto"
             >
               {/* Premium Luxury Frame for Hero (Cleaned of all overlaps) */}
               <motion.div 

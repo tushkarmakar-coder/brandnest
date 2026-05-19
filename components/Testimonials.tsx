@@ -9,31 +9,49 @@ const TESTIMONIALS = [
     role: "Owner, Littiwale — Cloud Kitchen, Barbil, Odisha",
     initials: "MK",
     service: "Full Digital Ecosystem (Web + Ads + SMM)",
-    rating: 5
+    rating: 5,
+    link: "https://www.instagram.com/littiwaleofficial",
+    linkLabel: "@littiwaleofficial"
   },
   {
-    quote: "Pehle sirf walk-ins the. BrandNest ne website banayi aur social media marketing/commercial ads se online footfall aur delivery orders 45% badha di. Sales grow karne ka inka approach aur execution bilkul perfect hai.",
+    quote: "Pehle sirf walk-ins the. BrandNest ne website banayi aur social media marketing/commercial ads se online footfall aur delivery orders 45% badha di.",
     name: "Shubham Sharma",
     role: "Owner, Chaiwale Café — Rohini, Delhi",
     initials: "SS",
     service: "Web Dev + SMM + Commercial Ads",
-    rating: 5
+    rating: 5,
+    link: "https://www.instagram.com/chaiwaleofficial",
+    linkLabel: "@chaiwaleofficial"
   },
   {
-    quote: "Desi Chulha ka brand identity aur website dono BrandNest ne banaye. AI commercial ad ne humara reach 3x kar diya pehle month mein hi. Authentic Indian feel perfectly capture hua.",
+    quote: "Desi Chulha ka brand identity aur website dono BrandNest ne banaye. AI commercial ad ne humara reach 3x kar diya pehle month mein hi.",
     name: "Desi Chulha Owner",
     role: "Owner, Desi Chulha — Restaurant, Kendujhar, Odisha",
     initials: "DC",
     service: "AI Commercial Ad + Website",
-    rating: 5
+    rating: 5,
+    link: null,
+    linkLabel: null
   },
   {
     quote: "AI influencer campaign tool ne mera kaam completely automate kar diya. Outreach, ROI tracking, brief generation — sab kuch. 3x faster workflow aur clients bhi zyada impress hote hain.",
     name: "Simran Sharma",
-    role: "Influencer & Founder, AI Influencer Campaign Tool",
+    role: "Influencer & Content Creator",
     initials: "SS",
     service: "AI Tools Development",
-    rating: 5
+    rating: 5,
+    link: "https://www.instagram.com/yourtrendygirl",
+    linkLabel: "@yourtrendygirl"
+  },
+  {
+    quote: "BrandNest ne FireSlab aur Innmotek dono ke liye kamaal ka kaam kiya — AI tools, automation workflows, aur digital strategy sab ek saath. Delivery fast thi aur quality top-notch.",
+    name: "Gaurav Agarwal",
+    role: "Founder, FireSlab & Innmotek",
+    initials: "GA",
+    service: "Website Development, Redesign & Maintenance",
+    rating: 5,
+    link: null,
+    linkLabel: null
   },
   {
     quote: "WareXhub ka poora B2B marketplace — vendor dashboards, commission system, buyer/seller protection, admin approval panel, DEV/UAT deployment — BrandNest ne end-to-end flawlessly deliver kiya.",
@@ -41,7 +59,9 @@ const TESTIMONIALS = [
     role: "Founder & CEO, WareXhub",
     initials: "RK",
     service: "Marketplace Development",
-    rating: 5
+    rating: 5,
+    link: null,
+    linkLabel: null
   }
 ];
 
@@ -93,6 +113,16 @@ export default function Testimonials() {
                   <p className="text-[11px] text-[rgba(245,245,245,0.4)] font-medium">
                     {testimonial.role}
                   </p>
+                  {testimonial.link && (
+                    <a
+                      href={testimonial.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] text-[#FF5C00] opacity-70 hover:opacity-100 transition-opacity mt-1 block"
+                    >
+                      {testimonial.linkLabel} ↗
+                    </a>
+                  )}
                   <p className="text-[10px] text-[#FF5C00] uppercase tracking-wider font-bold mt-1">
                     {testimonial.service}
                   </p>
