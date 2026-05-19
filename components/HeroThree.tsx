@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 
 export default function HeroThree() {
   const t_hero = useTranslations('Hero')
@@ -283,36 +282,24 @@ export default function HeroThree() {
               </a>
             </motion.div>
 
-            <motion.div
+            <motion.a
+              href="#testimonials"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
-              className="mt-12 flex items-center gap-4"
+              className="group mt-12 flex items-center gap-3 w-fit cursor-pointer"
             >
-              <div className="flex -space-x-3">
-                {[
-                  "/founders/tushar.jpg",
-                  "/founders/founder2.jpg"
-                ].map((src, i) => (
-                  <div key={i} className="relative w-10 h-10 rounded-full border-2 border-[#111] bg-[#1A1A1A] flex items-center justify-center overflow-hidden">
-                    <Image
-                      src={src}
-                      alt="Founder"
-                      fill
-                      className="object-cover grayscale hover:grayscale-0 transition-all"
-                    />
-                  </div>
-                ))}
-              </div>
               <div className="flex flex-col">
-                <div className="flex gap-0.5">
+                <div className="flex gap-0.5 mb-1 group-hover:scale-105 transition-transform duration-300 origin-left">
                   {[1, 2, 3, 4, 5].map(i => (
                     <span key={i} className="text-[#FF5C00] text-xs">★</span>
                   ))}
                 </div>
-                <p className="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Trusted by 20+ Business Owners Across India</p>
+                <p className="text-[11px] text-gray-500 font-bold uppercase tracking-widest group-hover:text-[#FF5C00] transition-colors duration-300 flex items-center gap-1.5">
+                  {t_hero('trusted')} <span className="transform group-hover:translate-x-1 transition-transform duration-300 text-[#FF5C00]">→</span>
+                </p>
               </div>
-            </motion.div>
+            </motion.a>
           </div>
         </div>
       </div>

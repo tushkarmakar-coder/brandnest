@@ -90,7 +90,7 @@ import { useTranslations } from 'next-intl'
 export default function Testimonials() {
   const t = useTranslations('Sections')
   return (
-    <section className="bg-[#111111] py-[100px] px-6 md:py-[120px] border-t border-[rgba(255,92,0,0.1)]">
+    <section id="testimonials" className="bg-[#111111] py-[100px] px-6 md:py-[120px] border-t border-[rgba(255,92,0,0.1)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
