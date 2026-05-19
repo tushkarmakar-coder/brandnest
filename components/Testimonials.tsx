@@ -4,7 +4,7 @@ import { Star } from 'lucide-react'
 
 const TESTIMONIALS = [
   {
-    quote: "BrandNest ne hamare cloud kitchen ka poora digital setup kiya — website, Razorpay, SMM aur AI ads sab. 3 mahine mein online orders 200% badh gaye. Sales badhane ki strategy aur technical support amazing hai.",
+    quote: "BrandNest built our entire digital ecosystem for the cloud kitchen—including the website, Razorpay integration, SMM, and AI ads. Online orders grew by 200% in 3 months. Their sales strategy and technical support are amazing.",
     name: "Manju Karmakar",
     role: "Owner, Littiwale — Cloud Kitchen, Barbil, Odisha",
     initials: "MK",
@@ -14,7 +14,7 @@ const TESTIMONIALS = [
     linkLabel: "@littiwaleofficial"
   },
   {
-    quote: "Pehle sirf walk-ins the. BrandNest ne website banayi aur social media marketing/commercial ads se online footfall aur delivery orders 45% badha di.",
+    quote: "We used to only get walk-in customers. BrandNest built our website and managed our social media marketing and commercial ads, increasing online footfall and delivery orders by 45%.",
     name: "Shubham Sharma",
     role: "Owner, Chaiwale Café — Rohini, Delhi",
     initials: "SS",
@@ -24,7 +24,7 @@ const TESTIMONIALS = [
     linkLabel: "@chaiwaleofficial"
   },
   {
-    quote: "Desi Chulha ka brand identity aur website dono BrandNest ne banaye. AI commercial ad ne humara reach 3x kar diya pehle month mein hi.",
+    quote: "BrandNest created the entire brand identity and website for Desi Chulha. Their custom AI-powered commercial ad tripled our organic reach in the very first month.",
     name: "Desi Chulha Owner",
     role: "Owner, Desi Chulha — Restaurant, Kendujhar, Odisha",
     initials: "DC",
@@ -34,7 +34,7 @@ const TESTIMONIALS = [
     linkLabel: null
   },
   {
-    quote: "AI influencer campaign tool ne mera kaam completely automate kar diya. Outreach, ROI tracking, brief generation — sab kuch. 3x faster workflow aur clients bhi zyada impress hote hain.",
+    quote: "The AI influencer campaign tool completely automated my workflow—from outreach and brief generation to real-time ROI tracking. Work flows 3x faster, and my clients are highly impressed.",
     name: "Simran Sharma",
     role: "Influencer & Content Creator",
     initials: "SS",
@@ -44,7 +44,7 @@ const TESTIMONIALS = [
     linkLabel: "@yourtrendygirl"
   },
   {
-    quote: "BrandNest ne FireSlab aur Innmotek dono ke liye kamaal ka kaam kiya — AI tools, automation workflows, aur digital strategy sab ek saath. Delivery fast thi aur quality top-notch.",
+    quote: "BrandNest did an outstanding job for both FireSlab and Innmotek—delivering AI tools, automation workflows, and digital strategy all in one go. Delivery was fast and the quality was top-notch.",
     name: "Gaurav Agarwal",
     role: "Founder, FireSlab & Innmotek",
     initials: "GA",
@@ -54,7 +54,7 @@ const TESTIMONIALS = [
     linkLabel: null
   },
   {
-    quote: "WareXhub ka poora B2B marketplace — vendor dashboards, commission system, buyer/seller protection, admin approval panel, DEV/UAT deployment — BrandNest ne end-to-end flawlessly deliver kiya.",
+    quote: "BrandNest flawlessly delivered the entire B2B marketplace for WareXhub end-to-end, including vendor dashboards, commission systems, buyer/seller protection, admin panels, and DEV/UAT deployment.",
     name: "Rohit Karmakar",
     role: "Founder & CEO, WareXhub",
     initials: "RK",
@@ -64,7 +64,7 @@ const TESTIMONIALS = [
     linkLabel: null
   },
   {
-    quote: "Kashmiri Organic Nuts ke liye BrandNest ne ek premium commercial ad shoot kiya with incredible brand collab. Visually stunning, fast execution aur aesthetics ekdum point par the. Growth aur reach dono massive mili.",
+    quote: "BrandNest shot a premium commercial ad campaign for Kashmiri Organic Nuts featuring an incredible brand collaboration. Visually stunning, fast turnaround, and the aesthetics were spot on. We saw a massive boost in reach and growth.",
     name: "Brand Team",
     role: "Kashmiri Organic Nuts",
     initials: "KN",
@@ -72,6 +72,16 @@ const TESTIMONIALS = [
     rating: 5,
     link: "https://www.instagram.com/reel/DN7jMkjEqY7/?igsh=dXA3YWNtdWdrOHQw",
     linkLabel: "Watch Reel"
+  },
+  {
+    quote: "For our anniversary, I reached out to BrandNest to surprise my husband. They transformed our entire love story into a cute, animated video/reel. We both broke into happy tears watching it—it was such a beautiful and emotional surprise!",
+    name: "Divya Jain",
+    role: "Anniversary Surprise Client",
+    initials: "DJ",
+    service: "Cute Animated Love Story Video",
+    rating: 5,
+    link: "https://www.instagram.com/reel/DU5RGN_ksou/?igsh=MXQ3MTVhNXU2MXQzbw==",
+    linkLabel: "Watch Surprise Reel"
   }
 ];
 
