@@ -14,7 +14,11 @@ const PORTFOLIO_ITEMS = [
     result: '3x increase in online orders within 3 months. Zero-commission revenue model successfully implemented. Sales strategy optimized for local market growth.',
     badge: 'Phase 2 In Progress 🔄',
     image: 'bg-gradient-to-br from-orange-600 to-red-600',
-    color: '#FF5C00'
+    color: '#FF5C00',
+    projectLinks: [
+      { label: 'Visit Website', url: 'https://littiwale-barbil.vercel.app' },
+      { label: 'Instagram (SMM)', url: 'https://www.instagram.com/littiwaleofficial' }
+    ]
   },
   {
     id: 2,
@@ -24,7 +28,11 @@ const PORTFOLIO_ITEMS = [
     solution: 'Created responsive website with delivery integrations. Implemented aggressive Social Media Marketing (SMM) and produced high-converting AI commercial ads to capture local attention.',
     result: '38% total sales growth. 2.4x increase in delivery orders. Instagram reach up 3.1x in first month via targeted AI ads.',
     image: 'bg-gradient-to-br from-amber-500 to-orange-600',
-    color: '#FF7A2E'
+    color: '#FF7A2E',
+    projectLinks: [
+      { label: 'Visit Website', url: 'https://chaiwale.vercel.app' },
+      { label: 'Instagram (SMM)', url: 'https://www.instagram.com/chaiwaleofficial' }
+    ]
   },
   {
     id: 3,
@@ -62,6 +70,10 @@ const PORTFOLIO_ITEMS = [
       'Interactive Relationship Timelines',
       'Digital Memory Vaults',
       'Secret QR Code Reveals'
+    ],
+    projectLinks: [
+      { label: 'Surprise Website', url: 'https://birthday-juhi.vercel.app/' },
+      { label: 'Reels Example', url: 'https://www.instagram.com/reel/DU5RGN_ksou/?igsh=MXQ3MTVhNXU2MXQzbw==' }
     ]
   },
   {
@@ -74,7 +86,10 @@ const PORTFOLIO_ITEMS = [
     image: 'bg-gradient-to-br from-green-600 to-emerald-600',
     color: '#059669',
     techStack: 'React / Next.js • Node.js • PostgreSQL • Razorpay • AWS / Vercel',
-    quote: 'The platform handles deal flow end-to-end — buyer and seller details stay protected to prevent direct bypass.'
+    quote: 'The platform handles deal flow end-to-end — buyer and seller details stay protected to prevent direct bypass.',
+    projectLinks: [
+      { label: 'Marketplace Link', url: '#', isConfidential: true }
+    ]
   },
   {
     id: 7,
@@ -84,7 +99,23 @@ const PORTFOLIO_ITEMS = [
     solution: 'Delivered end-to-end digital transformation. Redesigned their platforms for optimal user experience, integrated custom AI tools, and deployed robust business automation workflows.',
     result: 'Streamlined multi-brand operations with significantly reduced manual effort. Delivered high-performing, maintainable platforms with top-tier quality and fast turnaround.',
     image: 'bg-gradient-to-br from-indigo-600 to-blue-600',
-    color: '#4F46E5'
+    color: '#4F46E5',
+    projectLinks: [
+      { label: 'Redesign Link', url: '#', isConfidential: true }
+    ]
+  },
+  {
+    id: 8,
+    title: 'Kashmiri Organic Nuts (Aly Goni)',
+    subtitle: 'Commercial Ad & Brand Collaboration',
+    problem: 'The brand needed an aesthetic, high-converting commercial ad campaign featuring Aly Goni to capture premium organic food market attention.',
+    solution: 'Produced a cinema-grade commercial video ad, optimized for Instagram Reels and brand collaborations, showcasing product premium quality.',
+    result: 'Stunning commercial ad delivered. Highly engaged brand collaboration with Aly Goni. Boosted direct brand inquiries.',
+    image: 'bg-gradient-to-br from-amber-600 to-yellow-800',
+    color: '#D97706',
+    projectLinks: [
+      { label: 'Watch Reels Collaboration', url: 'https://www.instagram.com/reel/DN7jMkjEqY7/?igsh=dXA3YWNtdWdrOHQw' }
+    ]
   }
 ];
 
@@ -261,6 +292,39 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
+
+            {/* Project Links */}
+            {selectedItem.projectLinks && selectedItem.projectLinks.length > 0 && (
+              <div>
+                <h3 className="text-lg font-bold text-[#FF5C00] mb-3 flex items-center gap-2">
+                  <span className="inline-block w-1 h-6 bg-[#FF5C00]" />
+                  🔗 Live Links & Media
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {selectedItem.projectLinks.map((link: any, idx: number) => (
+                    link.isConfidential ? (
+                      <button
+                        key={idx}
+                        onClick={() => alert("This project is protected by a Non-Disclosure Agreement (NDA). Live links are confidential.")}
+                        className="px-4 py-2.5 bg-zinc-900/80 border border-zinc-700 hover:border-red-500 hover:bg-red-950/10 text-red-400 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+                      >
+                        🔒 {link.label} (Confidential)
+                      </button>
+                    ) : (
+                      <a
+                        key={idx}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2.5 bg-[#1A1A1A] border border-[rgba(255,92,0,0.3)] hover:border-[#FF5C00] hover:bg-[rgba(255,92,0,0.05)] text-[#FF7A2E] hover:text-[#FF5C00] rounded-lg text-xs font-bold transition-all flex items-center gap-1.5"
+                      >
+                        🌐 {link.label} ↗
+                      </a>
+                    )
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Quote */}
             {selectedItem.quote && (

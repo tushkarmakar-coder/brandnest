@@ -62,6 +62,16 @@ const TESTIMONIALS = [
     rating: 5,
     link: null,
     linkLabel: null
+  },
+  {
+    quote: "Kashmiri Organic Nuts ke liye BrandNest ne ek premium commercial ad shoot kiya with incredible brand collab. Visually stunning, fast execution aur aesthetics ekdum point par the. Growth aur reach dono massive mili.",
+    name: "Brand Team",
+    role: "Kashmiri Organic Nuts",
+    initials: "KN",
+    service: "Commercial Ads & Brand Collab",
+    rating: 5,
+    link: "https://www.instagram.com/reel/DN7jMkjEqY7/?igsh=dXA3YWNtdWdrOHQw",
+    linkLabel: "Watch Reel"
   }
 ];
 
