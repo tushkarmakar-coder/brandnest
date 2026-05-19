@@ -81,6 +81,16 @@ const PORTFOLIO_ITEMS = [
     color: '#059669',
     techStack: 'React / Next.js • Node.js • PostgreSQL • Razorpay • AWS / Vercel',
     quote: 'The platform handles deal flow end-to-end — buyer and seller details stay protected to prevent direct bypass.'
+  },
+  {
+    id: 7,
+    title: 'FireSlab & Innmotek',
+    subtitle: 'Website Development, Redesign & Maintenance',
+    problem: 'Both businesses required a unified digital strategy, performance-focused website redesigns, and the integration of automated workflows to scale operations efficiently.',
+    solution: 'Delivered end-to-end digital transformation. Redesigned their platforms for optimal user experience, integrated custom AI tools, and deployed robust business automation workflows.',
+    result: 'Streamlined multi-brand operations with significantly reduced manual effort. Delivered high-performing, maintainable platforms with top-tier quality and fast turnaround.',
+    image: 'bg-gradient-to-br from-indigo-600 to-blue-600',
+    color: '#4F46E5'
   }
 ];
 
