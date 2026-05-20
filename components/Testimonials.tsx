@@ -24,11 +24,11 @@ const TESTIMONIALS = [
     linkLabel: "@chaiwaleofficial"
   },
   {
-    quote: "BrandNest created the entire brand identity and website for Desi Chulha. Their custom AI-powered commercial ad tripled our organic reach in the very first month.",
+    quote: "BrandNest handles our social media marketing and produced a stunning AI-powered commercial ad for Desi Chulha. Our organic reach and walk-in footfall increased significantly — all without a single rupee spent on paid ads.",
     name: "Desi Chulha Owner",
     role: "Owner, Desi Chulha — Restaurant, Kendujhar, Odisha",
     initials: "DC",
-    service: "AI Commercial Ad + Website",
+    service: "Social Media Marketing + AI Video Ads",
     rating: 5,
     link: null,
     linkLabel: null
@@ -64,14 +64,14 @@ const TESTIMONIALS = [
     linkLabel: null
   },
   {
-    quote: "BrandNest shot a premium commercial ad campaign for Kashmiri Organic Nuts featuring an incredible brand collaboration. Visually stunning, fast turnaround, and the aesthetics were spot on. We saw a massive boost in reach and growth.",
-    name: "Brand Team",
-    role: "Kashmiri Organic Nuts",
-    initials: "KN",
-    service: "Commercial Ads & Brand Collab",
+    quote: "BrandNest created an AI-powered commercial ad for our brand — Kashmiri Organic Nuts. The ad was featured as a brand collaboration on our official Instagram page. Visually stunning, fast turnaround, and the aesthetics were spot on. We saw a great boost in reach and engagement.",
+    name: "Aly Goni",
+    role: "Founder, Kashmiri Organic Nuts",
+    initials: "AG",
+    service: "AI Commercial Ad + Instagram Brand Collab",
     rating: 5,
     link: "https://www.instagram.com/reel/DN7jMkjEqY7/?igsh=dXA3YWNtdWdrOHQw",
-    linkLabel: "Watch Reel"
+    linkLabel: "Watch Collab Reel"
   },
   {
     quote: "For our anniversary, I reached out to BrandNest to surprise my husband. They transformed our entire love story into a cute, animated video/reel. We both broke into happy tears watching it—it was such a beautiful and emotional surprise!",

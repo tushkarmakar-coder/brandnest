@@ -37,10 +37,10 @@ const PORTFOLIO_ITEMS = [
   {
     id: 3,
     title: 'Desi Chulha',
-    subtitle: 'Restaurant Website + AI Commercial Ad — Kendujhar, Odisha',
-    problem: 'Traditional dhaba-style restaurant wanted modern online presence while keeping authentic desi brand identity intact.',
-    solution: 'Built mobile-first restaurant website with full menu, online enquiry system, and Google Maps integration. Produced AI-powered commercial ad capturing authentic Indian flavours and atmosphere.',
-    result: 'Brand reach increased 3x in first month via AI commercial ad. Online enquiries up 74%. Featured in local Odisha food blogs.',
+    subtitle: 'Social Media Marketing + AI Commercial Ad — Kendujhar, Odisha',
+    problem: 'Traditional dhaba-style restaurant wanted to grow its local brand presence and attract more customers through digital channels — without a website.',
+    solution: 'BrandNest manages ongoing Social Media Marketing (SMM) for Desi Chulha and produced a high-quality AI-powered commercial video ad that captures the authentic desi flavour and atmosphere of the brand.',
+    result: 'Organic social reach grew significantly from the AI commercial ad. Walk-in footfall increased through consistent SMM. Zero paid ad spend required to achieve results.',
     image: 'bg-gradient-to-br from-red-600 to-orange-700',
     color: '#D32F2F'
   },
@@ -107,14 +107,14 @@ const PORTFOLIO_ITEMS = [
   {
     id: 8,
     title: 'Kashmiri Organic Nuts (Aly Goni)',
-    subtitle: 'Commercial Ad & Brand Collaboration',
-    problem: 'The brand needed an aesthetic, high-converting commercial ad campaign featuring Aly Goni to capture premium organic food market attention.',
-    solution: 'Produced a cinema-grade commercial video ad, optimized for Instagram Reels and brand collaborations, showcasing product premium quality.',
-    result: 'Stunning commercial ad delivered. Highly engaged brand collaboration with Aly Goni. Boosted direct brand inquiries.',
+    subtitle: 'AI Commercial Ad + Official Instagram Brand Collaboration',
+    problem: 'The brand needed a high-quality, aesthetic AI-powered commercial ad that could be published as an official brand collaboration on the Kashmiri Organic Nuts Instagram page.',
+    solution: 'BrandNest produced a cinematic AI commercial video ad for Kashmiri Organic Nuts, crafted to showcase the premium quality of the product. The ad was published as an official brand collaboration on the brand\'s Instagram page — founded by Aly Goni.',
+    result: 'AI commercial ad delivered and live on official Instagram as a brand collab. Strong engagement and reach boost immediately after posting. Elevated brand perception in the premium organic food segment.',
     image: 'bg-gradient-to-br from-amber-600 to-yellow-800',
     color: '#D97706',
     projectLinks: [
-      { label: 'Watch Reels Collaboration', url: 'https://www.instagram.com/reel/DN7jMkjEqY7/?igsh=dXA3YWNtdWdrOHQw' }
+      { label: 'Watch Collab Reel', url: 'https://www.instagram.com/reel/DN7jMkjEqY7/?igsh=dXA3YWNtdWdrOHQw' }
     ]
   }
 ];
