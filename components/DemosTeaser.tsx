@@ -72,6 +72,19 @@ export default function DemosTeaser() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            whileInView={{ opacity: 1 }} 
+            viewport={{ once: true }}
+            className="mt-12 flex justify-center"
+          >
+            <div className="flex items-center gap-4 text-zinc-500 font-medium text-sm">
+              <span className="w-12 h-px bg-zinc-800"></span>
+              + MANY MORE PROJECTS & TOOLS
+              <span className="w-12 h-px bg-zinc-800"></span>
+            </div>
+          </motion.div>
         </div>
       </section>
 

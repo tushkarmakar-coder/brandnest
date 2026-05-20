@@ -67,6 +67,22 @@ export default function DemoGallery() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            whileInView={{ opacity: 1 }} 
+            viewport={{ once: true }}
+            className="mt-16 flex justify-center pb-10"
+          >
+            <div className="flex flex-col items-center gap-3 text-zinc-500 font-medium">
+              <div className="flex items-center gap-4 text-sm">
+                <span className="w-16 h-px bg-zinc-800"></span>
+                + MANY MORE CONFIDENTIAL PROJECTS & TOOLS
+                <span className="w-16 h-px bg-zinc-800"></span>
+              </div>
+              <p className="text-xs text-zinc-600">Some of our best enterprise work is protected by NDA and cannot be showcased publicly.</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

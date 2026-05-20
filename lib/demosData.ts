@@ -32,8 +32,7 @@ export const DEMOS_DATA: DemoItem[] = [
     image: 'bg-gradient-to-br from-amber-500 to-orange-600',
     type: 'simulated-image',
     url: 'https://chaiwale.vercel.app',
-    tags: ['Café', 'WhatsApp Order', 'Landing Page'],
-    isFeatured: true
+    tags: ['Café', 'WhatsApp Order', 'Landing Page']
   },
   {
     id: 'influencer',
@@ -121,5 +120,16 @@ export const DEMOS_DATA: DemoItem[] = [
     type: 'simulated-image',
     url: 'Automation Concept',
     tags: ['AI Agents', 'SaaS', 'Automation']
+  },
+  {
+    id: 'kashmiri-organic',
+    title: 'Kashmiri Organic Nuts',
+    subtitle: 'Commercial AI Brand Ad',
+    description: 'Cinematic AI commercial video ad crafted to showcase premium quality. Published as an official brand collaboration with Aly Goni.',
+    image: 'bg-gradient-to-br from-amber-600 to-yellow-800',
+    type: 'iframe',
+    url: 'https://www.instagram.com/p/DN7jMkjEqY7/embed',
+    tags: ['Video Ad', 'AI Generated', 'Social Media'],
+    isFeatured: true
   }
 ]
