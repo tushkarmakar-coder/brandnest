@@ -173,18 +173,29 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <HeroThree />
       <TrustBar />
+      
+      {/* 1. What we do */}
       <Services />
-      <Industries />
-
-      <PricingSection />
-      <Portfolio />
+      
+      {/* 2. PROOF: Our Best Work (Moved up!) */}
       <DemosTeaser />
-      <FounderTeaser />
-      <WhyUs />
+      <Portfolio />
+      
+      {/* 3. Who we serve & How we do it better */}
+      <Industries />
       <AISection />
+      <WhyUs />
       <Process />
+      
+      {/* 4. Social Proof & Team */}
       <Testimonials />
+      <FounderTeaser />
+      
+      {/* 5. The Offer / Pricing (Moved down to build value first) */}
+      <PricingSection />
       <FAQ />
+      
+      {/* 6. Closing */}
       <ConsultationSection />
       <CTABanner />
       <Footer />
