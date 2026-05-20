@@ -4,6 +4,7 @@ import Services from '@/components/Services'
 import Portfolio from '@/components/Portfolio'
 import WhyUs from '@/components/WhyUs'
 import AISection from '@/components/AISection'
+import DemosTeaser from '@/components/DemosTeaser'
 import Process from '@/components/Process'
 import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
@@ -177,6 +178,7 @@ export default function Home() {
 
       <PricingSection />
       <Portfolio />
+      <DemosTeaser />
       <FounderTeaser />
       <WhyUs />
       <AISection />

@@ -21,6 +21,7 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <Link href="/#services" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Services</Link>
+          <Link href="/demos" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap font-bold">Demos</Link>
           <Link href="/#work" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Our Work</Link>
           <Link href="/#why" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Why Us</Link>
           <Link href="/founders" className="text-[12px] sm:text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors whitespace-nowrap">Our Story</Link>
@@ -51,6 +52,7 @@ export default function Navbar() {
         <div className="md:hidden border-t border-[rgba(255,92,0,0.08)] bg-[rgba(17,17,17,0.98)] overflow-x-hidden">
           <div className="px-4 sm:px-6 py-6 space-y-4">
             <Link href="/#services" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Services</Link>
+            <Link href="/demos" onClick={() => setIsOpen(false)} className="block text-[13px] text-[#FF5C00] font-bold hover:text-[#FF7A2E] transition-colors">Demos</Link>
             <Link href="/#work" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Work</Link>
             <Link href="/#why" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Why Us</Link>
             <Link href="/founders" onClick={() => setIsOpen(false)} className="block text-[13px] text-[rgba(245,245,245,0.6)] hover:text-[#FF5C00] transition-colors">Our Story</Link>
