@@ -112,6 +112,18 @@ export default function DemoPreviewModal({
               </div>
 
               <div className="flex items-center gap-4">
+                {url && (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-[#FF5C00] hover:text-white transition-colors text-sm font-medium bg-[#FF5C00]/10 hover:bg-[#FF5C00] px-3 py-1.5 rounded-lg border border-[#FF5C00]/20"
+                  >
+                    <ExternalLink size={14} />
+                    <span className="hidden sm:block">Open Live Site</span>
+                  </a>
+                )}
+
                 {/* Device Toggle */}
                 <div className="hidden sm:flex bg-zinc-900 rounded-lg p-1 border border-zinc-800">
                   <button 
