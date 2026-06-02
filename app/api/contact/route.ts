@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
 
                     <div style="text-align: center;">
                       <p style="color: rgba(245,245,245,0.4); font-size: 13px; margin-bottom: 20px;">Need an instant response?</p>
-                      <a href="https://wa.me/917894935653?text=Hi, I just filled out the inquiry form." style="display: inline-block; background: #25D366; color: #FFFFFF; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px;">Message us on WhatsApp</a>
+                      <a href="mailto:brandnest.team@gmail.com" style="display: inline-block; background: #25D366; color: #FFFFFF; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px;">Email us</a>
                     </div>
                   </div>
 

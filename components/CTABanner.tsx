@@ -25,11 +25,11 @@ export default function CTABanner() {
               {t('cta')} →
             </a>
             <a
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hi BrandNest, I'd like a consultation.`}
+              href={`mailto:brandnest.team@gmail.com`}
               target="_blank" rel="noopener noreferrer"
               className="border border-[#FF5C00] text-[#FF5C00] px-10 py-4 text-[13px] font-semibold tracking-wide hover:bg-[#FF5C00] hover:text-[#111] transition-colors"
             >
-              {t('whatsapp')}
+              Email Us
             </a>
           </div>
           <p className="text-[12px] text-[rgba(245,245,245,0.4)] mt-6">

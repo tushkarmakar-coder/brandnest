@@ -464,7 +464,7 @@ const PricingPage = () => {
                 )}
 
                 <a
-                  href={`https://wa.me/917894935653?text=Hi BrandNest, I'm interested in the ${plan.name} (${activeCategory}) package. Please share the details.`}
+                  href={`mailto:brandnest.team@gmail.com'm interested in the ${plan.name} (${activeCategory}) package. Please share the details.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all text-center flex items-center justify-center gap-2 ${plan.name.includes('Premium') || plan.name.includes('Custom') || plan.name.includes('Enterprise') ? 'bg-[#FF5C00] text-[#111] hover:bg-[#FF7A2E] shadow-xl shadow-[#FF5C00]/20' : 'bg-[#1A1A1A] border border-[rgba(255,92,0,0.2)] text-[#F5F5F5] hover:border-[#FF5C00] hover:text-[#FF5C00]'}`}

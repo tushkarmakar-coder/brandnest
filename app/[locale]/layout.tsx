@@ -168,7 +168,7 @@ export default async function RootLayout({
                   "logo": "https://brandnestagency.vercel.app/logo.png",
                   "image": "https://brandnestagency.vercel.app/logo.png",
                   "description": "BrandNest is a premium digital agency & India's first AI-powered web development company delivering world-class B2B marketplaces, multi-vendor platforms, SaaS dashboards, custom websites, commercial video ads, and performance marketing for founders in India and globally across the world.",
-                  "telephone": "+917894935653",
+                  "telephone": "brandnest.team@gmail.com",
                   "email": "brandnest.team@gmail.com",
                   "address": {
                     "@type": "PostalAddress",

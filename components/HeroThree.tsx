@@ -274,7 +274,7 @@ export default function HeroThree() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
               className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 flex-wrap"
             >
-              <a href="https://wa.me/917894935653" target="_blank" rel="noopener noreferrer" className="bg-[#FF5C00] text-[#111] px-6 sm:px-8 py-3 sm:py-3.5 text-[12px] sm:text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,92,0,0.3)] whitespace-nowrap">
+              <a href="mailto:brandnest.team@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-[#FF5C00] text-[#111] px-6 sm:px-8 py-3 sm:py-3.5 text-[12px] sm:text-[13px] font-semibold tracking-wide hover:bg-[#FF7A2E] transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,92,0,0.3)] whitespace-nowrap">
                 {t_hero('cta1')}
               </a>
               <a href="#work" className="text-[#FF7A2E] text-[12px] sm:text-[13px] tracking-wide font-medium border border-[rgba(255,92,0,0.4)] px-5 sm:px-7 py-3 sm:py-3.5 hover:border-[#FF5C00] hover:bg-[rgba(255,92,0,0.05)] transition-colors whitespace-nowrap">

@@ -88,13 +88,13 @@ export default function ConsultationSection() {
         >
           <p className="text-[13px] text-[rgba(245,245,245,0.5)] mb-4">Prefer instant chat?</p>
           <a
-            href={`https://wa.me/917894935653?text=Hi BrandNest, I'd like a consultation about our project.`}
+            href={`mailto:brandnest.team@gmail.com'd like a consultation about our project.`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-[#FF5C00] text-[#FF5C00] px-8 py-3 text-[13px] font-semibold tracking-wide hover:bg-[#FF5C00] hover:text-[#111] transition-colors"
           >
             <span>💬</span>
-            Message on WhatsApp
+            Email Us
           </a>
         </motion.div>
       </div>

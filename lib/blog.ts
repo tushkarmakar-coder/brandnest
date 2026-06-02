@@ -55,7 +55,7 @@ Clearly communicate the value of your product or service with motion graphics an
 3. **4K Delivery:** High-resolution output optimized for every platform.
 
 **Ready to launch your video campaign?**
-[Chat with us on WhatsApp](https://wa.me/917894935653)
+[Email us](mailto:brandnest.team@gmail.com)
 `
   },
   {
@@ -92,7 +92,7 @@ Sometimes you need results today. Our Google Ads experts create high-converting 
 - **Transparent Reporting:** You see exactly where your money is going and what results it's bringing.
 
 **Want to dominate Google Search?**
-[Get a Free SEO Audit](https://wa.me/917894935653)
+[Get a Free SEO Audit](mailto:brandnest.team@gmail.com)
 `
   },
   {
@@ -157,7 +157,7 @@ The hardest part was buyer/seller identity protection — showing enough info fo
 ## Building a Marketplace? Talk to Us.
 We know the complexity because we've done it. If you're building a marketplace, B2B platform, or multi-vendor system — we can help.
 
-**Free consultation on WhatsApp:** [wa.me/917894935653](https://wa.me/917894935653)
+**Free consultation via Email:** [mailto:brandnest.team@gmail.com](mailto:brandnest.team@gmail.com)
 **Or fill the form:** [brandnestagency.vercel.app/#consultation](https://brandnestagency.vercel.app/#consultation)
 `
   },

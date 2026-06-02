@@ -53,11 +53,11 @@ export default function Footer() {
               Get Free Quote →
             </a>
             <a
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hi BrandNest, I'd like a consultation.`}
+              href={`mailto:brandnest.team@gmail.com`}
               target="_blank" rel="noopener noreferrer"
               className="border border-[rgba(255,92,0,0.3)] text-[#FF7A2E] px-7 py-3 text-[13px] tracking-wide hover:border-[#FF5C00] hover:text-[#F5F5F5] transition-colors whitespace-nowrap"
             >
-              WhatsApp Us
+              Email Us
             </a>
           </div>
         </div>
@@ -144,8 +144,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={14} className="text-[#FF5C00] flex-shrink-0" />
-                <a href="https://wa.me/917894935653" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[rgba(245,245,245,0.5)] hover:text-[#FF7A2E] transition-colors font-body">
-                  WhatsApp: 7894935653
+                <a href="mailto:brandnest.team@gmail.com" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[rgba(245,245,245,0.5)] hover:text-[#FF7A2E] transition-colors font-body">
+                  Email: brandnest.team@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3">

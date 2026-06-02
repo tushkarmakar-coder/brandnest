@@ -97,7 +97,7 @@ export default function RefundPolicy() {
           <section className="bg-[#F4F2ED] p-6 rounded border border-[#E8E4DC]">
             <h2 className="font-display text-[24px] font-semibold mb-3">Need Help?</h2>
             <p className="text-[15px] leading-[1.8] text-[#6B6560]">
-              We are committed to your satisfaction. Contact us immediately at brandnest.team@gmail.com or WhatsApp: +91-7894935653
+              We are committed to your satisfaction. Contact us immediately at brandnest.team@gmail.com or WhatsApp: brandnest.team@gmail.com
             </p>
           </section>
 

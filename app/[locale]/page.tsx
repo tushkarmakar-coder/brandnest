@@ -39,7 +39,7 @@ export default function Home() {
         name: 'BrandNest Digital Agency',
         description: "AI Websites, Marketing & Branding for Startups. Starting ₹25k. Websites, SEO, Ads & AI Tools. Grow your business online fast.",
         url: 'https://brandnestagency.vercel.app',
-        telephone: '+91-7894935653',
+        telephone: 'brandnest.team@gmail.com',
         email: 'brandnest.team@gmail.com',
         address: { 
           '@type': 'PostalAddress', 

@@ -107,7 +107,7 @@ export default function Disclaimer() {
           <section className="bg-[#F4F2ED] p-6 rounded border border-[#E8E4DC]">
             <h2 className="font-display text-[24px] font-semibold mb-3">Questions?</h2>
             <p className="text-[15px] leading-[1.8] text-[#6B6560]">
-              Contact us at brandnest.team@gmail.com | WhatsApp: +91-7894935653 | Noida, India
+              Contact us at brandnest.team@gmail.com | WhatsApp: brandnest.team@gmail.com | Noida, India
             </p>
           </section>
 

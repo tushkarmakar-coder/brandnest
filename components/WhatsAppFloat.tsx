@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function WhatsAppFloat() {
-  const phoneNumber = '917894935653' // BrandNest WhatsApp number
+  const phoneNumber = 'brandnest.team@gmail.com' // BrandNest WhatsApp number
   const message = encodeURIComponent("Hi BrandNest, I'd like to discuss a project.")
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
 

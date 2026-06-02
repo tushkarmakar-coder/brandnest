@@ -30,9 +30,9 @@ export default function Navbar() {
           
           <LanguageSwitcher />
 
-          <a href="https://wa.me/917894935653" target="_blank" rel="noopener noreferrer"
+          <a href="mailto:brandnest.team@gmail.com" target="_blank" rel="noopener noreferrer"
             className="bg-[#25D366] text-white px-5 sm:px-6 py-2 text-[11px] sm:text-[12px] font-semibold rounded-[8px] hover:opacity-90 transition-opacity whitespace-nowrap">
-            💬 WhatsApp
+            📧 Email Us
           </a>
 
           <Link href="/#consultation"
@@ -63,8 +63,8 @@ export default function Navbar() {
               <LanguageSwitcher />
             </div>
 
-            <a href="https://wa.me/917894935653" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="block bg-[#25D366] text-white px-5 sm:px-6 py-3 text-[13px] font-semibold rounded-[8px] hover:opacity-90 transition-opacity text-center shadow-lg">
-              💬 WhatsApp
+            <a href="mailto:brandnest.team@gmail.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="block bg-[#25D366] text-white px-5 sm:px-6 py-3 text-[13px] font-semibold rounded-[8px] hover:opacity-90 transition-opacity text-center shadow-lg">
+              📧 Email Us
             </a>
 
             <Link href="/#consultation" onClick={() => setIsOpen(false)} className="block bg-[#FF5C00] text-[#111] px-5 sm:px-6 py-3 text-[13px] font-semibold hover:bg-[#FF7A2E] transition-colors text-center shadow-lg">
